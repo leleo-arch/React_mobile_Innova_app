@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import {
   Conteiner,
   Imagem,
@@ -28,6 +27,7 @@ function App() {
     console.log(newUser);
     setUsers([...users, newUser]);
   }
+  
 
   return (
     <Conteiner>
@@ -44,7 +44,8 @@ function App() {
           Cadastrar <img alt="Seta" src={Seta} />
         </Button>
         <Button to="/Alunos"Ver Alunos> Alunos Cadastrados <img alt="Seta" src={Seta} /> </Button>
-        <Button to="/Home-Login"Ver Menu> Voltar Menu</Button>
+        <Button to="/Menu"Ver Menu> Voltar Menu</Button>
+
       </ConteinerItens>
     </Conteiner>
   );

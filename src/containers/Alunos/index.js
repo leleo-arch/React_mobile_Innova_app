@@ -33,7 +33,7 @@ function Users() {
 
   async function deleteUser(userId) {
     await axios.delete(`http://localhost:5000/myprojects/${userId}`)
-    const DeleteUser = users.filter((user) => user.id != userId);
+    const DeleteUser = users.filter((user) => user.id !== userId);
     setUsers(DeleteUser);
   }
 
@@ -52,7 +52,7 @@ function Users() {
               </button>
             </User>
           ))}
-          ;
+        
         </ul>
 
         <Button to="/">

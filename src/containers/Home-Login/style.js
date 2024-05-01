@@ -12,12 +12,16 @@ display: flex;
 flex-direction: column;
 align-items: center;
 gap: 30px;
+min-height: 100vh;
 
 `;
 
+
 export const Imagem = styled.img `
 margin-top: 10px;
-width: 300px;
+width: 30px;
+height: 30px;
+
 `; 
 
 export const ConteinerItens = styled.div `
@@ -73,7 +77,7 @@ font-size: 15px;
 margin-top: 20px;
 width: 327px;
 height: 48px;
-border-radius: 10px;
+border-radius: 0px;
 background-color: black;
 color: white;
 display: flex;
@@ -89,3 +93,19 @@ gap: 4px;
 }
 `;
 
+export const Logos = styled.div `
+
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 20px;
+gap: 10px;
+
+`;
+
+export const Imagem2 = styled.img `
+
+margin-top: 20px;
+width: 150px;
+
+`;

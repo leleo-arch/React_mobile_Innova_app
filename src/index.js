@@ -4,6 +4,6 @@ import Routes from './routes';
 import GlobalStyle from './Styles/globalStyle';
 
 
- ReactDOM.render( <> <Routes /> <GlobalStyle/> </>, document.getElementById('root'));
+ ReactDOM.render( <> <Routes/> <GlobalStyle/> </>, document.getElementById('root'));
 
  

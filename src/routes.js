@@ -3,7 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import cadastro from "./containers/Cadastro-Alunos";
 import alunos from "./containers/Alunos";
-import Login  from "./containers/Home-Login";
+import historico  from "./containers/Historico";
+import login  from "./containers/Home-Login";
+import menu  from "./containers/Menu";
+import check  from "./containers/Checkin-aula";
 
 function Routes() {
 
@@ -11,9 +14,13 @@ function Routes() {
   
    <Router>
     <Switch>
+        <Route exact path="/Historico"component = {historico}/>
+        <Route exact path="/Home-Login"component = {login}/>
         <Route exact path="/" component = {cadastro}/>
         <Route exact path="/Alunos"component = {alunos}/>
-        <Route exact path="/Home-Login"component = {Login}/>
+        <Route exact path="/Menu"component = {menu}/>
+        <Route exact path="/Checkin-aula"component = {check}/>
+        
     </Switch>
    </Router> 
 
