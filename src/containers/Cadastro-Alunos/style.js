@@ -11,26 +11,25 @@ background-size: cover;
 display: flex;
 flex-direction: column;
 align-items: center;
-gap: 30px;
+gap: 15px;
+@media only screen and (max-width: 600px) {
+  height: 133vh;  }
 
 `;
 
 export const Imagem = styled.img `
 margin-top: 10px;
-width: 300px;
+height: 150px;
 `; 
 
 export const ConteinerItens = styled.div `
-background: linear-gradient(
-
-157.44deg, rgba(255, 255, 255, 0.6) 0.84%, rgba(255, 255, 255, 0.6) 0.85%, rgba(255, 255, 255, 0.15) 100%
-
-);
-
+background-color: rgba(255, 255, 255, 0.9);  background-size: cover;
 border-radius: 31px;
 padding: 50px 36px;
 display: flex;
 flex-direction: column;
+gap: 20px;
+
 `;
 
 export const H1 = styled.h1 `
@@ -46,10 +45,11 @@ margin-bottom: 30px;
 export const InputLabel = styled.p `
 display: flex;
 justify-content: start;
-color: aliceblue;
+color: black;
 font-family: Roboto;
 margin-left: 5px;
 margin-bottom: 0px;
+
 
 
 `;

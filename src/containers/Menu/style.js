@@ -13,11 +13,19 @@ flex-direction: column;
 align-items: center;
 gap: 30px;
 
+@media only screen and (max-width: 600px) {
+height: 120vh;
+margin-bottom:30px; 
+
+
+
+}
 `;
 
 export const Imagem = styled.img `
 margin-top: 10px;
-width: 300px;
+
+  height: 150px;
 `; 
 
 export const ConteinerItens = styled.div `

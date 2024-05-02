@@ -18,9 +18,9 @@ function App() {
         <H1>Inova-Jiu-Jitsu</H1>
 
         <Button to="/Checkin-aula"Ver Menu> Check-in em aula</Button>
-        <Button to="/Historico"Ver Historico> Histórico de Presença </Button>
+        <Button to="/Treino"Ver Historico> Treino do Dia </Button>
         <Button to="/"Ver Menu> Cadastro de Alunos </Button>
-        <Button to="/Home-Login"Ver Menu> Treino do Dia  </Button>
+        <Button to="/Desafios"Ver Menu> Desafios Innova  </Button>
         <Button to="/Home-Login"Ver Menu> Mercado de Troca </Button> 
         <Button to="/Home-Login"Ver Menu> Comunidades INV </Button> 
         

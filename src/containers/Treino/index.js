@@ -1,18 +1,96 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import logo from "../../assets/logoinnocva.png";
+
+
+
+const Body = styled.div`
+background-color: black;
+background-size: cover;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 30px;
+
+
+@media only screen and (max-width: 700px) {
+ 
+  height: 145vh;
+}
+
+`;
+
+const Imagem = styled.img`
+  background-color: black;
+  border-radius: 10px;
+  height: 150px;
+
+
+
+  @media only screen and (max-width: 700px) {
+ 
+   margin-bottom:30px; 
+   margin-top: 50px;
+
+}
+
+  @media only screen and (max-width: 600px) {
+
+   margin-bottom:30px; 
+   margin-top: 50px;
+
+
+}
+
+
+ 
+`;
+
 
 const Container = styled.div`
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  width: 60%;
-  margin: 50px auto;
+  background-color: rgba(255, 255, 255, 0.9);  background-size: cover;
+background-size: cover;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+border-radius: 25px;
+width: 32%;
+padding: 20px;
+overflow-x: auto;
+max-height: 80vh; 
+
+&::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+
+
+  @media only screen and (max-width: 400px) {
+  width: 95%; }
+  
+@media only screen and (max-width: 700px) {
+  width: 95%; }
+
+
+@media only screen and (max-width: 600px) {
+  width: 95%;  }
+
 `;
 
 const Title = styled.h1`
   color: #333;
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
 `;
 
 const SectionTitle = styled.h2`
@@ -27,6 +105,8 @@ const Input = styled.input`
   width: 100%;
   border-radius: 5px;
   border: 1px solid #ccc;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
 `;
 
 const Select = styled.select`
@@ -35,6 +115,8 @@ const Select = styled.select`
   width: 100%;
   border-radius: 5px;
   border: 1px solid #ccc;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
 `;
 
 const Button = styled.button`
@@ -45,16 +127,33 @@ const Button = styled.button`
   cursor: pointer;
   border-radius: 5px;
   margin-right: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
 `;
 
 const ExerciseList = styled.ul`
   list-style-type: none;
   padding: 0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 70%;
+
+  
 `;
 
 const ExerciseItem = styled.li`
   margin-bottom: 10px;
   color: #555;
+  
+`;
+
+const Div = styled.li`
+  margin-bottom: 20px;
+  color: #555;
+  display: flex;
+  flex-direction:column;
+
+
+
 `;
 
 const TrainingDayJiuJitsu = () => {
@@ -96,6 +195,8 @@ const TrainingDayJiuJitsu = () => {
   };
 
   return (
+    <Body>
+    <Imagem alt="img-pessoas" src={logo}/>
     <Container>
       <Title>Treino do Dia - Jiu-Jitsu</Title>
       <SectionTitle>Adicionar Exercícios</SectionTitle>
@@ -135,23 +236,24 @@ const TrainingDayJiuJitsu = () => {
       <Button onClick={handleSaveNotes}>Salvar Anotações</Button>
       <Button onClick={handleSaveTraining}>Salvar Treino</Button>
       <SectionTitle>Histórico de Treinos</SectionTitle>
-      <ul>
+      <ExerciseList>
         {previousTrainings.map((training, index) => (
-          <li key={index}>
-            <div>Data: {training.date}</div>
+          <Div key={index}>
+            <div >Data: {training.date}</div>
             <div>
               Exercícios: 
-              <ul>
+              <li>
                 {training.exercises.map((exercise, idx) => (
-                  <li key={idx}>{exercise.name} ({exercise.type})</li>
+                  <ExerciseItem key={idx}>{exercise.name} ({exercise.type})</ExerciseItem>
                 ))}
-              </ul>
-            </div>
-            <div>Anotações: {training.notes}</div>
-          </li>
+              </li>
+            </div  >
+            <div >Anotações: {training.notes}</div>
+          </Div>
         ))}
-      </ul>
+      </ExerciseList>
     </Container>
+    </Body>
   );
 };
 

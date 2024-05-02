@@ -2,24 +2,26 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Peoples from "../../assets/logoinnocva.png";
 import Calendar from './Calendar';
-import Historico from '../Historico/index'; // Importe o componente de calendário
-
 // Componentes estilizados
 const Container = styled.div`
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.9);  background-size: cover;
-  border-radius: 25px;
-  width: 40%;
-  height: 140vh;
-  margin-top: 20px;
+background-size: cover;
+display: flex;
+border-radius:20px;
+flex-direction: column;
+align-items: center;
+gap: 20px;
 
+@media only screen and (max-width: 600px) {
+  width: 90%;  }
 `;
 
 const Div = styled.div`
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.9);  background-size: opacity;
   border-radius: 25px;
-  width: 100%;
+  width: 95%;
   margin-top: 20px;
   display: flex;
   align-items: center;
@@ -40,6 +42,7 @@ const ClassListContainer = styled.div`
   max-height: 300px; /* Definindo a altura máxima */
   margin-top: 40px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
 
   /* Estilos da barra de rolagem */
   &::-webkit-scrollbar {
@@ -132,11 +135,18 @@ const Divcontainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
-  background-color: black;
+    background-color: black;
   width: 100%;
-  height: 200vh;
+
+@media only screen and (max-width: 600px) {
+  height: 150vh;  }
+
+  @media only screen and (max-width: 400px) {
+  height: 150vh;  }
+
+
 `;
+
 
 const P = styled.p`
   display: flex;
@@ -147,7 +157,7 @@ const P = styled.p`
 `;
 
 const Imagem = styled.img`
-  height: 200px;
+  height: 150px;
   margin-bottom: 50px;
 `;
 
@@ -196,7 +206,7 @@ const JiuJitsuCheckIn = () => {
     <Divcontainer>
       <Imagem alt="img-pessoas" src={Peoples}/>
       <Container>
-        <Calendar /> {Historico}
+        <Calendar /> {}
 
         <ClassListContainer>
           <ClassList>
@@ -222,7 +232,7 @@ const JiuJitsuCheckIn = () => {
         <Button onClick={handleCheckInAll}>Fazer Check-in em Todas as Aulas</Button>
         <Button onClick={handleCheckInAll2}>Retirar Check-in</Button>
       
-        <P>{selectedCount} Aulas Compaecidas(s)</P>
+        <P>{selectedCount} Aulas Comparecidas(s)</P>
      
 
         </Div>

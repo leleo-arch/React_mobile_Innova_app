@@ -24,7 +24,7 @@ const StyledCalendar = styled.div`
   display: flex;
   overflow-x: auto;
   flex-wrap: nowrap;
-  max-width: 400px;
+  max-width: 350px;
   &::-webkit-scrollbar {
     width: 8px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);

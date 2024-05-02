@@ -27,7 +27,6 @@ function App() {
     console.log(newUser);
     setUsers([...users, newUser]);
   }
-  
 
   return (
     <Conteiner>
