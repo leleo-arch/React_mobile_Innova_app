@@ -29,13 +29,6 @@ const Div = styled.div`
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 
-const Title = styled.h1`
-  color: #333;
-  font-size: 20px;
-  margin-bottom: 20px;
-  margin-left: 82px;
-
-`;
 
 const ClassListContainer = styled.div`
   overflow-y: auto; /* Adicionando rolagem vertical */
@@ -99,13 +92,6 @@ const ClassInfo = styled.div`
   justify-content: center;
 `;
 
-const CheckBox = styled.input`
-  margin-right: 5px;
-  background-color: rgb(255, 255, 255);
-  border-radius:20px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  background: rgba(255, 255, 255, 0.25);
-`;
 
 const Button = styled.button`
   background-color: #007bff;
@@ -118,18 +104,6 @@ const Button = styled.button`
 
 `;
 
-const Button2 = styled.button`
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 20px;
-  margin-left: 175px;
-
-
-`;
 
 const Divcontainer = styled.div`
   display: flex;

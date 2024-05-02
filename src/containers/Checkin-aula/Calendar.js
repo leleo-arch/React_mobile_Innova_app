@@ -134,7 +134,7 @@ const Calendar = () => {
     const lastDayOfMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0);
     const startingDay = firstDayOfMonth.getDay();
     const endingDay = lastDayOfMonth.getDate();
-
+    console.log(startingDay)
     const days = [];
 
     for (let day = 1; day <= endingDay; day++) {

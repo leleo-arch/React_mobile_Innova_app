@@ -19,7 +19,7 @@ function App() {
 
         <Button to="/Checkin-aula"Ver Menu> Check-in em aula</Button>
         <Button to="/Treino"Ver Historico> Treino do Dia </Button>
-        <Button to="/"Ver Menu> Cadastro de Alunos </Button>
+        <Button to="/Cadastro-Alunos"Ver Menu> Cadastro de Alunos </Button>
         <Button to="/Desafios"Ver Menu> Desafios Innova  </Button>
         <Button to="/Home-Login"Ver Menu> Mercado de Troca </Button> 
         <Button to="/Home-Login"Ver Menu> Comunidades INV </Button> 
