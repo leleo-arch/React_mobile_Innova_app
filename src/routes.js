@@ -7,6 +7,8 @@ import historico  from "./containers/Treino";
 import login  from "./containers/Desafios";
 import Home  from "./containers/Home";
 import check  from "./containers/Checkin-aula";
+import comunidades from "./containers/Comunidade";
+import perto  from "./containers/Pertodevoce";
 
 function Routes() {
 
@@ -15,11 +17,14 @@ function Routes() {
    <Router>
     <Switch>
         <Route path="/" exact component={Home} /> {Home}
+        <Route exact path="/Comunidade"component = {comunidades}/>
+        <Route exact path="/Pertodevoce"component = {perto}/>
         <Route exact path="/Treino"component = {historico}/>
         <Route exact path="/Desafios"component = {login}/>
         <Route exact path="/Cadastro-Alunos" component = {cadastro}/>
         <Route exact path="/Alunos"component = {alunos}/>
         <Route exact path="/Checkin-aula"component = {check}/>
+
         
     </Switch>
    </Router> 

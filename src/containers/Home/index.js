@@ -21,8 +21,8 @@ function App() {
         <Button to="/Treino"Ver Historico> Treino do Dia </Button>
         <Button to="/Cadastro-Alunos"Ver Menu> Cadastro de Alunos </Button>
         <Button to="/Desafios"Ver Menu> Desafios Innova  </Button>
-        <Button to="/Home-Login"Ver Menu> Mercado de Troca </Button> 
-        <Button to="/Home-Login"Ver Menu> Comunidades INV </Button> 
+        <Button to="/Pertodevoce"Ver Menu> Mercado de Troca </Button> 
+        <Button to="/Comunidade"Ver Menu> Comunidades INV </Button> 
         
       </ConteinerItens>
     </Conteiner>
