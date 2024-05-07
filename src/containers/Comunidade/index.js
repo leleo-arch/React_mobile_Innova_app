@@ -1,145 +1,246 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
 
-const Container = styled.div`
-  font-family: Arial, sans-serif;
-  padding: 20px;
-`;
+const styles = {
+  container: {
+    fontFamily: "Arial, sans-serif",
+    maxWidth: "800px",
+    margin: "0 auto",
+    padding: "20px",
+    backgroundColor: "#f9f9f9",
+    borderRadius: "5px",
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+  },
+  heading: {
+    textAlign: "center",
+    marginBottom: "20px",
+  },
+  formContainer: {
+    display: "flex",
+    marginBottom: "20px",
+    alignItems: "center",
+  },
+  input: {
+    flex: 1,
+    marginRight: "10px",
+    padding: "10px",
+    fontSize: "16px",
+    border: "1px solid #ccc",
+    borderRadius: "5px",
+  },
+  select: {
+    padding: "10px",
+    fontSize: "16px",
+    border: "1px solid #ccc",
+    borderRadius: "5px",
+  },
+  addButton: {
+    padding: "10px 20px",
+    backgroundColor: "#007bff",
+    color: "#fff",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    fontSize: "16px",
+    fontWeight: "bold",
+  },
+  table: {
+    width: "100%",
+    borderCollapse: "collapse",
+    marginBottom: "20px",
+  },
+  attendanceButton: {
+    padding: "5px 10px",
+    backgroundColor: "#28a745",
+    color: "#fff",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    fontSize: "14px",
+  },
+  editButton: {
+    backgroundColor: "#ffc107",
+    color: "#fff",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    padding: "5px 10px",
+    fontSize: "14px",
+    marginRight: "5px",
+  },
+};
 
-const Title = styled.h1`
-  font-size: 24px;
-  margin-bottom: 20px;
-`;
+const JiuJitsuPage = () => {
+  // Estado para armazenar a lista de alunos
+  const [students, setStudents] = useState([
+    { id: 1, name: "João", belt: "Branca", degrees: 1, attendance: 80 },
+    { id: 2, name: "Maria", belt: "Azul", degrees: 2, attendance: 90 },
+    { id: 3, name: "Pedro", belt: "Roxa", degrees: 3, attendance: 75 },
+  ]);
 
-const SearchForm = styled.form`
-  display: flex;
-  margin-bottom: 20px;
-`;
+  // Estado para controlar o formulário de adição de aluno
+  const [newStudentName, setNewStudentName] = useState("");
+  const [newStudentBelt, setNewStudentBelt] = useState("Branca");
+  const [newStudentDegrees, setNewStudentDegrees] = useState(1);
+  const [newStudentAttendance, setNewStudentAttendance] = useState(0);
 
-const SearchInput = styled.input`
-  padding: 10px;
-  font-size: 16px;
-  width: 100%;
-  max-width: 400px;
-  margin-right: 10px;
-`;
-
-const SearchButton = styled.button`
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-`;
-
-const ResultsList = styled.ul`
-  list-style: none;
-  padding: 0;
-`;
-
-const ResultItem = styled.li`
-  margin-bottom: 20px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-`;
-
-const ResultName = styled.strong`
-  font-size: 18px;
-  color: #333;
-`;
-
-const ResultAddress = styled.p`
-  font-size: 16px;
-  color: #666;
-  margin-top: 5px;
-`;
-
-const ResultRating = styled.div`
-  font-size: 16px;
-  color: #666;
-`;
-
-const LoadingMessage = styled.p`
-  font-size: 16px;
-  color: #666;
-`;
-
-const ErrorMessage = styled.p`
-  font-size: 16px;
-  color: red;
-`;
-
-const MartialArtsPage = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const handleSearchInputChange = (event) => {
-    setSearchQuery(event.target.value);
+  // Função para adicionar um novo aluno à lista
+  const handleNewStudentSubmit = () => {
+    const newStudentId = students.length > 0 ? students[students.length - 1].id + 1 : 1;
+    const newStudent = {
+      id: newStudentId,
+      name: newStudentName,
+      belt: newStudentBelt,
+      degrees: newStudentDegrees,
+      attendance: newStudentAttendance,
+    };
+    setStudents([...students, newStudent]);
+    resetNewStudentForm();
   };
 
-  const handleSearchSubmit = async (event) => {
-    event.preventDefault();
-    setLoading(true);
-    try {
-      const response = await fetch(
-        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${encodeURIComponent(
-          searchQuery
-        )}&type=gym&fields=name,formatted_address,rating&key=YOUR_API_KEY`
-      );
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch search results.");
-      }
-
-      const data = await response.json();
-      setSearchResults(data.results);
-      setLoading(false);
-    } catch (error) {
-      console.error("Error searching for jiu-jitsu academies:", error);
-      setError("Failed to fetch search results. Please try again later.");
-      setLoading(false);
-    }
+  // Função para limpar o formulário de adição de aluno
+  const resetNewStudentForm = () => {
+    setNewStudentName("");
+    setNewStudentBelt("Branca");
+    setNewStudentDegrees(1);
+    setNewStudentAttendance(0);
   };
 
-  useEffect(() => {
-    handleSearchSubmit();
-  }, []);
+  // Função para editar o nome de um aluno
+  const editName = (id, newName) => {
+    setStudents(
+      students.map((student) =>
+        student.id === id ? { ...student, name: newName } : student
+      )
+    );
+  };
+
+  // Função para editar a faixa de um aluno
+  const editBelt = (id, newBelt) => {
+    setStudents(
+      students.map((student) =>
+        student.id === id ? { ...student, belt: newBelt } : student
+      )
+    );
+  };
+
+  // Função para editar os graus de um aluno
+  const editDegrees = (id, newDegrees) => {
+    setStudents(
+      students.map((student) =>
+        student.id === id ? { ...student, degrees: newDegrees } : student
+      )
+    );
+  };
+
+  // Função para editar a presença de um aluno
+  const editAttendance = (id, newAttendance) => {
+    setStudents(
+      students.map((student) =>
+        student.id === id ? { ...student, attendance: newAttendance } : student
+      )
+    );
+  };
 
   return (
-    <Container>
-      <Title>Search for Jiu-Jitsu Academies</Title>
-      <SearchForm onSubmit={handleSearchSubmit}>
-        <SearchInput
+    <div style={styles.container}>
+      <h1 style={styles.heading}>Controle de Presença e Evolução</h1>
+      {/* Formulário para adicionar um novo aluno */}
+      <div style={styles.formContainer}>
+        <input
           type="text"
-          placeholder="Enter search term"
-          value={searchQuery}
-          onChange={handleSearchInputChange}
+          placeholder="Nome do Aluno"
+          value={newStudentName}
+          onChange={(e) => setNewStudentName(e.target.value)}
+          style={styles.input}
         />
-        <SearchButton type="submit">Search</SearchButton>
-      </SearchForm>
-      {loading && <LoadingMessage>Loading...</LoadingMessage>}
-      {error && <ErrorMessage>{error}</ErrorMessage>}
-      {!loading && !error && (
-        <ResultsList>
-          {searchResults.map((result, index) => (
-            <ResultItem key={index}>
-              <ResultName>{result.name}</ResultName>
-              <ResultAddress>{result.formatted_address}</ResultAddress>
-              {result.rating && <ResultRating>Rating: {result.rating}</ResultRating>}
-            </ResultItem>
+        <select
+          value={newStudentBelt}
+          onChange={(e) => setNewStudentBelt(e.target.value)}
+          style={styles.select}
+        >
+          <option value="Branca">Branca</option>
+          <option value="Azul">Azul</option>
+          <option value="Roxa">Roxa</option>
+          <option value="Marrom">Marrom</option>
+          <option value="Preta">Preta</option>
+        </select>
+        <input
+          type="number"
+          placeholder="Graus"
+          value={newStudentDegrees}
+          onChange={(e) => setNewStudentDegrees(parseInt(e.target.value))}
+          style={styles.input}
+        />
+        <input
+          type="number"
+          placeholder="Frequência (%)"
+          value={newStudentAttendance}
+          onChange={(e) => setNewStudentAttendance(parseInt(e.target.value))}
+          style={styles.input}
+        />
+        <button onClick={handleNewStudentSubmit} style={styles.addButton}>
+          Adicionar Aluno
+        </button>
+      </div>
+      {/* Tabela para exibir a lista de alunos */}
+      <table style={styles.table}>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Faixa</th>
+            <th>Graus</th>
+            <th>Frequência</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {students.map((student) => (
+            <tr key={student.id}>
+              <td>
+                <input
+                  type="text"
+                  value={student.name}
+                  onChange={(e) => editName(student.id, e.target.value)}
+                  style={styles.input}
+                />
+              </td>
+              <td>
+                <select
+                  value={student.belt}
+                  onChange={(e) => editBelt(student.id, e.target.value)}
+                  style={styles.select}
+                >
+                  <option value="Branca">Branca</option>
+                  <option value="Azul">Azul</option>
+                  <option value="Roxa">Roxa</option>
+                  <option value="Marrom">Marrom</option>
+                  <option value="Preta">Preta</option>
+                </select>
+              </td>
+              <td>
+                <button onClick={() => editDegrees(student.id, student.degrees + 1)}>+</button>{" "}
+                {student.degrees}{" "}
+                <button onClick={() => editDegrees(student.id, student.degrees - 1)}>-</button>
+              </td>
+              <td>
+                <input
+                  type="number"
+                  value={student.attendance}
+                  onChange={(e) => editAttendance(student.id, parseInt(e.target.value))}
+                  style={styles.input}
+                />
+              </td>
+              <td>
+                <button onClick={() => editAttendance(student.id, student.attendance)} style={styles.editButton}>
+                  Editar Presença
+                </button>
+              </td>
+            </tr>
           ))}
-        </ResultsList>
-      )}
-    </Container>
+        </tbody>
+      </table>
+    </div>
   );
 };
 
-export default MartialArtsPage;
-
-
+export default JiuJitsuPage;
