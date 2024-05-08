@@ -121,7 +121,6 @@ const Divcontainer = styled.div`
 
 `;
 
-
 const P = styled.p`
   display: flex;
   align-items: center;
