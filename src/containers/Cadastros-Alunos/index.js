@@ -28,6 +28,7 @@ const Container2 = styled.div`
   background-color: rgba(255, 255, 255, 0.9);  background-size: opacity;
   border-radius: 25px;
   width: 40%;
+  height: 40%;
   margin-top: 20px;
   display: flex;
   align-items: center;
@@ -91,6 +92,10 @@ const FormContainer = styled.div`
   border-radius: 20px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 padding: 10px;
+@media only screen and (max-width: 700px) {
+  overflow-y: auto; /* Adicionando rolagem vertical */
+  max-height: 400px; 
+  }
 `;
 
 const InputGroup = styled.div`
@@ -214,6 +219,8 @@ const JiuJitsuPage = () => {
 
   return (
     <Container>
+
+    
    <Imagem alt="img-pessoas" src={Peoples}/>
 
     <Container2> 

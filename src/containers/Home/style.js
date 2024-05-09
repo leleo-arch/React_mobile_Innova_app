@@ -18,7 +18,6 @@ height: 120vh;
 margin-bottom:30px; 
 
 
-
 }
 `;
 
