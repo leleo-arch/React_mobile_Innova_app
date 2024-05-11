@@ -15,7 +15,7 @@ function App() {
     <Conteiner>
       <Imagem alt="img-pessoas" src={Peoples}/>
       <ConteinerItens>
-        <H1>Inova-Jiu-Jitsu</H1>
+        <H1>Innova</H1>
 
         <Button to="/Checkin-aula"Ver Menu> Check-in em aula</Button>
         <Button to="/Treino"Ver Historico> Treino do Dia </Button>
