@@ -6,6 +6,8 @@ import {
   Button,
 } from "./style";
 
+
+
 import Peoples from "../../assets/logoinnocva.png";
 
 function App() {
@@ -22,7 +24,7 @@ function App() {
         <Button to="/Cadastros-Alunos"Ver Menu> Cadastro de Alunos </Button>
         <Button to="/Desafios"Ver Menu> Desafios Innova  </Button>
         <Button to="/Cadastros-Alunos"Ver Menu> Mercado de Troca </Button> 
-        <Button to="/Comunidade"Ver Menu> Comunidades INV </Button> 
+        <Button to="/Pertodevoce"Ver Menu> Comunidades INV </Button> 
         
       </ConteinerItens>
     </Conteiner>

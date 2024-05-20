@@ -2,24 +2,25 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Peoples from "../../assets/logoinnocva.png";
 import Calendar from './Calendar';
+
 // Componentes estilizados
 const Container = styled.div`
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9);  background-size: cover;
-background-size: cover;
-display: flex;
-border-radius:20px;
-flex-direction: column;
-align-items: center;
-gap: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 
-@media only screen and (max-width: 600px) {
-  width: 90%;  }
+  @media only screen and (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 const Div = styled.div`
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9);  background-size: opacity;
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 25px;
   width: 95%;
   margin-top: 20px;
@@ -29,15 +30,13 @@ const Div = styled.div`
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 
-
 const ClassListContainer = styled.div`
-  overflow-y: auto; /* Adicionando rolagem vertical */
-  max-height: 300px; /* Definindo a altura máxima */
+  overflow-y: auto;
+  max-height: 300px;
   margin-top: 40px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   width: 100%;
 
-  /* Estilos da barra de rolagem */
   &::-webkit-scrollbar {
     width: 8px;
   }
@@ -56,10 +55,27 @@ const ClassList = styled.ul`
   list-style-type: none;
   padding: 0;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
   background: linear-gradient(rgba(32, 10, 43, 0.69) 87.68%);
-  
+`;
+
+const DeleteButton = styled.button`
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+`;
+
+const TimeInput = styled.input`
+  width: 90px;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 `;
 
 const ClassItem = styled.li`
@@ -67,21 +83,20 @@ const ClassItem = styled.li`
   color: #333;
   text-align: center;
   font-family: "Roboto", sans-serif;
-  margin-bottom: 5px; 
   padding: 10px;
   width: 90%;
   background-color: ${({ selected }) => (selected ? 'rgba(0, 123, 255, 0.3)' : 'rgba(255, 255, 255, 0.8)')};
   border-radius: 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   &:hover {
     background-color: ${({ selected }) => (selected ? 'rgba(0, 123, 255, 0.5)' : 'rgba(0, 123, 255, 0.1)')};
-  }
-  transition: transform 0.3s ease; /* Adiciona uma transição suave */
-  &:hover {
-    transform: translateY(-5px); /* Move para cima quando o mouse passa por cima */
+    transform: translateY(-5px);
   }
 `;
 
@@ -92,7 +107,6 @@ const ClassInfo = styled.div`
   justify-content: center;
 `;
 
-
 const Button = styled.button`
   background-color: #007bff;
   color: #fff;
@@ -101,24 +115,22 @@ const Button = styled.button`
   cursor: pointer;
   border-radius: 5px;
   margin-top: 10px;
-
 `;
-
 
 const Divcontainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-    background-color: black;
+  background-color: black;
   width: 100%;
 
-@media only screen and (max-width: 600px) {
-  height: 150vh;  }
+  @media only screen and (max-width: 600px) {
+    height: 150vh;
+  }
 
   @media only screen and (max-width: 400px) {
-  height: 150vh;  }
-
-
+    height: 150vh;
+  }
 `;
 
 const P = styled.p`
@@ -134,32 +146,9 @@ const Imagem = styled.img`
   margin-bottom: 50px;
 `;
 
-// Função para obter todas as segundas, quartas e sexta-feira do ano
-const getWeekdaysOfYear = (year) => {
-  const weekdays = [];
-  for (let month = 0; month < 12; month++) {
-    for (let day = 1; day <= 31; day++) {
-      const date = new Date(year, month, day);
-      if (date.getFullYear() !== year) {
-        break;
-      }
-      const dayOfWeek = date.getDay();
-      if (dayOfWeek === 1 || dayOfWeek === 3 || dayOfWeek === 6) {
-        weekdays.push(date.toLocaleDateString('en-US'));
-      }
-    }
-  }
-  return weekdays;
-};
-
 const JiuJitsuCheckIn = () => {
-  const [classes, setClasses] = useState(getWeekdaysOfYear(2024).map((date, index) => ({
-    id: index + 1,
-    title: `Aula ${index + 1}`,
-    date: date,
-    time: '19:00',
-    selected: false
-  })));
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [classes, setClasses] = useState([]);
 
   const handleToggleSelection = (id) => {
     setClasses(classes.map(cls => cls.id === id ? { ...cls, selected: !cls.selected } : cls));
@@ -168,24 +157,48 @@ const JiuJitsuCheckIn = () => {
   const handleCheckInAll = () => {
     setClasses(classes.map(cls => ({ ...cls, selected: true })));
   };
-  
+
   const handleCheckInAll2 = () => {
     setClasses(classes.map(cls => ({ ...cls, selected: false })));
+  };
+
+  const handleAddClass = () => {
+    if (selectedDate) {
+      const newClass = {
+        id: classes.length + 1,
+        title: `Aula ${classes.length + 1}`,
+        date: selectedDate.toLocaleDateString('en-US'),
+        time: '19:00',
+        selected: false
+      };
+      setClasses([...classes, newClass]);
+    }
+  };
+
+  const handleDeleteClass = (id) => {
+    const confirmed = window.confirm("Você tem certeza que deseja deletar esta aula?");
+    if (confirmed) {
+      setClasses(classes.filter(cls => cls.id !== id));
+    }
+  };
+
+  const handleChangeTime = (id, newTime) => {
+    setClasses(classes.map(cls => cls.id === id ? { ...cls, time: newTime } : cls));
   };
 
   const selectedCount = classes.filter(cls => cls.selected).length;
 
   return (
     <Divcontainer>
-      <Imagem alt="img-pessoas" src={Peoples}/>
+      <Imagem alt="img-pessoas" src={Peoples} />
       <Container>
-        <Calendar /> {}
-
+        <Calendar onSelectDate={setSelectedDate} />
+        <Button onClick={handleAddClass} disabled={!selectedDate}>Salvar Data</Button>
         <ClassListContainer>
           <ClassList>
             {classes.map(cls => (
-              <ClassItem 
-                key={cls.id} 
+              <ClassItem
+                key={cls.id}
                 onClick={() => handleToggleSelection(cls.id)}
                 selected={cls.selected}
               >
@@ -193,24 +206,32 @@ const JiuJitsuCheckIn = () => {
                   <div>
                     <div>{cls.title}</div>
                     <div>Data: {cls.date}</div>
-                    <div>Horário: {cls.time}</div>
+                    <div>
+                      Horário:
+                      <TimeInput
+                        type="time"
+                        value={cls.time}
+                        onChange={(e) => handleChangeTime(cls.id, e.target.value)}
+                        onClick={(e) => e.stopPropagation()}
+                      />
+                    </div>
                   </div>
                 </ClassInfo>
+                <DeleteButton onClick={(e) => { e.stopPropagation(); handleDeleteClass(cls.id); }}>
+                  Deletar
+                </DeleteButton>
               </ClassItem>
             ))}
           </ClassList>
         </ClassListContainer>
         <Div>
-        <Button to="/Menu"Ver Menu> Voltar Menu</Button>
-        <Button onClick={handleCheckInAll}>Fazer Check-in em Todas as Aulas</Button>
-        <Button onClick={handleCheckInAll2}>Retirar Check-in</Button>
-      
-        <P>{selectedCount} Aulas Comparecidas(s)</P>
-     
-
+          <Button onClick={() => window.location.href = '/Menu'}>Voltar Menu</Button>
+          <Button onClick={handleCheckInAll}>Fazer Check-in em Todas as Aulas</Button>
+          <Button onClick={handleCheckInAll2}>Retirar Check-in</Button>
+          <P>{selectedCount} Aulas Comparecidas(s)</P>
         </Div>
       </Container>
-     </Divcontainer>
+    </Divcontainer>
   );
 };
 
