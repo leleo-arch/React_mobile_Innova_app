@@ -2,95 +2,50 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import logo from "../../assets/logoinnocva.png";
 
-
-
 const Body = styled.div`
-background-color: black;
-background-size: cover;
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 30px;
-
-
-@media only screen and (max-width: 700px) {
- 
-  height: 145vh;
-}
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f5f5f5;
 `;
 
 const Imagem = styled.img`
   background-color: black;
   border-radius: 10px;
   height: 150px;
-
-
+  margin-bottom: 30px;
 
   @media only screen and (max-width: 700px) {
- 
-   margin-bottom:30px; 
-   margin-top: 50px;
-
-}
-
-  @media only screen and (max-width: 600px) {
-
-   margin-bottom:30px; 
-   margin-top: 50px;
-
-
-}
-
-
- 
+    margin-bottom: 30px;
+    margin-top: 50px;
+  }
 `;
 
-
 const Container = styled.div`
-  background-color: rgba(255, 255, 255, 0.9);  background-size: cover;
-background-size: cover;
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 10px;
-border-radius: 25px;
-width: 32%;
-padding: 20px;
-overflow-x: auto;
-max-height: 80vh; 
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-radius: 25px;
+  width: 32%;
+  padding: 20px;
+  overflow-y: auto;
+  background: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
-&::-webkit-scrollbar {
-    width: 8px;
+  @media only screen and (max-width: 700px) {
+    width: 95%;
   }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 4px;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-  }
-
-
-  @media only screen and (max-width: 400px) {
-  width: 95%; }
-  
-@media only screen and (max-width: 700px) {
-  width: 95%; }
-
-
-@media only screen and (max-width: 600px) {
-  width: 95%;  }
-
 `;
 
 const Title = styled.h1`
   color: #333;
   font-size: 24px;
   margin-bottom: 10px;
-  border-radius: 10px;
 `;
 
 const SectionTitle = styled.h2`
@@ -106,7 +61,6 @@ const Input = styled.input`
   border-radius: 5px;
   border: 1px solid #ccc;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-
 `;
 
 const Select = styled.select`
@@ -116,7 +70,6 @@ const Select = styled.select`
   border-radius: 5px;
   border: 1px solid #ccc;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-
 `;
 
 const Button = styled.button`
@@ -127,33 +80,50 @@ const Button = styled.button`
   cursor: pointer;
   border-radius: 5px;
   margin-right: 10px;
+  margin-bottom: 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
+
+const DeleteButton = styled(Button)`
+  background-color: #dc3545;
+
+  &:hover {
+    background-color: #c82333;
+  }
 `;
 
 const ExerciseList = styled.ul`
   list-style-type: none;
   padding: 0;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  width: 70%;
-
-  
+  width: 100%;
+  margin-bottom: 20px;
 `;
 
 const ExerciseItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
   color: #555;
-  
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
-const Div = styled.li`
+const TrainingDiv = styled.div`
   margin-bottom: 20px;
   color: #555;
   display: flex;
-  flex-direction:column;
-
-
-
+  flex-direction: column;
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 const TrainingDayJiuJitsu = () => {
@@ -196,63 +166,63 @@ const TrainingDayJiuJitsu = () => {
 
   return (
     <Body>
-    <Imagem alt="img-pessoas" src={logo}/>
-    <Container>
-      <Title>Treino do Dia - Jiu-Jitsu</Title>
-      <SectionTitle>Adicionar Exercícios</SectionTitle>
-      <Input 
-        type="text" 
-        value={exerciseName} 
-        onChange={(e) => setExerciseName(e.target.value)} 
-        placeholder="Nome do Exercício" 
-      />
-      <Select 
-        value={exerciseType} 
-        onChange={(e) => setExerciseType(e.target.value)}
-      >
-        <option value="">Selecione o Tipo de Exercício</option>
-        <option value="aquecimento">Aquecimento</option>
-        <option value="técnico">Técnico</option>
-        <option value="drill">Drill</option>
-        <option value="sparring">Sparring</option>
-      </Select>
-      <Button onClick={handleAddExercise}>Adicionar Exercício</Button>
-      <SectionTitle>Exercícios do Treino</SectionTitle>
-      <ExerciseList>
-        {exercises.map((exercise, index) => (
-          <ExerciseItem key={index}>
-            {exercise.name} ({exercise.type})
-            <Button onClick={() => handleDeleteExercise(index)}>Excluir</Button>
-          </ExerciseItem>
-        ))}
-      </ExerciseList>
-      <SectionTitle>Anotações</SectionTitle>
-      <Input 
-        type="text" 
-        value={notes} 
-        onChange={(e) => setNotes(e.target.value)} 
-        placeholder="Digite suas anotações aqui" 
-      />
-      <Button onClick={handleSaveNotes}>Salvar Anotações</Button>
-      <Button onClick={handleSaveTraining}>Salvar Treino</Button>
-      <SectionTitle>Histórico de Treinos</SectionTitle>
-      <ExerciseList>
-        {previousTrainings.map((training, index) => (
-          <Div key={index}>
-            <div >Data: {training.date}</div>
-            <div>
-              Exercícios: 
-              <li>
-                {training.exercises.map((exercise, idx) => (
-                  <ExerciseItem key={idx}>{exercise.name} ({exercise.type})</ExerciseItem>
-                ))}
-              </li>
-            </div  >
-            <div >Anotações: {training.notes}</div>
-          </Div>
-        ))}
-      </ExerciseList>
-    </Container>
+      <Imagem alt="img-pessoas" src={logo} />
+      <Container>
+        <Title>Treino do Dia - Jiu-Jitsu</Title>
+        <SectionTitle>Adicionar Exercícios</SectionTitle>
+        <Input 
+          type="text" 
+          value={exerciseName} 
+          onChange={(e) => setExerciseName(e.target.value)} 
+          placeholder="Nome do Exercício" 
+        />
+        <Select 
+          value={exerciseType} 
+          onChange={(e) => setExerciseType(e.target.value)}
+        >
+          <option value="">Selecione o Tipo de Exercício</option>
+          <option value="aquecimento">Aquecimento</option>
+          <option value="técnico">Técnico</option>
+          <option value="drill">Drill</option>
+          <option value="sparring">Sparring</option>
+        </Select>
+        <Button onClick={handleAddExercise}>Adicionar Exercício</Button>
+        <SectionTitle>Exercícios do Treino</SectionTitle>
+        <ExerciseList>
+          {exercises.map((exercise, index) => (
+            <ExerciseItem key={index}>
+              {exercise.name} ({exercise.type})
+              <DeleteButton onClick={() => handleDeleteExercise(index)}>Excluir</DeleteButton>
+            </ExerciseItem>
+          ))}
+        </ExerciseList>
+        <SectionTitle>Anotações</SectionTitle>
+        <Input 
+          type="text" 
+          value={notes} 
+          onChange={(e) => setNotes(e.target.value)} 
+          placeholder="Digite suas anotações aqui" 
+        />
+        <Button onClick={handleSaveNotes}>Salvar Anotações</Button>
+        <Button onClick={handleSaveTraining}>Salvar Treino</Button>
+        <SectionTitle>Histórico de Treinos</SectionTitle>
+        <ExerciseList>
+          {previousTrainings.map((training, index) => (
+            <TrainingDiv key={index}>
+              <div>Data: {training.date}</div>
+              <div>
+                Exercícios: 
+                <ul style={{ paddingLeft: '20px', margin: '10px 0' }}>
+                  {training.exercises.map((exercise, idx) => (
+                    <li key={idx} style={{ marginBottom: '5px' }}>{exercise.name} ({exercise.type})</li>
+                  ))}
+                </ul>
+              </div>
+              <div>Anotações: {training.notes}</div>
+            </TrainingDiv>
+          ))}
+        </ExerciseList>
+      </Container>
     </Body>
   );
 };

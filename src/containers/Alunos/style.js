@@ -11,7 +11,7 @@ flex-direction: column;
 align-items: center;
 gap: 30px;
 height: 100%;
-min-height: 100vh;
+min-height: 180vh;
 
 `;
 

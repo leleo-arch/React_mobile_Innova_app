@@ -2,56 +2,44 @@ import React, { useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import Peoples from "../../assets/logoinnocva.png";
 
-
 const Container = styled.div`
-background-color: black;
-height: 120vh;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-@media only screen and (max-width: 600px) {
-  height: 120vh;  
-}
-
-
-`;
-
-
-
-const Div3 = styled.div`
-padding: 50px 36px;
-padding: 10px;
-  background-color: rgba(255, 255, 255, 0.9);  background-size: opacity;
-  border-radius: 25px;
-  width: 30%;
-    display: flex;
+  background-color: #000;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-@media only screen and (max-width: 600px) {
-  width: 95%;
-  height: 90%;  
-  margin-bottom: 50px;
-}
+  padding: 20px;
+`;
 
+const Div3 = styled.div`
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
+  width: 60%;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-
-
+  @media (max-width: 600px) {
+    width: 95%;
+    height: auto;
+    margin-bottom: 50px;
+  }
 `;
 
 const Div2 = styled.div`
-   padding: 20px;
+  padding: 20px;
   background-color: #f9f9f9;
   border-radius: 10px;
   width: 100%;
-  margin: 50px auto;
-  overflow-y: auto; /* Adicionando rolagem vertical */
-  max-height: 430px; /* Definindo a altura máxima */
-  margin-top: 40px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  max-height: 430px;
+  margin-top: 20px;
+  overflow-y: auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-  /* Estilos da barra de rolagem */
   &::-webkit-scrollbar {
     width: 8px;
   }
@@ -64,31 +52,24 @@ const Div2 = styled.div`
   &::-webkit-scrollbar-thumb:hover {
     background-color: #555;
   }
-
-
-
-`;
-
-
-const Icon = styled.div`
-
 `;
 
 const Title = styled.h1`
   color: black;
-  font-size: 25px;
+  font-size: 28px;
   font-family: 'Arial', sans-serif;
-  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
 `;
 
 const MonthlyChallengeSection = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 `;
 
 const MonthlyChallengeTitle = styled.h2`
   color: #333;
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 22px;
+  margin-bottom: 15px;
 `;
 
 const ChallengeList = styled.ul`
@@ -97,10 +78,10 @@ const ChallengeList = styled.ul`
 `;
 
 const ChallengeItem = styled.li`
-  margin-bottom: 30px;
-  padding: 20px;
+  margin-bottom: 15px;
+  padding: 15px;
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -127,14 +108,14 @@ const ChallengeItem = styled.li`
 
 const ChallengeTitle = styled.h3`
   color: #007bff;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 10px;
 `;
 
 const ChallengeDescription = styled.p`
   color: #666;
   font-size: 16px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 `;
 
 const Reward = styled.p`
@@ -144,14 +125,13 @@ const Reward = styled.p`
 `;
 
 const Button = styled.button`
-  padding: 10px 20px;
+  padding: 10px 15px;
   background-color: ${({ completed }) => (completed ? '#28a745' : '#007bff')};
   color: #fff;
   border: none;
   border-radius: 5px;
-  margin-bottom: 10px;
   cursor: ${({ completed }) => (completed ? 'not-allowed' : 'pointer')};
-  font-size: 16px;
+  font-size: 14px;
   transition: background-color 0.3s;
 
   &:hover {
@@ -214,10 +194,9 @@ const LoadingIcon = styled.div`
   animation: ${rotateAnimation} 1s linear infinite;
 `;
 
-
 const Imagem = styled.img`
   height: 150px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 `;
 
 const ChallengePage = () => {
@@ -267,7 +246,6 @@ const ChallengePage = () => {
         },
       ],
     },
-    // Adicione mais meses e desafios aqui...
   ]);
 
   const totalChallenges = monthlyChallenges.reduce((total, month) => total + month.challenges.length, 0);
@@ -291,44 +269,44 @@ const ChallengePage = () => {
 
   return (
     <Container>
-   <Imagem alt="img-pessoas" src={Peoples}/>
+      <Imagem alt="img-pessoas" src={Peoples} />
 
       <Div3>
-      <Title>Desafios Mensais de Treino</Title>
+        <Title>Desafios Mensais de Treino</Title>
 
-      <Div2>
-      <GlobalProgressBar>
-        <GlobalProgress progress={globalProgress} />
-      </GlobalProgressBar>
-      {monthlyChallenges.map((monthlyChallenge, monthIndex) => (
-        <MonthlyChallengeSection key={monthlyChallenge.month}>
-          <MonthlyChallengeTitle>
-            Desafios de {monthlyChallenge.month} - Concluídos: {monthlyChallenge.challenges.filter((c) => c.completed).length}/{monthlyChallenge.challenges.length}
-          </MonthlyChallengeTitle>
-          <ChallengeList>
-            {monthlyChallenge.challenges.map((challenge) => (
-              <ChallengeItem key={challenge.id} completed={challenge.completed}>
-                <ChallengeTitle>{challenge.title}</ChallengeTitle>
-                <ChallengeDescription>{challenge.description}</ChallengeDescription>
-                <Reward>Recompensa: {challenge.reward}</Reward>
-                <Button
-                  onClick={() => handleChallengeComplete(monthIndex, challenge.id)}
-                  completed={challenge.completed}
-                  disabled={challenge.completed}
-                >
-                  {challenge.completed ? <LoadingIcon /> : <Icon>{'\u{2714}'}</Icon>}
-                  {challenge.completed ? 'Concluído' : 'Concluir'}
-                </Button>
-                <Progress>
-                  <ProgressBar progress={challenge.completed ? 100 : 0} completed={challenge.completed} />
-                </Progress>
-                {challenge.completed && <CompletionMessage>Desafio concluído!</CompletionMessage>}
-              </ChallengeItem>
-            ))}
-          </ChallengeList>
-        </MonthlyChallengeSection>
-      ))}
-      </Div2>
+        <Div2>
+          <GlobalProgressBar>
+            <GlobalProgress progress={globalProgress} />
+          </GlobalProgressBar>
+          {monthlyChallenges.map((monthlyChallenge, monthIndex) => (
+            <MonthlyChallengeSection key={monthlyChallenge.month}>
+              <MonthlyChallengeTitle>
+                Desafios de {monthlyChallenge.month} - Concluídos: {monthlyChallenge.challenges.filter((c) => c.completed).length}/{monthlyChallenge.challenges.length}
+              </MonthlyChallengeTitle>
+              <ChallengeList>
+                {monthlyChallenge.challenges.map((challenge) => (
+                  <ChallengeItem key={challenge.id} completed={challenge.completed}>
+                    <ChallengeTitle>{challenge.title}</ChallengeTitle>
+                    <ChallengeDescription>{challenge.description}</ChallengeDescription>
+                    <Reward>Recompensa: {challenge.reward}</Reward>
+                    <Button
+                      onClick={() => handleChallengeComplete(monthIndex, challenge.id)}
+                      completed={challenge.completed}
+                      disabled={challenge.completed}
+                    >
+                      {challenge.completed ? <LoadingIcon /> : '\u{2714}'}
+                      {challenge.completed ? 'Concluído' : 'Concluir'}
+                    </Button>
+                    <Progress>
+                      <ProgressBar progress={challenge.completed ? 100 : 0} completed={challenge.completed} />
+                    </Progress>
+                    {challenge.completed && <CompletionMessage>Desafio concluído!</CompletionMessage>}
+                  </ChallengeItem>
+                ))}
+              </ChallengeList>
+            </MonthlyChallengeSection>
+          ))}
+        </Div2>
       </Div3>
     </Container>
   );

@@ -1,99 +1,96 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-//import background from "./assets/bg-image.svg"
+import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
 
-
-
-export const Conteiner = styled.div `
-
-background-color: black;
-background-size: cover;
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 30px;
-
-@media only screen and (max-width: 600px) {
-height: 120vh;
-margin-bottom:30px; 
-
-
-
-}
+// Spinner animation
+const spin = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 `;
 
-export const Imagem = styled.img `
-margin-top: 10px;
-
-  height: 150px;
-`; 
-
-export const ConteinerItens = styled.div `
-background: linear-gradient(
-
-157.44deg, rgba(255, 255, 255, 0.6) 0.84%, rgba(255, 255, 255, 0.6) 0.85%, rgba(255, 255, 255, 0.15) 100%
-
-);
-
-border-radius: 31px;
-padding: 50px 36px;
-display: flex;
-flex-direction: column;
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 120vh;
+  padding: 20px;
+  background-color: #f5f5f5;
+  transition: opacity 0.5s ease-in-out;
 `;
 
-export const H1 = styled.h1 `
-display: flex;
-justify-content: center;
-color: aliceblue;
-font-size: 30px;
-margin-bottom: 30px;
-
-
+export const Image = styled.img`
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 20px;
 `;
 
-export const InputLabel = styled.p `
-display: flex;
-justify-content: start;
-color: aliceblue;
-font-family: Roboto;
-margin-left: 5px;
-margin-bottom: 0px;
-
-
+export const ContainerItems = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
-export const Input = styled.input `
-width: 327px;
-height: 48px;
-border-radius: 10px;
-background-color: rgb(255, 255, 255);
-border: none;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-background: rgba(255, 255, 255, 0.25);
-margin-top: 5px;
-margin-bottom: 5PX;
-
-
+export const Title = styled.h1`
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 20px;
+  font-size: 32px;
+  color: #333;
+  text-align: center;
 `;
 
 export const Button = styled(Link)`
-font-size: 15px;
-margin-top: 15px;
-width: 327px;
-height: 48px;
-border-radius: 0px;
-background-color: black;
-color: white;
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 4px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 15px 20px;
+  margin: 10px 0;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  width: 220px;
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 
-&:hover{
-    opacity: 0.8;
-}
-&:active{
-    opacity: 0.5;
-}
+  &:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+  }
 `;
 
+export const IntroText = styled.p`
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 600px;
+  color: #555;
+`;
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`;
+
+export const Spinner = styled.div`
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: ${spin} 1s linear infinite;
+  margin-bottom: 10px;
+`;
+
+export const LoadingText = styled.p`
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  color: #007bff;
+`;

@@ -6,12 +6,17 @@ import Calendar from './Calendar';
 // Componentes estilizados
 const Container = styled.div`
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   border-radius: 20px;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  width: 50%;
+  background-color: white;
+
+  @media only screen and (max-width: 900px) {
+    width: 70%;
+  }
 
   @media only screen and (max-width: 600px) {
     width: 90%;
@@ -22,11 +27,11 @@ const Div = styled.div`
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 25px;
-  width: 95%;
+  width: 100%;
   margin-top: 20px;
   display: flex;
   align-items: center;
-  flex-direction: column-reverse;
+  flex-direction: column;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 
@@ -68,6 +73,10 @@ const DeleteButton = styled.button`
   cursor: pointer;
   border-radius: 5px;
   margin-left: 10px;
+
+  &:hover {
+    background-color: #c82333;
+  }
 `;
 
 const TimeInput = styled.input`
@@ -115,21 +124,24 @@ const Button = styled.button`
   cursor: pointer;
   border-radius: 5px;
   margin-top: 10px;
+
+  &:hover {
+    background-color: #0056b3;
+  }
 `;
 
 const Divcontainer = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
-  background-color: black;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f5f5f5;
+  transition: opacity 0.5s ease-in-out;
 
-  @media only screen and (max-width: 600px) {
-    height: 150vh;
-  }
-
-  @media only screen and (max-width: 400px) {
-    height: 150vh;
+  @media only screen and (max-width: 900px) {
+    height: auto;
   }
 `;
 
@@ -144,6 +156,12 @@ const P = styled.p`
 const Imagem = styled.img`
   height: 150px;
   margin-bottom: 50px;
+  border-radius: 20px;
+
+  @media only screen and (max-width: 600px) {
+    height: 120px;
+    margin-bottom: 30px;
+  }
 `;
 
 const JiuJitsuCheckIn = () => {
