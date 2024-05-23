@@ -3,8 +3,7 @@ import styled, { keyframes, css } from 'styled-components';
 import Peoples from "../../assets/logoinnocva.png";
 
 const Container = styled.div`
-  background-color: #000;
-  min-height: 100vh;
+  background-color: #f5f5f5;  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -197,6 +196,7 @@ const LoadingIcon = styled.div`
 const Imagem = styled.img`
   height: 150px;
   margin-bottom: 30px;
+border-radius: 20px;
 `;
 
 const ChallengePage = () => {

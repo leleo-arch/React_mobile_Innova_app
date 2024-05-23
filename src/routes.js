@@ -9,6 +9,8 @@ import Home  from "./containers/Home";
 import check  from "./containers/Checkin-aula";
 import comunidades from "./containers/Cadastros-Alunos";
 import perto  from "./containers/Pertodevoce";
+import mercado  from "./containers/Mercado";
+
 
 function Routes() {
 
@@ -24,6 +26,8 @@ function Routes() {
         <Route exact path="/Cadastro-Alunos" component = {cadastro}/>
         <Route exact path="/Alunos"component = {alunos}/>
         <Route exact path="/Checkin-aula"component = {check}/>
+        <Route exact path="/Mercado"component = {mercado}/>
+
 
         
     </Switch>

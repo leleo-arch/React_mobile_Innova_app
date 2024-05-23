@@ -140,6 +140,16 @@ const DeleteButton = styled.button`
   }
 `;
 
+const SearchInput = styled.input`
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+`;
+
 const JiuJitsuPage = () => {
   const [students, setStudents] = useState([
     { id: 1, name: "João", belt: "Branca", degrees: 1, attendance: 80, age: 25 },
@@ -154,6 +164,8 @@ const JiuJitsuPage = () => {
     attendance: 0,
     age: 0,
   });
+
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -189,6 +201,10 @@ const JiuJitsuPage = () => {
       students.map((student) => (student.id === id ? { ...student, [field]: value } : student))
     );
   };
+
+  const filteredStudents = students.filter((student) =>
+    student.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <Container>
@@ -263,8 +279,15 @@ const JiuJitsuPage = () => {
       </FormContainer>
       <StyledContainer>
         <Heading>Lista de Alunos</Heading>
+        <SearchInput
+          type="text"
+          placeholder="Pesquisar alunos..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          aria-label="Pesquisar alunos"
+        />
         <StudentList>
-          {students.map((student) => (
+          {filteredStudents.map((student) => (
             <StudentItem key={student.id}>
               <InputGroup>
                 <Label htmlFor={`name-${student.id}`}>Nome:</Label>

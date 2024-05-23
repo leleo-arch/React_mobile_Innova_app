@@ -142,8 +142,7 @@ const TrainingDayJiuJitsu = () => {
   };
 
   const handleDeleteExercise = (index) => {
-    const updatedExercises = [...exercises];
-    updatedExercises.splice(index, 1);
+    const updatedExercises = exercises.filter((_, i) => i !== index);
     setExercises(updatedExercises);
   };
 
@@ -162,6 +161,19 @@ const TrainingDayJiuJitsu = () => {
     setExerciseName('');
     setExerciseType('');
     setNotes('');
+  };
+
+  const handleDeleteTraining = (index) => {
+    if (window.confirm("Tem certeza que deseja excluir este treino?")) {
+      const updatedTrainings = previousTrainings.filter((_, i) => i !== index);
+      setPreviousTrainings(updatedTrainings);
+    }
+  };
+
+  const handleDeleteAllTrainings = () => {
+    if (window.confirm("Tem certeza que deseja excluir todo o histórico de treinos?")) {
+      setPreviousTrainings([]);
+    }
   };
 
   return (
@@ -219,9 +231,13 @@ const TrainingDayJiuJitsu = () => {
                 </ul>
               </div>
               <div>Anotações: {training.notes}</div>
+              <DeleteButton onClick={() => handleDeleteTraining(index)}>Excluir</DeleteButton>
             </TrainingDiv>
           ))}
         </ExerciseList>
+        {previousTrainings.length > 0 && (
+          <DeleteButton onClick={handleDeleteAllTrainings}>Excluir Todo o Histórico</DeleteButton>
+        )}
       </Container>
     </Body>
   );
