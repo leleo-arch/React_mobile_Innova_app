@@ -126,18 +126,32 @@ const TrainingDiv = styled.div`
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
+const SearchInput = styled.input`
+  margin-bottom: 20px;
+  padding: 8px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+`;
+
 const TrainingDayJiuJitsu = () => {
   const [exercises, setExercises] = useState([]);
   const [exerciseName, setExerciseName] = useState('');
   const [exerciseType, setExerciseType] = useState('');
   const [notes, setNotes] = useState('');
   const [previousTrainings, setPreviousTrainings] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const handleAddExercise = () => {
     if (exerciseName && exerciseType) {
-      setExercises([...exercises, { name: exerciseName, type: exerciseType }]);
-      setExerciseName('');
-      setExerciseType('');
+      if (!exercises.find(ex => ex.name === exerciseName && ex.type === exerciseType)) {
+        setExercises([...exercises, { name: exerciseName, type: exerciseType }]);
+        setExerciseName('');
+        setExerciseType('');
+      } else {
+        alert('Este exercício já foi adicionado.');
+      }
     }
   };
 
@@ -176,9 +190,16 @@ const TrainingDayJiuJitsu = () => {
     }
   };
 
+  const filteredTrainings = previousTrainings.filter(training =>
+    training.exercises.some(exercise =>
+      exercise.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      exercise.type.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  );
+
   return (
     <Body>
-      <Imagem alt="img-pessoas" src={logo} />
+      <Imagem alt="Logo Innocva" src={logo} />
       <Container>
         <Title>Treino do Dia - Jiu-Jitsu</Title>
         <SectionTitle>Adicionar Exercícios</SectionTitle>
@@ -186,11 +207,13 @@ const TrainingDayJiuJitsu = () => {
           type="text" 
           value={exerciseName} 
           onChange={(e) => setExerciseName(e.target.value)} 
-          placeholder="Nome do Exercício" 
+          placeholder="Nome do Exercício"
+          aria-label="Nome do Exercício" 
         />
         <Select 
           value={exerciseType} 
           onChange={(e) => setExerciseType(e.target.value)}
+          aria-label="Tipo de Exercício"
         >
           <option value="">Selecione o Tipo de Exercício</option>
           <option value="aquecimento">Aquecimento</option>
@@ -213,13 +236,21 @@ const TrainingDayJiuJitsu = () => {
           type="text" 
           value={notes} 
           onChange={(e) => setNotes(e.target.value)} 
-          placeholder="Digite suas anotações aqui" 
+          placeholder="Digite suas anotações aqui"
+          aria-label="Anotações" 
         />
         <Button onClick={handleSaveNotes}>Salvar Anotações</Button>
         <Button onClick={handleSaveTraining}>Salvar Treino</Button>
         <SectionTitle>Histórico de Treinos</SectionTitle>
+        <SearchInput 
+          type="text" 
+          value={searchTerm} 
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Pesquisar no histórico de treinos..."
+          aria-label="Pesquisar no histórico de treinos"
+        />
         <ExerciseList>
-          {previousTrainings.map((training, index) => (
+          {filteredTrainings.map((training, index) => (
             <TrainingDiv key={index}>
               <div>Data: {training.date}</div>
               <div>
