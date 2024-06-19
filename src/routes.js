@@ -8,8 +8,8 @@ import login  from "./containers/Desafios";
 import Home  from "./containers/Home";
 import check  from "./containers/Checkin-aula";
 import comunidades from "./containers/Cadastros-Alunos";
-import perto  from "./containers/Pertodevoce";
-import mercado  from "./containers/Mercado";
+import golpes  from "./containers/Golpes";
+import comunidade  from "./containers/Comunidade";
 
 
 function Routes() {
@@ -20,13 +20,13 @@ function Routes() {
     <Switch>
         <Route path="/" exact component={Home} /> {Home}
         <Route exact path="/Cadastros-Alunos"component = {comunidades}/>
-        <Route exact path="/Pertodevoce"component = {perto}/>
+        <Route exact path="/Golpes"component = {golpes}/>
         <Route exact path="/Treino"component = {historico}/>
         <Route exact path="/Desafios"component = {login}/>
         <Route exact path="/Cadastro-Alunos" component = {cadastro}/>
         <Route exact path="/Alunos"component = {alunos}/>
         <Route exact path="/Checkin-aula"component = {check}/>
-        <Route exact path="/Mercado"component = {mercado}/>
+        <Route exact path="/Comunidade"component = {comunidade}/>
 
 
         

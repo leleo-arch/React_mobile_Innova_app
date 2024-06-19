@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Peoples from "../../assets/logoinnocva.png";
 import Calendar from './Calendar';
 
-// Componentes estilizados
+// Styled Components
 const Container = styled.div`
   padding: 20px;
   display: flex;
@@ -176,7 +176,7 @@ const JiuJitsuCheckIn = () => {
     setClasses(classes.map(cls => ({ ...cls, selected: true })));
   };
 
-  const handleCheckInAll2 = () => {
+  const handleUncheckAll = () => {
     setClasses(classes.map(cls => ({ ...cls, selected: false })));
   };
 
@@ -245,8 +245,8 @@ const JiuJitsuCheckIn = () => {
         <Div>
           <Button onClick={() => window.location.href = '/Menu'}>Voltar Menu</Button>
           <Button onClick={handleCheckInAll}>Fazer Check-in em Todas as Aulas</Button>
-          <Button onClick={handleCheckInAll2}>Retirar Check-in</Button>
-          <P>{selectedCount} Aulas Comparecidas(s)</P>
+          <Button onClick={handleUncheckAll}>Retirar Check-in de Todas as Aulas</Button>
+          <P>{selectedCount} Aula(s) Comparecida(s)</P>
         </Div>
       </Container>
     </Divcontainer>

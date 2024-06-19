@@ -42,8 +42,8 @@ function App() {
             <Button to="/Treino">Treino do Dia</Button>
             <Button to="/Cadastros-Alunos">Cadastro de Alunos</Button>
             <Button to="/Desafios">Desafios Innova</Button>
-            <Button to="/Mercado">Perto de você</Button>
-            <Button to="/Pertodevoce">Comunidades INV</Button>
+            <Button to="/Golpes">Lista de golpes</Button>
+            <Button to="/Comunidade">Comunidades INV</Button>
           </>
         )}
       </ContainerItems>
