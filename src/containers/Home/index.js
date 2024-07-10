@@ -36,14 +36,14 @@ function App() {
         ) : (
           <>
             <IntroText>
-              Bem-vindo à Innova! Explore nossas opções para check-in em aula, treino do dia, cadastro de alunos, desafios Innova, mercado de troca e comunidades INV.
+              Bem-vindo à Innova! Explore nossas opções para check-in em aula, treino do dia, cadastro de alunos, desafios Innova e comunidades INV.
             </IntroText>
             <Button to="/Checkin-aula">Check-in em aula</Button>
             <Button to="/Treino">Treino do Dia</Button>
             <Button to="/Cadastros-Alunos">Cadastro de Alunos</Button>
             <Button to="/Desafios">Desafios Innova</Button>
             <Button to="/Golpes">Lista de golpes</Button>
-            <Button to="/Comunidade">Comunidades INV</Button>
+            <Button to="/Comunidade">Comunidades INV - Test</Button>
           </>
         )}
       </ContainerItems>

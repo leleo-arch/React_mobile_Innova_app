@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 import Peoples from "../../assets/logoinnocva.png";
 
@@ -150,12 +150,18 @@ const SearchInput = styled.input`
   margin-bottom: 20px;
 `;
 
+
+// Supondo que os componentes estilizados estejam definidos/importados corretamente
+// Isso inclui Container, Imagem, Heading, FormContainer, InputGroup, Label, Input, Select, Button, 
+// StyledContainer, SearchInput, StudentList, StudentItem, DeleteButton
+
 const JiuJitsuPage = () => {
-  const [students, setStudents] = useState([
-    { id: 1, name: "João", belt: "Branca", degrees: 1, attendance: 80, age: 25 },
-    { id: 2, name: "Maria", belt: "Azul", degrees: 2, attendance: 90, age: 30 },
-    { id: 3, name: "Pedro", belt: "Roxa", degrees: 3, attendance: 75, age: 28 },
-  ]);
+  const [students, setStudents] = useState(() => {
+    const savedStudents = localStorage.getItem('students');
+    return savedStudents ? JSON.parse(savedStudents) : [
+      { id: 1, name: "João", belt: "Branca", degrees: 1, attendance: 80, age: 25 },
+    ];
+  });
 
   const [newStudent, setNewStudent] = useState({
     name: "",
@@ -166,6 +172,10 @@ const JiuJitsuPage = () => {
   });
 
   const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem('students', JSON.stringify(students));
+  }, [students]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -232,7 +242,7 @@ const JiuJitsuPage = () => {
             onChange={handleInputChange}
             aria-label="Faixa do Aluno"
           >
-            {beltOptions.map((belt) => (
+            {["Branca", "Azul", "Roxa", "Marrom", "Preta"].map((belt) => (
               <option key={belt} value={belt}>
                 {belt}
               </option>
@@ -307,7 +317,7 @@ const JiuJitsuPage = () => {
                   onChange={(e) => editStudent(student.id, "belt", e.target.value)}
                   aria-label={`Faixa do Aluno ${student.name}`}
                 >
-                  {beltOptions.map((belt) => (
+                  {["Branca", "Azul", "Roxa", "Marrom", "Preta"].map((belt) => (
                     <option key={belt} value={belt}>
                       {belt}
                     </option>
@@ -354,3 +364,4 @@ const JiuJitsuPage = () => {
 };
 
 export default JiuJitsuPage;
+

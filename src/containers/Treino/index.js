@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import logo from "../../assets/logoinnocva.png";
 
@@ -134,14 +134,24 @@ const SearchInput = styled.input`
   border: 1px solid #ccc;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 `;
+// Supondo que os componentes estilizados estejam definidos/importados corretamente
+// Isso inclui Body, Imagem, Container, Title, SectionTitle, Input, Select, Button, ExerciseList,
+// ExerciseItem, DeleteButton, SearchInput, TrainingDiv
 
 const TrainingDayJiuJitsu = () => {
   const [exercises, setExercises] = useState([]);
   const [exerciseName, setExerciseName] = useState('');
   const [exerciseType, setExerciseType] = useState('');
   const [notes, setNotes] = useState('');
-  const [previousTrainings, setPreviousTrainings] = useState([]);
+  const [previousTrainings, setPreviousTrainings] = useState(() => {
+    const savedTrainings = localStorage.getItem('previousTrainings');
+    return savedTrainings ? JSON.parse(savedTrainings) : [];
+  });
   const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    localStorage.setItem('previousTrainings', JSON.stringify(previousTrainings));
+  }, [previousTrainings]);
 
   const handleAddExercise = () => {
     if (exerciseName && exerciseType) {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Peoples from "../../assets/logoinnocva.png";
 import Calendar from './Calendar';
@@ -164,19 +164,33 @@ const Imagem = styled.img`
   }
 `;
 
-import React, { useState, useEffect } from 'react';
+
+// Certifique-se de que todos os componentes personalizados usados aqui estão definidos/importados corretamente.
+// Isso inclui Divcontainer, Imagem, Container, Calendar, ClassListContainer, ClassList, ClassItem, ClassInfo, TimeInput, DeleteButton, Button, e P.
 
 const JiuJitsuCheckIn = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [classes, setClasses] = useState(() => {
-    // Recupera as classes do localStorage quando o componente é montado
-    const savedClasses = localStorage.getItem('jiuJitsuClasses');
-    return savedClasses ? JSON.parse(savedClasses) : [];
+    if (typeof window !== 'undefined') {
+      try {
+        const savedClasses = localStorage.getItem('jiuJitsuClasses');
+        return savedClasses ? JSON.parse(savedClasses) : [];
+      } catch (error) {
+        console.error('Error reading localStorage:', error);
+        return [];
+      }
+    }
+    return [];
   });
 
   useEffect(() => {
-    // Salva as classes no localStorage sempre que a lista de classes for atualizada
-    localStorage.setItem('jiuJitsuClasses', JSON.stringify(classes));
+    if (typeof window !== 'undefined') {
+      try {
+        localStorage.setItem('jiuJitsuClasses', JSON.stringify(classes));
+      } catch (error) {
+        console.error('Error writing to localStorage:', error);
+      }
+    }
   }, [classes]);
 
   const handleToggleSelection = (id) => {

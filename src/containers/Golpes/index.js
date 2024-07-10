@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import styled from 'styled-components';
 import { FaSearch, FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import logo from "../../assets/logoinnocva.png"; // Certifique-se de que o caminho do logo está correto
@@ -142,8 +142,13 @@ const FormButton = styled.button`
   }
 `;
 
-const moves = [
 
+// Supondo que os componentes estilizados estejam definidos/importados corretamente
+// Isso inclui Body, Imagem, Container, Title, SearchContainer, SearchInput, SearchButton,
+// MoveListContainer, MoveItemContainer, MoveHeader, MoveName, MoveDescription, MoveImage, Form,
+// FormInput, FormButton.
+
+const initialMoves = [
   {
     name: "Kimura",
     description: "Uma técnica de submissão que torce o braço do oponente em um ângulo doloroso.",
@@ -154,9 +159,7 @@ const moves = [
 ];
 
 const MoveItem = ({ move, index, expanded, toggleExpand }) => (
- 
- 
- <MoveItemContainer>
+  <MoveItemContainer>
     <MoveHeader onClick={() => toggleExpand(index)}>
       <MoveName>{move.name}</MoveName>
       {expanded === index ? <FaAngleUp /> : <FaAngleDown />}
@@ -164,7 +167,7 @@ const MoveItem = ({ move, index, expanded, toggleExpand }) => (
     {expanded === index && (
       <>
         <MoveDescription>{move.description}</MoveDescription>
-        <MoveImage src={move.link} alt={move.name} />
+        <MoveImage src={move.image} alt={move.name} />
       </>
     )}
   </MoveItemContainer>
@@ -187,9 +190,16 @@ const MoveList = ({ moves, expanded, toggleExpand }) => (
 const JiuJitsuMoves = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [expanded, setExpanded] = useState(null);
-  const [newMove, setNewMove] = useState({ name: '', description: '', link: ''});
-  const [moveList, setMoveList] = useState(moves);
+  const [newMove, setNewMove] = useState({ name: '', description: '', image: '', level: 'all' });
+  const [moveList, setMoveList] = useState(() => {
+    const savedMoves = localStorage.getItem('jiuJitsuMoves');
+    return savedMoves ? JSON.parse(savedMoves) : initialMoves;
+  });
   const [filterLevel] = useState('all');
+
+  useEffect(() => {
+    localStorage.setItem('jiuJitsuMoves', JSON.stringify(moveList));
+  }, [moveList]);
 
   const filteredMoves = moveList.filter(move =>
     (filterLevel === 'all' || move.level === filterLevel) &&
@@ -208,7 +218,7 @@ const JiuJitsuMoves = () => {
   const handleNewMoveSubmit = (e) => {
     e.preventDefault();
     setMoveList([...moveList, newMove]);
-    setNewMove({ name: '', description: '', link: ''});
+    setNewMove({ name: '', description: '', image: '', level: 'all' });
   };
 
   return (
@@ -247,10 +257,10 @@ const JiuJitsuMoves = () => {
           />
           <FormInput
             type="text"
-            name="link"
-            value={newMove.link}
+            name="image"
+            value={newMove.image}
             onChange={handleNewMoveChange}
-            placeholder="URL"
+            placeholder="URL da Imagem"
             required
           />
           <FormButton type="submit">Cadastrar Golpe</FormButton>
@@ -261,3 +271,4 @@ const JiuJitsuMoves = () => {
 };
 
 export default JiuJitsuMoves;
+
