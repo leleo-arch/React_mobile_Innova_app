@@ -231,17 +231,6 @@ const JiuJitsuCheckIn = () => {
 
   const selectedCount = classes.filter(cls => cls.selected).length;
 
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000); // Simulated loading time of 2 seconds
-
-    return () => clearTimeout(timer);
-  }, []);
-    
-
   return (
     
     <Divcontainer>

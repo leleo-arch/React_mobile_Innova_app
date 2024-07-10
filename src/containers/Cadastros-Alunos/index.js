@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 import Peoples from "../../assets/logoinnocva.png";
 
-const beltOptions = ["Branca", "Azul", "Roxa", "Marrom", "Preta", "Vermelha", "Coral"];
 
 const Container = styled.div`
   display: flex;

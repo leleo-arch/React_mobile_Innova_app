@@ -27,8 +27,6 @@ function Routes() {
         <Route exact path="/Alunos"component = {alunos}/>
         <Route exact path="/Checkin-aula"component = {check}/>
         <Route exact path="/Comunidade"component = {comunidade}/>
-
-
         
     </Switch>
    </Router> 
