@@ -149,7 +149,8 @@ const P = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
   font-size: 25px;
 `;
 
@@ -236,8 +237,10 @@ const JiuJitsuCheckIn = () => {
     <Divcontainer>
       <Imagem alt="img-pessoas" src={Peoples} />
       <Container>
+      <P>Selecione uma data para salvar:</P>
         <Calendar onSelectDate={setSelectedDate} />
         <Button onClick={handleAddClass} disabled={!selectedDate}>Salvar Data</Button>
+        <P>Datas salvas:</P>
         <ClassListContainer>
           <ClassList>
             {classes.map(cls => (
@@ -269,10 +272,10 @@ const JiuJitsuCheckIn = () => {
           </ClassList>
         </ClassListContainer>
         <Div>
-          <Button onClick={() => window.location.href = '/Menu'}>Voltar Menu</Button>
+        <P>{selectedCount} Aula(s) Comparecida(s)</P>
           <Button onClick={handleCheckInAll}>Fazer Check-in em Todas as Aulas</Button>
           <Button onClick={handleUncheckAll}>Retirar Check-in de Todas as Aulas</Button>
-          <P>{selectedCount} Aula(s) Comparecida(s)</P>
+          <Button onClick={() => window.location.href = '/Home'}>Voltar Menu</Button>
         </Div>
       </Container>
     </Divcontainer>

@@ -149,11 +149,6 @@ const SearchInput = styled.input`
   margin-bottom: 20px;
 `;
 
-
-// Supondo que os componentes estilizados estejam definidos/importados corretamente
-// Isso inclui Container, Imagem, Heading, FormContainer, InputGroup, Label, Input, Select, Button, 
-// StyledContainer, SearchInput, StudentList, StudentItem, DeleteButton
-
 const JiuJitsuPage = () => {
   const [students, setStudents] = useState(() => {
     const savedStudents = localStorage.getItem('students');

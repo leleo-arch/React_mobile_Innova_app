@@ -41,8 +41,8 @@ function App() {
             <Button to="/Checkin-aula">Check-in em aula</Button>
             <Button to="/Treino">Treino do Dia</Button>
             <Button to="/Cadastros-Alunos">Cadastro de Alunos</Button>
-            <Button to="/Desafios">Desafios Innova</Button>
             <Button to="/Golpes">Lista de golpes</Button>
+            <Button to="/Desafios">Desafios Innova - Test</Button>
             <Button to="/Comunidade">Comunidades INV - Test</Button>
           </>
         )}

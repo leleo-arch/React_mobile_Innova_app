@@ -286,9 +286,9 @@ const ChallengePage = () => {
 
       <Div3>
         <Title>Desafios Mensais de Treino</Title>
-
+    
         <Div2>
-          <GlobalProgressBar>
+        <GlobalProgressBar>
             <GlobalProgress progress={globalProgress} />
           </GlobalProgressBar>
           {monthlyChallenges.map((monthlyChallenge, monthIndex) => (

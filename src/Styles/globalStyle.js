@@ -5,9 +5,10 @@ export default createGlobalStyle `
 * {
  margin:0;
  padding:0;
- box-sizing: border-box;
- font-family: "roboto", sans serif;
- text-decoration:none;
+ font-family: "Orbitron", sans-serif;
+ font-optical-sizing: auto;
+ font-weight: weight;
+ font-style: normal;
 }
 
 `;

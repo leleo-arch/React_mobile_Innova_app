@@ -260,7 +260,7 @@ const JiuJitsuMoves = () => {
             name="image"
             value={newMove.image}
             onChange={handleNewMoveChange}
-            placeholder="URL da Imagem"
+            placeholder="link do video"
             required
           />
           <FormButton type="submit">Cadastrar Golpe</FormButton>

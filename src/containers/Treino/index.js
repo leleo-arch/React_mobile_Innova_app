@@ -212,7 +212,7 @@ const TrainingDayJiuJitsu = () => {
       <Imagem alt="Logo Innocva" src={logo} />
       <Container>
         <Title>Treino do Dia - Jiu-Jitsu</Title>
-        <SectionTitle>Adicionar Exercícios</SectionTitle>
+        <SectionTitle>Adicionar Exercícios:</SectionTitle>
         <Input 
           type="text" 
           value={exerciseName} 
@@ -232,7 +232,7 @@ const TrainingDayJiuJitsu = () => {
           <option value="sparring">Sparring</option>
         </Select>
         <Button onClick={handleAddExercise}>Adicionar Exercício</Button>
-        <SectionTitle>Exercícios do Treino</SectionTitle>
+        <SectionTitle>Exercícios do Treino:</SectionTitle>
         <ExerciseList>
           {exercises.map((exercise, index) => (
             <ExerciseItem key={index}>
@@ -241,7 +241,7 @@ const TrainingDayJiuJitsu = () => {
             </ExerciseItem>
           ))}
         </ExerciseList>
-        <SectionTitle>Anotações</SectionTitle>
+        <SectionTitle>Anotações:</SectionTitle>
         <Input 
           type="text" 
           value={notes} 
