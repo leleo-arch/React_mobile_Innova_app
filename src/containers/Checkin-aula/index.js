@@ -5,21 +5,23 @@ import Calendar from './Calendar';
 
 // Styled Components
 const Container = styled.div`
-  padding: 40px;
+  padding: 30px;
   display: flex;
   border-radius: 20px;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  width: 50%;
+  
   background-color: white;
 
   @media only screen and (max-width: 900px) {
-    width: 70%;
+    width: 85%;
+
   }
 
   @media only screen and (max-width: 600px) {
-    width: 90%;
+    width:85%;
+
   }
 `;
 

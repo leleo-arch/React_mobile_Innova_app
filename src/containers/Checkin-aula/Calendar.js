@@ -10,7 +10,7 @@ const Divcontainer = styled.div`
 const Div = styled.div`
   display: flex;
   align-items: center;
-
+font-size: 15px;
 `;
 
 const H2 = styled.h2`
