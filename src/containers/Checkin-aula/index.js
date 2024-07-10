@@ -151,8 +151,17 @@ const P = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 23px;
+`;
+
+const H1 = styled.h1`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
   font-size: 23px;
 `;
 
@@ -238,8 +247,10 @@ const JiuJitsuCheckIn = () => {
     
     <Divcontainer>
       <Imagem alt="img-pessoas" src={Peoples} />
+      <H1>Controle das minhas aulas</H1>
+
       <Container>
-      <P>Selecione uma data para salvar:</P>
+      <P>Selecione uma data para salvar</P>
         <Calendar onSelectDate={setSelectedDate} />
         <Button onClick={handleAddClass} disabled={!selectedDate}>Salvar Data</Button>
         <P>Datas salvas:</P>

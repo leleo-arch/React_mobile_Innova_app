@@ -45,7 +45,7 @@ const Container = styled.div`
 const Title = styled.h1`
   color: #333;
   font-size: 24px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 `;
 
 const SectionTitle = styled.h2`
@@ -210,8 +210,9 @@ const TrainingDayJiuJitsu = () => {
   return (
     <Body>
       <Imagem alt="Logo Innocva" src={logo} />
+      <Title>Treino do Dia - Jiu-Jitsu</Title>
       <Container>
-        <Title>Treino do Dia - Jiu-Jitsu</Title>
+    
         <SectionTitle>Adicionar Exercícios:</SectionTitle>
         <Input 
           type="text" 

@@ -43,6 +43,8 @@ const Title = styled.h1`
   color: #343a40;
   font-size: 28px;
   text-align: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
 `;
 
 const SearchContainer = styled.div`
@@ -190,7 +192,7 @@ const MoveList = ({ moves, expanded, toggleExpand }) => (
 const JiuJitsuMoves = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [expanded, setExpanded] = useState(null);
-  const [newMove, setNewMove] = useState({ name: '', description: '', image: '', level: 'all' });
+  const [newMove, setNewMove] = useState({ name: '', description: '', link: '', level: 'all' });
   const [moveList, setMoveList] = useState(() => {
     const savedMoves = localStorage.getItem('jiuJitsuMoves');
     return savedMoves ? JSON.parse(savedMoves) : initialMoves;
@@ -224,8 +226,9 @@ const JiuJitsuMoves = () => {
   return (
     <Body>
       <Imagem alt="Logo Innocva" src={logo} />
+      <Title>Golpes de Jiu-Jitsu</Title>
       <Container>
-        <Title>Golpes de Jiu-Jitsu</Title>
+       
         <SearchContainer>
           <SearchInput
             type="text"
@@ -237,7 +240,9 @@ const JiuJitsuMoves = () => {
             <FaSearch />
           </SearchButton>
         </SearchContainer>
+        <p>Sua lista de golpes aqui:</p>
         <MoveList moves={filteredMoves} expanded={expanded} toggleExpand={toggleExpand} />
+       <p>Salve seu golpe aqui:</p>
         <Form onSubmit={handleNewMoveSubmit}>
           <FormInput
             type="text"
