@@ -164,9 +164,20 @@ const Imagem = styled.img`
   }
 `;
 
+import React, { useState, useEffect } from 'react';
+
 const JiuJitsuCheckIn = () => {
   const [selectedDate, setSelectedDate] = useState(null);
-  const [classes, setClasses] = useState([]);
+  const [classes, setClasses] = useState(() => {
+    // Recupera as classes do localStorage quando o componente é montado
+    const savedClasses = localStorage.getItem('jiuJitsuClasses');
+    return savedClasses ? JSON.parse(savedClasses) : [];
+  });
+
+  useEffect(() => {
+    // Salva as classes no localStorage sempre que a lista de classes for atualizada
+    localStorage.setItem('jiuJitsuClasses', JSON.stringify(classes));
+  }, [classes]);
 
   const handleToggleSelection = (id) => {
     setClasses(classes.map(cls => cls.id === id ? { ...cls, selected: !cls.selected } : cls));
@@ -254,3 +265,4 @@ const JiuJitsuCheckIn = () => {
 };
 
 export default JiuJitsuCheckIn;
+
