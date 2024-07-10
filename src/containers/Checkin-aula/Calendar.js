@@ -10,17 +10,20 @@ const Divcontainer = styled.div`
 const Div = styled.div`
   display: flex;
   align-items: center;
+
 `;
 
 const H2 = styled.h2`
-  font-family: "Roboto", sans-serif;
+   font-size: 20px;
 `;
 
 const StyledCalendar = styled.div`
   display: flex;
   overflow-x: auto;
   flex-wrap: nowrap;
-  max-width: 300px;
+  max-width: 350px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
   &::-webkit-scrollbar {
     width: 8px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -60,6 +63,7 @@ const DayCell = styled.div`
   padding: 10px;
   text-align: center;
   border-radius: 5px;
+margin-top: 10px;
   cursor: pointer;
   ${({ isSelected }) => isSelected && 'background-color: #007bff; color: #fff;'}
   ${({ isCheckin }) => isCheckin && 'background-color: #28a745; color: #fff;'}

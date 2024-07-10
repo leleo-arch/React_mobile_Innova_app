@@ -5,7 +5,7 @@ import Calendar from './Calendar';
 
 // Styled Components
 const Container = styled.div`
-  padding: 20px;
+  padding: 40px;
   display: flex;
   border-radius: 20px;
   flex-direction: column;
@@ -43,7 +43,7 @@ const ClassListContainer = styled.div`
   width: 100%;
 
   &::-webkit-scrollbar {
-    width: 8px;
+    width: 5px;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -151,7 +151,7 @@ const P = styled.p`
   justify-content: center;
   margin-top: 30px;
   margin-bottom: 20px;
-  font-size: 25px;
+  font-size: 23px;
 `;
 
 const Imagem = styled.img`
