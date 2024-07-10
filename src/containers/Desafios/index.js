@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import Peoples from "../../assets/logoinnocva.png";
 
@@ -199,54 +199,67 @@ const Imagem = styled.img`
 border-radius: 20px;
 `;
 
+
+// Supondo que os componentes estilizados estejam definidos/importados corretamente
+// Isso inclui Container, Imagem, Div3, Title, Div2, GlobalProgressBar, GlobalProgress, MonthlyChallengeSection,
+// MonthlyChallengeTitle, ChallengeList, ChallengeItem, ChallengeTitle, ChallengeDescription, Reward, Button,
+// Progress, ProgressBar, CompletionMessage e LoadingIcon
+
 const ChallengePage = () => {
-  const [monthlyChallenges, setMonthlyChallenges] = useState([
-    {
-      month: 'Janeiro',
-      challenges: [
-        {
-          id: 1,
-          title: 'Desafio de Técnica',
-          description: 'Pratique a técnica de raspagem de guarda durante 30 minutos.',
-          reward: '15 pontos no ranking de técnicas.',
-          completed: false,
-        },
-        {
-          id: 2,
-          title: 'Desafio de Resistência',
-          description: 'Realize 50 burpees seguidos, descansando apenas 1 minuto entre cada série.',
-          reward: '10 pontos no ranking de resistência.',
-          completed: false,
-        },
-      ],
-    },
-    {
-      month: 'Fevereiro',
-      challenges: [
-        {
-          id: 3,
-          title: 'Desafio de Flexibilidade',
-          description: 'Alongue-se por 15 minutos após o treino, focando em cada grupo muscular.',
-          reward: '20 pontos no ranking de flexibilidade.',
-          completed: false,
-        },
-        {
-          id: 4,
-          title: 'Desafio de Cardio',
-          description: 'Corra 5km em menos de 25 minutos.',
-          reward: '15 pontos no ranking de cardio.',
-          completed: false,
-        },
-        {
-          id: 5,
-          title: 'Desafio de Força',
-          description: 'Realize 3 séries de 10 repetições de agachamento com 100% do seu peso corporal.',
-          reward: '25 pontos no ranking de força.',
-          completed: false,
-        },
-      ],
-    },
-  ]);
+  const [monthlyChallenges, setMonthlyChallenges] = useState(() => {
+    const savedChallenges = localStorage.getItem('monthlyChallenges');
+    return savedChallenges ? JSON.parse(savedChallenges) : [
+      {
+        month: 'Janeiro',
+        challenges: [
+          {
+            id: 1,
+            title: 'Desafio de Técnica',
+            description: 'Pratique a técnica de raspagem de guarda durante 30 minutos.',
+            reward: '15 pontos no ranking de técnicas.',
+            completed: false,
+          },
+          {
+            id: 2,
+            title: 'Desafio de Resistência',
+            description: 'Realize 50 burpees seguidos, descansando apenas 1 minuto entre cada série.',
+            reward: '10 pontos no ranking de resistência.',
+            completed: false,
+          },
+        ],
+      },
+      {
+        month: 'Fevereiro',
+        challenges: [
+          {
+            id: 3,
+            title: 'Desafio de Flexibilidade',
+            description: 'Alongue-se por 15 minutos após o treino, focando em cada grupo muscular.',
+            reward: '20 pontos no ranking de flexibilidade.',
+            completed: false,
+          },
+          {
+            id: 4,
+            title: 'Desafio de Cardio',
+            description: 'Corra 5km em menos de 25 minutos.',
+            reward: '15 pontos no ranking de cardio.',
+            completed: false,
+          },
+          {
+            id: 5,
+            title: 'Desafio de Força',
+            description: 'Realize 3 séries de 10 repetições de agachamento com 100% do seu peso corporal.',
+            reward: '25 pontos no ranking de força.',
+            completed: false,
+          },
+        ],
+      },
+    ];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('monthlyChallenges', JSON.stringify(monthlyChallenges));
+  }, [monthlyChallenges]);
 
   const totalChallenges = monthlyChallenges.reduce((total, month) => total + month.challenges.length, 0);
   const completedChallenges = monthlyChallenges.reduce((total, month) => {
@@ -313,3 +326,4 @@ const ChallengePage = () => {
 };
 
 export default ChallengePage;
+
