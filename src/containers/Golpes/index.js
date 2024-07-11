@@ -89,6 +89,7 @@ const MoveItemContainer = styled.li`
   display: flex;
   flex-direction: column;
   transition: transform 0.2s;
+align-items: center;
   &:hover {
     transform: scale(1.02);
   }
@@ -144,6 +145,23 @@ const FormButton = styled.button`
   }
 `;
 
+const DeleteButton = styled.button`
+  background-color: #dc3545;
+
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-top:30px;
+  width: 40%;
+
+  &:hover {
+    background-color: #c82333;
+  }
+`;
+
 
 // Supondo que os componentes estilizados estejam definidos/importados corretamente
 // Isso inclui Body, Imagem, Container, Title, SearchContainer, SearchInput, SearchButton,
@@ -160,7 +178,7 @@ const initialMoves = [
   //... outros golpes
 ];
 
-const MoveItem = ({ move, index, expanded, toggleExpand }) => (
+const MoveItem = ({ move, index, expanded, toggleExpand, Delete, }) => (
   <MoveItemContainer>
     <MoveHeader onClick={() => toggleExpand(index)}>
       <MoveName>{move.name}</MoveName>
@@ -172,6 +190,8 @@ const MoveItem = ({ move, index, expanded, toggleExpand }) => (
         <MoveImage src={move.image} alt={move.name} />
       </>
     )}
+        <DeleteButton onClick={() => Delete(index)}>Deletar</DeleteButton>
+
   </MoveItemContainer>
 );
 
@@ -203,6 +223,10 @@ const JiuJitsuMoves = () => {
     localStorage.setItem('jiuJitsuMoves', JSON.stringify(moveList));
   }, [moveList]);
 
+  const handleDeleteExercise = (index) => {
+    const updatedmoveListE = moveList.filter((_, i) => i !== index);
+    setMoveList(updatedmoveListE);
+  };
   const filteredMoves = moveList.filter(move =>
     (filterLevel === 'all' || move.level === filterLevel) &&
     move.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -224,7 +248,9 @@ const JiuJitsuMoves = () => {
   };
 
   return (
+    
     <Body>
+      
       <Imagem alt="Logo Innocva" src={logo} />
       <Title>Golpes de Jiu-Jitsu</Title>
       <Container>
@@ -241,7 +267,8 @@ const JiuJitsuMoves = () => {
           </SearchButton>
         </SearchContainer>
         <p>Sua lista de golpes aqui:</p>
-        <MoveList moves={filteredMoves} expanded={expanded} toggleExpand={toggleExpand} />
+        <MoveList moves={filteredMoves} expanded={expanded} toggleExpand={toggleExpand} Delete={handleDeleteExercise}
+        /> 
        <p>Salve seu golpe aqui:</p>
         <Form onSubmit={handleNewMoveSubmit}>
           <FormInput
