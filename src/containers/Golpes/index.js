@@ -177,8 +177,7 @@ const initialMoves = [
   },
   //... outros golpes
 ];
-
-const MoveItem = ({ move, index, expanded, toggleExpand, Delete, }) => (
+const MoveItem = ({ move, index, expanded, toggleExpand, Delete }) => (
   <MoveItemContainer>
     <MoveHeader onClick={() => toggleExpand(index)}>
       <MoveName>{move.name}</MoveName>
@@ -190,12 +189,12 @@ const MoveItem = ({ move, index, expanded, toggleExpand, Delete, }) => (
         <MoveImage src={move.image} alt={move.name} />
       </>
     )}
-        <DeleteButton onClick={() => Delete(index)}>Deletar</DeleteButton>
-
+    <DeleteButton onClick={() => Delete(index)}>Deletar</DeleteButton>
   </MoveItemContainer>
 );
 
-const MoveList = ({ moves, expanded, toggleExpand }) => (
+// Componente MoveList
+const MoveList = ({ moves, expanded, toggleExpand, Delete }) => (
   <MoveListContainer>
     {moves.map((move, index) => (
       <MoveItem
@@ -204,15 +203,17 @@ const MoveList = ({ moves, expanded, toggleExpand }) => (
         index={index}
         expanded={expanded}
         toggleExpand={toggleExpand}
+        Delete={Delete} // Passando a função Delete para MoveItem
       />
     ))}
   </MoveListContainer>
 );
 
+// Componente principal
 const JiuJitsuMoves = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [expanded, setExpanded] = useState(null);
-  const [newMove, setNewMove] = useState({ name: '', description: '', link: '', level: 'all' });
+  const [newMove, setNewMove] = useState({ name: '', description: '', image: '', level: 'all' });
   const [moveList, setMoveList] = useState(() => {
     const savedMoves = localStorage.getItem('jiuJitsuMoves');
     return savedMoves ? JSON.parse(savedMoves) : initialMoves;
@@ -224,9 +225,10 @@ const JiuJitsuMoves = () => {
   }, [moveList]);
 
   const handleDeleteExercise = (index) => {
-    const updatedmoveListE = moveList.filter((_, i) => i !== index);
-    setMoveList(updatedmoveListE);
+    const updatedMoveList = moveList.filter((_, i) => i !== index);
+    setMoveList(updatedMoveList);
   };
+
   const filteredMoves = moveList.filter(move =>
     (filterLevel === 'all' || move.level === filterLevel) &&
     move.name.toLowerCase().includes(searchTerm.toLowerCase())
