@@ -2,10 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import cadastro from "./containers/Cadastro-Alunos";
-import alunos from "./containers/Alunos";
+import session from "./containers/Session";
 import historico  from "./containers/Treino";
-import login  from "./containers/Desafios";
-import Home  from "./containers/Home";
+import menu from "./containers/Menu";
+import home  from "./containers/Home";
 import check  from "./containers/Checkin-aula";
 import comunidades from "./containers/Cadastros-Alunos";
 import golpes  from "./containers/Golpes";
@@ -18,13 +18,13 @@ function Routes() {
   
    <Router>
     <Switch>
-        <Route path="/" exact component={Home} /> {Home}
+        <Route path="/" exact component={home} /> {home}
         <Route exact path="/Cadastros-Alunos"component = {comunidades}/>
         <Route exact path="/Golpes"component = {golpes}/>
         <Route exact path="/Treino"component = {historico}/>
-        <Route exact path="/Desafios"component = {login}/>
+        <Route exact path="/Menu"component = {menu}/>
         <Route exact path="/Cadastro-Alunos" component = {cadastro}/>
-        <Route exact path="/Alunos"component = {alunos}/>
+        <Route exact path="/Session"component = {session}/>
         <Route exact path="/Checkin-aula"component = {check}/>
         <Route exact path="/Comunidade"component = {comunidade}/>
         
