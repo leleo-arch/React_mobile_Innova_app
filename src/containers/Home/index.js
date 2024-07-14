@@ -25,9 +25,14 @@ const Title = styled.h1`
 `;
 
 const LoginFormContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 30px;
   width: 300px;
   margin: 50px auto;
   padding: 20px;
+  height: 100vh;
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f5f5f5;
@@ -65,6 +70,7 @@ const Button = styled.button`
   color: white;
   border: none;
   border-radius: 4px;
+  margin-top: 20px;
   cursor: pointer;
   
   &:hover {
@@ -77,21 +83,17 @@ const SessionContainer = styled.div`
 `;
 
 export const Button2 = styled(Link)`
-  background-color: #007bff;
-  color: #fff;
+ width: 94%;
+  padding: 10px;
+  background-color: #0066cc;
+  color: white;
   border: none;
-  padding: 15px 20px;
-  margin: 10px 0;
-  text-decoration: none;
-  text-align: center;
-  border-radius: 5px;
-  width: 220px;
-  font-size: 18px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  
   &:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px);
+    background-color: #004d99;
   }
 `;
 
@@ -165,10 +167,13 @@ const App = () => {
               />
             </FormGroup>
             <Button type="submit" >Entrar</Button>
+
           </form>
-          
+
+          <Button2 to="/Session">cadastrar-se</Button2>
           <Button2 to="/Menu">Pular</Button2>
-          <a>cadastro</a>
+
+
 
         </LoginFormContainer>
       ) : (

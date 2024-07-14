@@ -104,7 +104,7 @@ const SignupPage = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-          </FormGroup>
+             </FormGroup>
           <Button type="submit">Cadastrar</Button>
         </form>
       </SignupFormContainer>
