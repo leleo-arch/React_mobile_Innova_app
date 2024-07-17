@@ -253,7 +253,7 @@ const JiuJitsuCheckIn = () => {
       <P>Selecione uma data para salvar</P>
         <Calendar onSelectDate={setSelectedDate} />
         <Button onClick={handleAddClass} disabled={!selectedDate}>Salvar Data</Button>
-        <P>Datas salvas:</P>
+        <P>Datas Salvas:</P>
         <ClassListContainer>
           <ClassList>
             {classes.map(cls => (
