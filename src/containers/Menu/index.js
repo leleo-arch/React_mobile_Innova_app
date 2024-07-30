@@ -52,6 +52,7 @@ const App = () => {
         </ButtonGallery>
         <NavBar />
       </ContainerItems>
+
     </Container>
   );
 };
