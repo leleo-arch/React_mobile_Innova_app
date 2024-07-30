@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
-
 
 // Estilos com styled-components
 const AppContainer = styled.div`
@@ -25,14 +24,13 @@ const Title = styled.h1`
 `;
 
 const LoginFormContainer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-gap: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
   width: 300px;
   margin: 50px auto;
   padding: 20px;
-  height: 100vh;
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f5f5f5;
@@ -72,71 +70,72 @@ const Button = styled.button`
   border-radius: 4px;
   margin-top: 20px;
   cursor: pointer;
-  
+
   &:hover {
     background-color: #004d99;
   }
 `;
 
-const SessionContainer = styled.div`
-  margin-top: 20px;
-`;
-
-export const Button2 = styled(Link)`
- width: 94%;
+const Button2 = styled(Link)`
+  width: 93%;
   padding: 10px;
   background-color: #0066cc;
   color: white;
   border: none;
-  margin-top: 10px;
+  margin-top: 1px;
   border-radius: 4px;
   cursor: pointer;
-  
+  text-align: center;
+  text-decoration: none;
+
   &:hover {
     background-color: #004d99;
   }
 `;
 
-const LogoutButton = styled.button`
-  width: 100px;
-  padding: 10px;
-  background-color: #cc0000;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+const LoadingContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
-  
-  &:hover {
-    background-color: #990000;
+`;
+
+const spin = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 `;
 
-const WelcomeMessage = styled.p`
-  font-size: 18px;
-  color: #333;
+const Spinner = styled.div`
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #0066cc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: ${spin} 1s linear infinite;
+  margin: 20px auto;
 `;
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState('');
+  const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Aqui você pode adicionar lógica de autenticação
-    if (username === 'user' && password === 'password') {
-      setUser(username);
-      setIsLoggedIn(true);
-    }
-  };
+    setLoading(true);
 
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setUser('');
-    setUsername('');
-    setPassword('');
+    // Simulação de autenticação com tempo de espera
+    setTimeout(() => {
+      if (username === 'user' && password === 'password') {
+        setIsLoggedIn(true);
+      }
+      setLoading(false);
+    }, 2000);
   };
 
   return (
@@ -166,23 +165,19 @@ const App = () => {
                 required
               />
             </FormGroup>
-            <Button type="submit" >Entrar</Button>
-
+            <Button type="submit">Entrar</Button>
           </form>
-
-          <Button2 to="/Session">cadastrar-se</Button2>
+          <Button2 to="/Session">Cadastrar-se</Button2>
           <Button2 to="/Menu">Pular</Button2>
-
-
-
+          {loading && (
+            <LoadingContainer>
+              <Spinner />
+              <p>Carregando...</p>
+            </LoadingContainer>
+          )}
         </LoginFormContainer>
       ) : (
-        <SessionContainer>
-          <Subtitle>Bem-vindo, {user}!</Subtitle>
-          <WelcomeMessage>Estamos felizes em vê-lo novamente.</WelcomeMessage>
-          <p>Conteúdo relacionado ao Jiu-Jitsu pode ser exibido aqui.</p>
-          <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
-        </SessionContainer>
+        <p>Você está logado!</p>
       )}
     </AppContainer>
   );
