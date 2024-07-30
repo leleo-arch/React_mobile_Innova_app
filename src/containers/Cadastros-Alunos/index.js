@@ -10,7 +10,7 @@ const Container = styled.div`
   justify-content: center;
   min-height: 100vh;
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: black;
 `;
 
 const StyledContainer = styled.div`

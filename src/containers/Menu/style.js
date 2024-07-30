@@ -1,27 +1,15 @@
-import styled, { keyframes } from 'styled-components';
+// src/pages/style.js
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
-
-
-// Spinner animation
-const spin = keyframes`
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-`;
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 120vh;
+  height: 100vh;
   padding: 20px;
-  background-color: #f5f5f5;
-  transition: opacity 0.5s ease-in-out;
+  background-color: black;
 `;
 
 export const Image = styled.img`
@@ -35,32 +23,96 @@ export const ContainerItems = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 `;
 
 export const Title = styled.h1`
   font-family: 'Roboto', sans-serif;
   margin-bottom: 20px;
   font-size: 32px;
-  color: #333;
+  color: white;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
+export const ButtonGallery = styled.div`
+ display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px 0;
+  gap: 15px;
+  width: 100%;
+  box-sizing: border-box;
+
+  /* Scrollbar styles for WebKit browsers */
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    overflow-x: scroll;
+  }
+`;
+
+
+
 export const Button = styled(Link)`
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 15px 20px;
-  margin: 10px 0;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  border: 2px solid green;
+  border-radius: 12px; /* Rounded corners */
+  padding: 0px;
   text-decoration: none;
-  text-align: center;
-  border-radius: 5px;
-  width: 220px;
-  font-size: 18px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 180px;
+  height: 180px; /* Ajuste conforme o tamanho desejado */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+
+  img {
+    max-width: 400px;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 10px; /* Rounded corners on image */
+  }
+
+  span {
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+  }
 
   &:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px);
+    background-color: green;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+  }
+
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 150px;
+  }
+
+  @media (max-width: 480px) {
+    width: 120px;
+    height: 120px;
   }
 `;
 
@@ -70,52 +122,14 @@ export const IntroText = styled.p`
   margin-bottom: 20px;
   text-align: center;
   max-width: 600px;
-  color: #555;
-`;
+  color: white;
 
-export const LoadingContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-`;
+  @media (max-width: 768px) {
+    font-size: 16px;
+    max-width: 90%;
+  }
 
-export const Spinner = styled.div`
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-top: 4px solid #007bff;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: ${spin} 1s linear infinite;
-  margin-bottom: 10px;
-`;
-
-export const LoadingText = styled.p`
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-  text-align: center;
-  color: #007bff;
-`;
-// src/themes.js
-export const lightTheme = {
-  body: '#FFF',
-  text: '#000',
-  toggleBorder: '#FFF',
-  background: '#363537',
-};
-
-export const darkTheme = {
-  body: '#363537',
-  text: '#FAFAFA',
-  toggleBorder: '#6B8096',
-  background: '#999',
-};
-
-export const GlobalStyles = createGlobalStyle`
-  body {
-    background: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};
-    font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
-    transition: all 0.50s linear;
+  @media (max-width: 480px) {
+    font-size: 14px;
   }
 `;

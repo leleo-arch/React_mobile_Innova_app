@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Peoples from "../../assets/logoinnocva.png";
 import Calendar from './Calendar';
+import NavBar from '../Nave/index';
+
 
 // Styled Components
 const Container = styled.div`
@@ -12,7 +14,7 @@ const Container = styled.div`
   align-items: center;
   gap: 20px;
   
-  background-color: white;
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4), 0 6px 20px rgba(30, 120, 50, 0.3);
 
   @media only screen and (max-width: 900px) {
     width: 85%;
@@ -27,7 +29,7 @@ const Container = styled.div`
 
 const Div = styled.div`
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: black;
   border-radius: 25px;
   width: 100%;
   margin-top: 20px;
@@ -90,13 +92,14 @@ const TimeInput = styled.input`
 `;
 
 const ClassItem = styled.li`
+
   margin-bottom: 10px;
-  color: #333;
+  color: white;
   text-align: center;
   font-family: "Roboto", sans-serif;
   padding: 10px;
   width: 90%;
-  background-color: ${({ selected }) => (selected ? 'rgba(0, 123, 255, 0.3)' : 'rgba(255, 255, 255, 0.8)')};
+  background-color: ${({ selected }) => (selected ? 'green' : 'black')};
   border-radius: 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -106,10 +109,13 @@ const ClassItem = styled.li`
   align-items: center;
 
   &:hover {
-    background-color: ${({ selected }) => (selected ? 'rgba(0, 123, 255, 0.5)' : 'rgba(0, 123, 255, 0.1)')};
+    background-color: ${({ selected }) => (selected ? 'rgba(40, 167, 69, 0.4)' : 'rgba(0, 123, 255, 0.1)')};
     transform: translateY(-5px);
+    background: linear-gradient(45deg, #000000, #008000);
+
   }
 `;
+
 
 const ClassInfo = styled.div`
   display: flex;
@@ -119,7 +125,7 @@ const ClassInfo = styled.div`
 `;
 
 const Button = styled.button`
-  background-color: #007bff;
+  background-color: green;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -128,7 +134,7 @@ const Button = styled.button`
   margin-top: 10px;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: rgba(40, 167, 69, 0.4);
   }
 `;
 
@@ -139,7 +145,7 @@ const Divcontainer = styled.div`
   justify-content: center;
   min-height: 100vh;
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: black;
   transition: opacity 0.5s ease-in-out;
 
   @media only screen and (max-width: 900px) {
@@ -152,8 +158,11 @@ const P = styled.p`
   align-items: center;
   justify-content: center;
   margin-top: 10px;
-  margin-bottom: 30px;
-  font-size: 23px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  box-shadow: 0 2px 1px rgba(40, 167, 69, 0.4), 0 6px 20px rgba(30, 120, 50, 0.3);
+
+  color: white;
 `;
 
 const H1 = styled.h1`
@@ -163,6 +172,7 @@ const H1 = styled.h1`
   margin-top: 10px;
   margin-bottom: 30px;
   font-size: 23px;
+  color: white;
 `;
 
 const Imagem = styled.img`
@@ -288,8 +298,10 @@ const JiuJitsuCheckIn = () => {
         <P>{selectedCount} Aula(s) Comparecida(s)</P>
           <Button onClick={handleCheckInAll}>Fazer Check-in em Todas as Aulas</Button>
           <Button onClick={handleUncheckAll}>Retirar Check-in de Todas as Aulas</Button>
-          <Button onClick={() => window.location.href = '/Home'}>Voltar Menu</Button>
+          <Button onClick={() => window.location.href = '/Menu'}>Voltar Menu</Button>
         </Div>
+        <NavBar></NavBar>
+
       </Container>
     </Divcontainer>
   );

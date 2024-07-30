@@ -10,7 +10,7 @@ const Body = styled.div`
   justify-content: center;
   min-height: 100vh;
   padding: 20px;
-  background-color: #e9ecef;
+  background-color:black;
   font-family: 'Arial', sans-serif;
 `;
 

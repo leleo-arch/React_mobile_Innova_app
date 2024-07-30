@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom';
 const AppContainer = styled.div`
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #f0f0f0;
+  background-color: black;
   min-height: 100vh;
   padding: 20px;
 `;
 
 const HeaderContainer = styled.header`
-  background-color: #333;
+  background-color: black;
   padding: 10px;
   color: white;
   text-align: center;
@@ -33,14 +33,14 @@ const LoginFormContainer = styled.div`
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  background-color: #f5f5f5;
+  background-color: black;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
 const Subtitle = styled.h2`
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
+  color: white;
 `;
 
 const FormGroup = styled.div`

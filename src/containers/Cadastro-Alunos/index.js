@@ -1,53 +1,46 @@
-import axios from "axios";
-import React, { useRef, useState } from "react";
-import {
-  Conteiner,
-  Imagem,
-  ConteinerItens,
-  H1,
-  InputLabel,
-  Input,
-  Button,
-} from "./style";
+// src/components/NavBar.js
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-import Peoples from "../../assets/logoinnocva.png";
-import Seta from "../../assets/􀰑.svg";
+const NavContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+`;
 
-function App() {
-  const [users, setUsers] = useState([]);
-  const InputName = useRef();
-  const InputAge = useRef();
+const NavLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
 
-  async function addNewuser() {
-    const { data: newUser } = await axios.post(
-      "http://localhost:5000/myprojects",
-      { name: InputName.current.value, age: InputAge.current.value }
-    );
-
-    console.log(newUser);
-    setUsers([...users, newUser]);
+  &:hover {
+    background-color: green;
+    border-radius: 5px;
   }
+`;
 
+const NavBar = () => {
   return (
-    <Conteiner>
-      <Imagem alt="img-pessoas" src={Peoples}/>
-      <ConteinerItens>
-        <H1>Inova-Jiu-Jitsu</H1>
-
-        <InputLabel>Nome do Aluno:</InputLabel>
-        <Input placeholder="Name" ref={InputName} />
-
-        <InputLabel>Faixa:</InputLabel>
-        <Input placeholder="Belt" ref={InputAge} />
-        <Button to="/Alunos" onClick={addNewuser}>
-          Cadastrar <img alt="Seta" src={Seta} />
-        </Button>
-        <Button to="/Alunos"Ver Alunos> Alunos Cadastrados <img alt="Seta" src={Seta} /> </Button>
-        <Button to="/Menu"Ver Menu> Voltar Menu</Button>
-
-      </ConteinerItens>
-    </Conteiner>
+    <NavContainer>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/Checkin-aula">Check-in</NavLink>
+      <NavLink to="/Treino">Treino do Dia</NavLink>
+      <NavLink to="/Cadastros-Alunos">Cadastro de Alunos</NavLink>
+      <NavLink to="/Golpes">Lista de Golpes</NavLink>
+      <NavLink to="/Desafios">Desafios</NavLink>
+      <NavLink to="/Comunidade">Comunidades</NavLink>
+    </NavContainer>
   );
-}
+};
 
-export default App;
+export default NavBar;

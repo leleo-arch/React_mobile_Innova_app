@@ -11,10 +11,13 @@ const Div = styled.div`
   display: flex;
   align-items: center;
 font-size: 15px;
+color: white;
 `;
 
 const H2 = styled.h2`
    font-size: 20px;
+   color: white;
+
 `;
 
 const StyledCalendar = styled.div`
@@ -22,7 +25,8 @@ const StyledCalendar = styled.div`
   overflow-x: auto;
   flex-wrap: nowrap;
   max-width: 350px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 0px rgba(40, 167, 69, 0.4), 0 6px 25px rgba(30, 120, 50, 0.3);
+    
 
   &::-webkit-scrollbar {
     width: 8px;
@@ -33,7 +37,7 @@ const StyledCalendar = styled.div`
 
   &::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.25);
-    margin-top: -32px;
+    margin-top: -22px;
   }
 
   &::-webkit-scrollbar-thumb:hover {
@@ -50,7 +54,7 @@ const Header = styled.div`
 `;
 
 const Button = styled.button`
-  background-color: #007bff;
+  background-color: black;
   color: #fff;
   border: none;
   padding: 5px 10px;
@@ -63,11 +67,13 @@ const DayCell = styled.div`
   padding: 10px;
   text-align: center;
   border-radius: 5px;
+  color: white;
+
 margin-top: 10px;
   cursor: pointer;
-  ${({ isSelected }) => isSelected && 'background-color: #007bff; color: #fff;'}
-  ${({ isCheckin }) => isCheckin && 'background-color: #28a745; color: #fff;'}
-  ${({ isSomeOtherCriteriaMet }) => isSomeOtherCriteriaMet && 'border: 2px solid #f39c12;'}
+  ${({ isSelected }) => isSelected && 'background-color: #007bff; color: #fff;border: 2px solid #28a745;'}
+  ${({ isCheckin }) => isCheckin && 'background-color: #28a745; color: #fff '}
+  ${({ isSomeOtherCriteriaMet }) => isSomeOtherCriteriaMet && 'border: 2px solid #;'}
 
   &:hover {
     background-color: ${({ selected }) => (selected ? 'rgba(0, 123, 255, 0.5)' : 'rgba(0, 123, 255, 0.1)')};
