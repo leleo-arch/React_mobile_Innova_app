@@ -41,7 +41,7 @@ const BottomNavContainer = styled.div`
   box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
   box-sizing: border-box;
-  border: 1px solid green;
+  border: 1px solid ;
 
 
   @media (max-width: 768px) {
@@ -52,8 +52,8 @@ const BottomNavContainer = styled.div`
 const BottomNavLink = styled(Link)`
   color: white;
   text-decoration: none;
-  font-size: 14px;
-  padding: 8px;
+  font-size: 20px;
+  padding: 15px;
   border-radius: 4px;
   transition: background-color 0.3s ease, transform 0.3s ease;
   text-align: center;
@@ -64,7 +64,7 @@ const BottomNavLink = styled(Link)`
   }
 
   @media (max-width: 768px) {
-    font-size: 12px;
+    font-size: 15px;
     padding: 6px;
   }
 `;
@@ -109,7 +109,7 @@ const BottomNavBar = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); 
+    }, 1000); 
 
     return () => clearTimeout(timer);
   }, []);
