@@ -41,6 +41,8 @@ const BottomNavContainer = styled.div`
   box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
   box-sizing: border-box;
+  border: 1px solid green;
+
 
   @media (max-width: 768px) {
     padding: 6px 12px;
@@ -87,8 +89,8 @@ const SpinnerWrapper = styled.div`
 `;
 
 const Dot = styled.div`
-  width: 12px;
-  height: 12px;
+  width: 20px;
+  height: 22px;
   margin: 0 5px;
   background-color: white;
   border-radius: 50%;
@@ -130,7 +132,6 @@ const BottomNavBar = () => {
           <BottomNavLink to="/Treino">Treino</BottomNavLink>
           <BottomNavLink to="/Cadastros-Alunos">Cadastros</BottomNavLink>
           <BottomNavLink to="/Golpes">Golpes</BottomNavLink>
-          <BottomNavLink to="/Desafios">Desafios</BottomNavLink>
           <BottomNavLink to="/Comunidade">Comunidade</BottomNavLink>
         </BottomNavContainer>
       )}
