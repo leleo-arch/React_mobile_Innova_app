@@ -1,25 +1,26 @@
+<h1>Innova Jius-jitsu</h1>
+
+<h2>Descrição</h2>
+<p>O Innova Jiu é uma aplicação web voltada para praticantes de Jiu-Jitsu. A plataforma oferece recursos para facilitar o gerenciamento de treinos e a interação com a comunidade. A página principal do aplicativo fornece uma visão geral das funcionalidades e acesso a ferramentas úteis para treinos e gestão de alunos.</p>
+
 ## Funcionalidades
-- Funcionalidade 1: Descrição da funcionalidade 1
-- Funcionalidade 2: Descrição da funcionalidade 2
-- Funcionalidade 3: Descrição da funcionalidade 3
+Check-in em Aula: Permite aos usuários registrar sua presença nas aulas.
+Treino do Dia: Visualize o treino recomendado para o dia.
+Cadastro de Alunos: Adicione e gerencie informações dos alunos.
+Desafios Innova: Participe de desafios e acompanhe seu progresso.
+Comunidades INV: Conecte-se com outros praticantes em comunidades dedicadas.
+Tecnologias Utilizadas
+Frontend: React, styled-components
+Backend: (Especificar se há backend ou outras tecnologias envolvidas)
+Hospedagem: Netlify
 
 ## Screenshots
 ![Screenshot 1](link-para-screenshot1.png)
 ![Screenshot 2](link-para-screenshot2.png)
 
-## GIFs
-![GIF 1](link-para-gif1.gif)
-![GIF 2](link-para-gif2.gif)
 
-## Contribuição
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
-4. Faça um push para a branch (`git push origin feature/nova-feature`)
-5. Abra um Pull Request
-
-## Licença
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+## Site 
+Site:*(https://innova-jiu.netlify.app/)
 
 ## Contato
 - Email: [seu-email@example.com](mailto:seu-email@example.com)
