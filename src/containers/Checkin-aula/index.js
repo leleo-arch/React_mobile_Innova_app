@@ -37,7 +37,7 @@ const Div = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 3px 10px 0px 1px rgba(0, 0, 0, 0.25);
   border: 2px solid white;
 
 `;
@@ -46,7 +46,7 @@ const ClassListContainer = styled.div`
   overflow-y: auto;
   max-height: 300px;
   margin-top: 10px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 10px 10px 0px 5px rgba(0, 0, 0, 0.25);
   width: 100%;
   border: 6px solid white;
   border-radius: 20px;
@@ -109,7 +109,7 @@ const ClassItem = styled.li`
   width: 90%;
   background-color: ${({ selected }) => (selected ? '#3498db' : 'black')};
   border-radius: 10px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 20px 10px 10px 20px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
   display: flex;
