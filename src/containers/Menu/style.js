@@ -79,7 +79,7 @@ export const CircleContainer = styled.div`
   margin-bottom: 20px;
 `;
 
-export const Circle = styled.div`
+export const Circle = styled(Link)`
   width: 50px;
   height: 50px;
   background-color: #3498db;

@@ -5,6 +5,8 @@ import Peoples from "../../assets/logoinnocva.png";
 import CheckinImage from '../../assets/checkin.png.jpg'; // Corrigido a extensão
 import CheckinImage2 from '../../assets/png2.jpg'; // Corrigido a extensão
 import CheckinImage3 from '../../assets/png3.jpg'; // Corrigido a extensão
+import relogio from '../../assets/timer.png'; // Corrigido a extensão
+
 
 import {
   Container,
@@ -29,14 +31,16 @@ const App = () => {
           Bem-vindo à Innova! Explore nossas opções para check-in em aula, treino do dia, cadastro de alunos, desafios Innova e comunidades INV.
         </IntroText>
         <CircleContainer>
-          <Circle />
+        <Circle to="/Timer" src={relogio}> 
+        </Circle>               
+
           <Circle />
           <Circle />
           <Circle />
         </CircleContainer>
       <ButtonGallery>
           <Button to="/Cadastros-Alunos">
-          <img src={CheckinImage} alt="Cadastros-Alunos"/>
+          <img src={CheckinImage} alt="Cadastro"/>
           </Button>
           <Button to="/Desafios">
           <img src={CheckinImage2} alt="Desafios"/>
@@ -44,8 +48,8 @@ const App = () => {
           <Button to="/Comunidade">
           <img src={CheckinImage3} alt="Comunidade"/>
           </Button>
-          <Button to="/Cronometro">
-          <img src={CheckinImage} alt="Cronometro"/>
+          <Button to="/Timer">
+          <img src={CheckinImage} alt="Timer"/>
           </Button>
         </ButtonGallery>
         <NavBar />

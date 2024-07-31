@@ -27,7 +27,7 @@ const StyledCalendar = styled.div`
   display: flex;
   overflow-x: auto;
   flex-wrap: nowrap;
-  max-width: 350px;
+  max-width: 345px;
   box-shadow: 0 4px 0px #3498db, 0 6px 1px white;
   
     

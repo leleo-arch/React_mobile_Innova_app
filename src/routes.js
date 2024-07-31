@@ -10,6 +10,8 @@ import check  from "./containers/Checkin-aula";
 import comunidades from "./containers/Cadastros-Alunos";
 import golpes  from "./containers/Golpes";
 import comunidade  from "./containers/Comunidade";
+import timer  from "./containers/Timer";
+
 
 
 
@@ -29,6 +31,8 @@ function Routes() {
         <Route exact path="/Session"component = {session}/>
         <Route exact path="/Checkin-aula"component = {check}/>
         <Route exact path="/Comunidade"component = {comunidade}/>
+        <Route exact path="/Timer"component = {timer}/>
+
         
     </Switch>
    </Router> 
