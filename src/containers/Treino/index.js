@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import logo from "../../assets/logoinnocva.png";
+import NavBar from '../Nave/index'; // Certifique-se de que o caminho para o NavBar esteja correto
 
 const Body = styled.div`
   display: flex;
@@ -280,6 +281,7 @@ const TrainingDayJiuJitsu = () => {
         {previousTrainings.length > 0 && (
           <DeleteButton onClick={handleDeleteAllTrainings}>Excluir Todo o Histórico</DeleteButton>
         )}
+          <NavBar />
       </Container>
     </Body>
   );

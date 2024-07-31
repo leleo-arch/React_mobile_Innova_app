@@ -1,6 +1,8 @@
 import React, { useState, useEffect} from 'react';
 import styled from 'styled-components';
 import { FaSearch, FaAngleDown, FaAngleUp } from 'react-icons/fa';
+import NavBar from '../Nave/index'; // Certifique-se de que o caminho para o NavBar esteja correto
+
 import logo from "../../assets/logoinnocva.png"; // Certifique-se de que o caminho do logo está correto
 
 const Body = styled.div`
@@ -299,6 +301,7 @@ const JiuJitsuMoves = () => {
           />
           <FormButton type="submit">Cadastrar Golpe</FormButton>
         </Form>
+        <NavBar />
       </Container>
     </Body>
   );
