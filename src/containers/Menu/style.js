@@ -8,14 +8,13 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 10px;
+  padding: 0;
   background-color: black;
 
   @media (max-width: 768px) {
-    padding: 0px; 
-    font-size: 16px;
-    width: 100%; 
-    height: auto; 
+    padding: 0;
+    width: 100%;
+    height: auto;
   }
 `;
 
@@ -42,11 +41,16 @@ export const Title = styled.h1`
 
   @media (max-width: 768px) {
     font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 20px;
   }
 `;
 
 export const ButtonGallery = styled.div`
- display: flex;
+  display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
   padding: 10px 0;
@@ -77,6 +81,11 @@ export const CircleContainer = styled.div`
   justify-content: center;
   gap: 20px;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    gap: 15px;
+    margin-bottom: 15px;
+  }
 `;
 
 export const Circle = styled(Link)`
@@ -91,30 +100,40 @@ export const Circle = styled(Link)`
     background-color: #2980b9;
     transform: translateY(-5px);
   }
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (max-width: 480px) {
+    width: 35px;
+    height: 35px;
+  }
 `;
 
 export const Button = styled(Link)`
-   display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   background-color: black;
   color: white;
   border: 2px solid #3498db;
-  border-radius: 12px; /* Rounded corners */
-  padding: 0px;
+  border-radius: 12px;
+  padding: 0;
   text-decoration: none;
   width: 180px;
-  height: 180px; /* Ajuste conforme o tamanho desejado */
+  height: 180px;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
   img {
-    max-width: 400px;
-    max-height: 100%;
+    max-width: 200px;
+    max-height: 120px;
     object-fit: cover;
-    border-radius: 10px; /* Rounded corners on image */
+    border-radius: 10px;
   }
 
   span {
@@ -128,7 +147,7 @@ export const Button = styled(Link)`
   &:hover {
     background-color: green;
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
   }
 
   @media (max-width: 768px) {
@@ -153,9 +172,11 @@ export const IntroText = styled.p`
   @media (max-width: 768px) {
     font-size: 16px;
     max-width: 90%;
+    margin-bottom: 15px;
   }
 
   @media (max-width: 480px) {
     font-size: 14px;
+    max-width: 100%;
   }
 `;
