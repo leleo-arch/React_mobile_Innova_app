@@ -13,8 +13,9 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  
-  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4), 0 6px 20px rgba(30, 120, 50, 0.3);
+  background-color: #3498db;
+  border: 2px solid white;
+
 
   @media only screen and (max-width: 900px) {
     width: 85%;
@@ -37,14 +38,19 @@ const Div = styled.div`
   align-items: center;
   flex-direction: column;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: 2px solid white;
+
 `;
 
 const ClassListContainer = styled.div`
   overflow-y: auto;
   max-height: 300px;
-  margin-top: 40px;
+  margin-top: 10px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   width: 100%;
+  border: 6px solid white;
+  border-radius: 20px;
+
 
   &::-webkit-scrollbar {
     width: 5px;
@@ -66,7 +72,9 @@ const ClassList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(rgba(32, 10, 43, 0.69) 87.68%);
+background-color: white;
+
+
 `;
 
 const DeleteButton = styled.button`
@@ -99,7 +107,7 @@ const ClassItem = styled.li`
   font-family: "Roboto", sans-serif;
   padding: 10px;
   width: 90%;
-  background-color: ${({ selected }) => (selected ? 'green' : 'black')};
+  background-color: ${({ selected }) => (selected ? '#3498db' : 'black')};
   border-radius: 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -109,9 +117,9 @@ const ClassItem = styled.li`
   align-items: center;
 
   &:hover {
-    background-color: ${({ selected }) => (selected ? 'rgba(40, 167, 69, 0.4)' : 'rgba(0, 123, 255, 0.1)')};
+    background-color: ${({ selected }) => (selected ? '#3498db' : 'rgba(0, 123, 255, 0.1)')};
     transform: translateY(-5px);
-    background: linear-gradient(45deg, #000000, #008000);
+    background: linear-gradient(10deg, #000000, #3498db);
 
   }
 `;
@@ -125,16 +133,19 @@ const ClassInfo = styled.div`
 `;
 
 const Button = styled.button`
-  background-color: green;
+  background-color: #3498db;
   color: #fff;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
   margin-top: 10px;
+  border: 2px solid white
+  ;
+
 
   &:hover {
-    background-color: rgba(40, 167, 69, 0.4);
+    background-color: #3498db;
   }
 `;
 
@@ -147,6 +158,7 @@ const Divcontainer = styled.div`
   padding: 20px;
   background-color: black;
   transition: opacity 0.5s ease-in-out;
+  
 
   @media only screen and (max-width: 900px) {
     height: auto;
@@ -160,7 +172,6 @@ const P = styled.p`
   margin-top: 10px;
   margin-bottom: 20px;
   font-size: 18px;
-  box-shadow: 0 2px 1px rgba(40, 167, 69, 0.4), 0 6px 20px rgba(30, 120, 50, 0.3);
 
   color: white;
 `;
@@ -298,7 +309,6 @@ const JiuJitsuCheckIn = () => {
         <P>{selectedCount} Aula(s) Comparecida(s)</P>
           <Button onClick={handleCheckInAll}>Fazer Check-in em Todas as Aulas</Button>
           <Button onClick={handleUncheckAll}>Retirar Check-in de Todas as Aulas</Button>
-          <Button onClick={() => window.location.href = '/Menu'}>Voltar Menu</Button>
         </Div>
         <NavBar></NavBar>
 

@@ -7,9 +7,16 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 110vh;
   padding: 20px;
   background-color: black;
+
+  @media (max-width: 768px) {
+    padding: 10px; 
+    font-size: 16px;
+    width: 100%; 
+    height: auto; 
+  }
 `;
 
 export const Image = styled.img`

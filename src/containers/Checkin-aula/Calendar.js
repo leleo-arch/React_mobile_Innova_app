@@ -12,6 +12,7 @@ const Div = styled.div`
   align-items: center;
 font-size: 15px;
 color: white;
+
 `;
 
 const H2 = styled.h2`
@@ -24,8 +25,9 @@ const StyledCalendar = styled.div`
   display: flex;
   overflow-x: auto;
   flex-wrap: nowrap;
-  max-width: 350px;
-  box-shadow: 0 4px 0px rgba(40, 167, 69, 0.4), 0 6px 25px rgba(30, 120, 50, 0.3);
+  max-width: 360px;
+  box-shadow: 0 4px 0px #3498db, 0 6px 1px white;
+  
     
 
   &::-webkit-scrollbar {
@@ -51,6 +53,7 @@ const Header = styled.div`
   align-items: center;
   margin-bottom: 10px;
   gap: 20px;
+  
 `;
 
 const Button = styled.button`
@@ -68,11 +71,10 @@ const DayCell = styled.div`
   text-align: center;
   border-radius: 5px;
   color: white;
-
 margin-top: 10px;
   cursor: pointer;
-  ${({ isSelected }) => isSelected && 'background-color: #007bff; color: #fff;border: 2px solid #28a745;'}
-  ${({ isCheckin }) => isCheckin && 'background-color: #28a745; color: #fff '}
+  ${({ isSelected }) => isSelected && 'background-color: rgba(0, 123, 255, 0.5); color: white ;border: 2px solid #fff ;'}
+  ${({ isCheckin }) => isCheckin && 'background-color: black ; color: black  color: white ;border: 2px solid #fff ;'}
   ${({ isSomeOtherCriteriaMet }) => isSomeOtherCriteriaMet && 'border: 2px solid #;'}
 
   &:hover {

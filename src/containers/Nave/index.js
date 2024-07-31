@@ -59,10 +59,11 @@ const BottomNavLink = styled(Link)`
   border-radius: 4px;
   transition: background-color 0.3s ease, transform 0.3s ease;
   text-align: center;
-
+  
   &:hover {
-    background-color: #3498db;
-    transform: scale(1.1);
+    transform: scale(1.2);
+    background-color: ${({ selected }) => (selected ? '#3498db' : '#3498db')};
+
   }
 
   @media (max-width: 768px) {
