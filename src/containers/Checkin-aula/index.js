@@ -14,7 +14,7 @@ const Container = styled.div`
   align-items: center;
   gap: 20px;
   background-color: #3498db;
-  border: 2px solid white;
+  border: 5px solid white;
 
 
   @media only screen and (max-width: 900px) {
