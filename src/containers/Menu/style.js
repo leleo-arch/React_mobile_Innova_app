@@ -7,12 +7,12 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 110vh;
-  padding: 20px;
+  min-height: 100vh;
+  padding: 10px;
   background-color: black;
 
   @media (max-width: 768px) {
-    padding: 10px; 
+    padding: 0px; 
     font-size: 16px;
     width: 100%; 
     height: auto; 
@@ -22,7 +22,7 @@ export const Container = styled.div`
 export const Image = styled.img`
   width: 150px;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-radius: 20px;
 `;
 

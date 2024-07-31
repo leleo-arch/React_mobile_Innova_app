@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import NavBar from '../Nave/index'; // Certifique-se de que o caminho para o NavBar esteja correto
 
-
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -19,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
     justify-content: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden; /* Adicionado para evitar barras de rolagem inesperadas */
   }
 `;
 
@@ -35,9 +35,11 @@ const TimerContainer = styled.div`
   width: 90%;
   max-width: 600px;
   text-align: center;
+  box-sizing: border-box; /* Garantir que o padding e a borda não afetam a largura total */
+  margin-left: 19px;
 
   @media (min-width: 768px) {
-    padding: 30px;
+    padding: 0px;
     max-width: 700px;
   }
 
@@ -53,6 +55,7 @@ const TimeDisplay = styled.div`
   margin-bottom: 20px;
   letter-spacing: 0.1em;
   color: white;
+
   @media (min-width: 768px) {
     font-size: 1rem;
   }
@@ -95,7 +98,6 @@ const Button = styled.button`
     transform: translateY(0);
   }
 `;
-
 
 const App = () => {
   const [time, setTime] = useState(0);
@@ -198,11 +200,9 @@ const App = () => {
           <Button onClick={() => setCountdownRunning(false)}>Parar Temporizador</Button>
         </ButtonContainer>
         <NavBar />
-
       </TimerContainer>
     </>
   );
 };
 
 export default App;
-
