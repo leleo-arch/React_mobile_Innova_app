@@ -72,7 +72,7 @@ const ClassList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-background-color: white;
+background-color: black;
 
 
 `;
