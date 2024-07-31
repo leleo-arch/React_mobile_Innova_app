@@ -9,7 +9,11 @@ export default createGlobalStyle `
  font-optical-sizing: auto;
  font-weight: weight;
  font-style: normal;
+
+ 
 }
 
 `;
+
+
 

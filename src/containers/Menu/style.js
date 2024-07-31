@@ -65,7 +65,26 @@ export const ButtonGallery = styled.div`
   }
 `;
 
+export const CircleContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+`;
 
+export const Circle = styled.div`
+  width: 50px;
+  height: 50px;
+  background-color: #3498db;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: #2980b9;
+    transform: translateY(-5px);
+  }
+`;
 
 export const Button = styled(Link)`
    display: flex;
@@ -73,7 +92,7 @@ export const Button = styled(Link)`
   justify-content: center;
   background-color: black;
   color: white;
-  border: 2px solid green;
+  border: 2px solid #3498db;
   border-radius: 12px; /* Rounded corners */
   padding: 0px;
   text-decoration: none;

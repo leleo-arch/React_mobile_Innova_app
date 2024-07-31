@@ -1,7 +1,9 @@
 // src/components/BottomNavBar.js
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
+import CheckinImage from '../../assets/sport.png'; // Corrigido a extensão
+
 
 const bounce = keyframes`
   0%, 20%, 50%, 80%, 100% {
@@ -41,7 +43,7 @@ const BottomNavContainer = styled.div`
   box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
   box-sizing: border-box;
-  border: 1px solid ;
+  border: 1px solid #3498db;
 
 
   @media (max-width: 768px) {
@@ -59,7 +61,7 @@ const BottomNavLink = styled(Link)`
   text-align: center;
 
   &:hover {
-    background-color: green;
+    background-color: #3498db;
     transform: scale(1.1);
   }
 
@@ -73,10 +75,10 @@ const SpinnerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; 
+  height: 100vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  animation: ${BackgroundAnimation} 1.5s infinite alternate;
+  animation: ${BackgroundAnimation} 1s infinite alternate;
   position: fixed;
   top: 0;
   left: 0;
@@ -86,11 +88,23 @@ const SpinnerContainer = styled.div`
 const SpinnerWrapper = styled.div`
   display: flex;
   align-items: center;
+  width: 50%;
+  height: 50%;
+`;
+
+const Image = styled.img`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+
+  
+  
 `;
 
 const Dot = styled.div`
-  width: 20px;
-  height: 22px;
+  width: 12px;
+  height: 12px;
   margin: 0 5px;
   background-color: white;
   border-radius: 50%;
@@ -103,17 +117,7 @@ const Dot = styled.div`
   }
 `;
 
-const BottomNavBar = () => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000); 
-
-    return () => clearTimeout(timer);
-  }, []);
-
+const BottomNavBar = ({ loading }) => {
   return (
     <>
       {loading ? (
@@ -127,12 +131,11 @@ const BottomNavBar = () => {
         </SpinnerContainer>
       ) : (
         <BottomNavContainer>
-          <BottomNavLink to="/">Home</BottomNavLink>
+          <BottomNavLink to="Menu">Home</BottomNavLink>
           <BottomNavLink to="/Checkin-aula">Checkin</BottomNavLink>
+          <Image src={CheckinImage} alt="Check-in em aula"/>
           <BottomNavLink to="/Treino">Treino</BottomNavLink>
-          <BottomNavLink to="/Cadastros-Alunos">Cadastros</BottomNavLink>
           <BottomNavLink to="/Golpes">Golpes</BottomNavLink>
-          <BottomNavLink to="/Comunidade">Comunidade</BottomNavLink>
         </BottomNavContainer>
       )}
     </>

@@ -2,7 +2,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-// Animação de "pular"
 const bounce = keyframes`
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
@@ -15,7 +14,6 @@ const bounce = keyframes`
   }
 `;
 
-// Animação de fundo pulsante
 const BackgroundAnimation = keyframes`
   0% {
     background-color: rgba(0, 0, 0, 0.8);
@@ -35,12 +33,11 @@ const SpinnerContainer = styled.div`
   height: 100vh; 
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  animation: ${BackgroundAnimation} 1s;
+  animation: ${BackgroundAnimation} 1s forwards;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  animation: ${BackgroundAnimation} 1s forwards;
 `;
 
 const SpinnerWrapper = styled.div`
@@ -54,7 +51,7 @@ const Dot = styled.div`
   margin: 0 5px;
   background-color: white;
   border-radius: 50%;
-  animation: ${bounce} 1s;
+  animation: ${bounce} 1s forwards;
   animation-delay: ${({ delay }) => delay};
 `;
 
