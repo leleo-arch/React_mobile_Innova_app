@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Peoples from "../../assets/logoinnocva.png";
 import Calendar from './Calendar';
 import NavBar from '../Nave/index';
 
@@ -13,8 +12,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  background-color: #3498db;
-  border: 5px solid white;
 
 
   @media only screen and (max-width: 900px) {
@@ -30,7 +27,6 @@ const Container = styled.div`
 
 const Div = styled.div`
   padding: 20px;
-  background-color: black;
   border-radius: 25px;
   width: 100%;
   margin-top: 20px;
@@ -38,7 +34,6 @@ const Div = styled.div`
   align-items: center;
   flex-direction: column;
   box-shadow: 3px 10px 0px 1px rgba(0, 0, 0, 0.25);
-  border: 2px solid white;
 
 `;
 
@@ -46,10 +41,9 @@ const ClassListContainer = styled.div`
   overflow-y: auto;
   max-height: 300px;
   margin-top: 10px;
-  box-shadow: 10px 10px 0px 5px rgba(0, 0, 0, 0.25);
   width: 100%;
-  border: 6px solid white;
   border-radius: 20px;
+  
 
 
   &::-webkit-scrollbar {
@@ -72,13 +66,13 @@ const ClassList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-background-color: black;
+  background-color: rgba(128, 128, 128, 0.1);
 
 
 `;
 
 const DeleteButton = styled.button`
-  background-color: #dc3545;
+  background-color: rgba(0, 123, 255, 0.1);
   color: #fff;
   border: none;
   padding: 5px 10px;
@@ -107,19 +101,20 @@ const ClassItem = styled.li`
   font-family: "Roboto", sans-serif;
   padding: 10px;
   width: 90%;
-  background-color: ${({ selected }) => (selected ? '#3498db' : 'black')};
+  background-color: ${({ selected }) => (selected ? '#3498db' : ';')};
   border-radius: 10px;
   box-shadow: 20px 10px 10px 20px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
+  gap:0px;
+  
 
   &:hover {
     background-color: ${({ selected }) => (selected ? '#3498db' : 'rgba(0, 123, 255, 0.1)')};
     transform: translateY(-5px);
-    background: linear-gradient(10deg, #000000, #3498db);
 
   }
 `;
@@ -133,13 +128,13 @@ const ClassInfo = styled.div`
 `;
 
 const Button = styled.button`
-  background-color: #3498db;
+  background-color: rgba(0, 123, 255, 0.1);
   color: #fff;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 5px;
   border: 2px solid white
   ;
 
@@ -169,33 +164,13 @@ const P = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-bottom: 1px;
   font-size: 18px;
 
   color: white;
 `;
 
-const H1 = styled.h1`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  font-size: 23px;
-  color: white;
-`;
-
-const Imagem = styled.img`
-  height: 150px;
-  margin-bottom: 50px;
-  border-radius: 20px;
-
-  @media only screen and (max-width: 600px) {
-    height: 120px;
-    margin-bottom: 30px;
-  }
-`;
 
 
 // Certifique-se de que todos os componentes personalizados usados aqui estão definidos/importados corretamente.
@@ -267,14 +242,11 @@ const JiuJitsuCheckIn = () => {
   return (
     
     <Divcontainer>
-      <Imagem alt="img-pessoas" src={Peoples} />
-      <H1>Controle das minhas aulas</H1>
-
       <Container>
-      <P>Selecione uma data para salvar</P>
+      <P></P>
         <Calendar onSelectDate={setSelectedDate} />
         <Button onClick={handleAddClass} disabled={!selectedDate}>Salvar Data</Button>
-        <P>Datas Salvas:</P>
+        <P>Frequência:</P>
         <ClassListContainer>
           <ClassList>
             {classes.map(cls => (

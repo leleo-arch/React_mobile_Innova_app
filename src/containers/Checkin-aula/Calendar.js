@@ -6,7 +6,9 @@ const Divcontainer = styled.div`
   flex-direction: column;
   align-items: center;
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
-
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 20px;
+  padding: 10px;
 `;
 
 const Div = styled.div`
@@ -28,7 +30,6 @@ const StyledCalendar = styled.div`
   overflow-x: auto;
   flex-wrap: nowrap;
   max-width: 345px;
-  box-shadow: 0 4px 0px #3498db, 0 6px 1px white;
   
     
 

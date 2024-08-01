@@ -91,7 +91,7 @@ export const CircleContainer = styled.div`
 export const Circle = styled(Link)`
   width: 50px;
   height: 50px;
-  background-color: #3498db;
+  background-color: rgba(0, 123, 255, 0.3);
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, transform 0.3s ease;

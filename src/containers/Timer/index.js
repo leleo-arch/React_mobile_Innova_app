@@ -1,7 +1,7 @@
 // src/App.js
 import React, { useState, useEffect, useRef } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import NavBar from '../Nave/index'; // Certifique-se de que o caminho para o NavBar esteja correto
+import NavBar from '../Nave/index'; 
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
     justify-content: center;
     height: 100vh;
     margin: 0;
-    overflow: hidden; /* Adicionado para evitar barras de rolagem inesperadas */
+    overflow: hidden; 
   }
 `;
 
@@ -35,7 +35,7 @@ const TimerContainer = styled.div`
   width: 90%;
   max-width: 600px;
   text-align: center;
-  box-sizing: border-box; /* Garantir que o padding e a borda não afetam a largura total */
+  box-sizing: border-box;
   margin-left: 19px;
 
   @media (min-width: 768px) {
@@ -99,7 +99,7 @@ const Button = styled.button`
   }
 `;
 
-const App = () => {
+const Timer = () => {
   const [time, setTime] = useState(0);
   const [running, setRunning] = useState(false);
   const [countdown, setCountdown] = useState(null);
@@ -135,7 +135,7 @@ const App = () => {
           if (prevCountdown <= 0) {
             clearInterval(countdownRef.current);
             setCountdownRunning(false);
-            alarmRef.current.play(); // Toca o alarme quando o temporizador chega a zero
+            alarmRef.current.play(); 
             return 0;
           }
           return prevCountdown - 1000;
@@ -205,4 +205,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Timer;
