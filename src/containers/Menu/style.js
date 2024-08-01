@@ -2,13 +2,14 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 0;
+  padding: 20px;
   background-color: black;
 
   @media (max-width: 768px) {
@@ -19,10 +20,17 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 150px;
+  width: 230px;
   height: auto;
   margin-bottom: 10px;
   border-radius: 20px;
+`;
+export const Tempo = styled.img`
+  width: 25px;
+  height: 23px;
+
+
+
 `;
 
 export const ContainerItems = styled.div`
@@ -95,6 +103,9 @@ export const Circle = styled(Link)`
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, transform 0.3s ease;
+display: flex;
+justify-content: center;
+align-items: center;
 
   &:hover {
     background-color: #2980b9;
@@ -116,22 +127,23 @@ export const Button = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
+ background-color: white;
   color: white;
   border: 2px solid #3498db;
   border-radius: 12px;
   padding: 0;
   text-decoration: none;
-  width: 180px;
+  width: 200px;
   height: 180px;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
+
   img {
-    max-width: 200px;
-    max-height: 120px;
+   width: 200px;
+    height: 440px;
     object-fit: cover;
     border-radius: 10px;
   }
@@ -151,13 +163,14 @@ export const Button = styled(Link)`
   }
 
   @media (max-width: 768px) {
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
+    
   }
 
   @media (max-width: 480px) {
-    width: 120px;
-    height: 120px;
+    width: 300px;
+    height: 300px;
   }
 `;
 
@@ -166,17 +179,22 @@ export const IntroText = styled.p`
   font-size: 18px;
   margin-bottom: 20px;
   text-align: center;
-  max-width: 600px;
+  max-width: 500px;
   color: white;
+  background-color:rgba(0, 123, 255, 0.3) ;
+  border-radius:20px;
+  padding: 10px;
 
   @media (max-width: 768px) {
     font-size: 16px;
-    max-width: 90%;
-    margin-bottom: 15px;
+    max-width: 80%;
+    margin-bottom: 30px;
   }
 
   @media (max-width: 480px) {
     font-size: 14px;
-    max-width: 100%;
+    max-width: 80%;
+    margin-bottom: 30px;
+
   }
 `;

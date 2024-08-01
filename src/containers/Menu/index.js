@@ -18,6 +18,7 @@ import {
   IntroText,
   CircleContainer,
   Circle,
+  Tempo
 
 } from "./style";
 
@@ -31,9 +32,9 @@ const App = () => {
           Bem-vindo à Innova! Explore nossas opções para check-in em aula, treino do dia, cadastro de alunos, desafios Innova e comunidades INV.
         </IntroText>
         <CircleContainer>
-        <Circle to="/Timer" src={relogio}> 
-        </Circle>               
-
+        <Circle to="/Timer"> 
+        <Tempo src={relogio} alt="Desafios"/>
+         </Circle>              
           <Circle />
           <Circle />
           <Circle />
