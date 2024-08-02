@@ -101,7 +101,7 @@ const ClassItem = styled.li`
   font-family: "Roboto", sans-serif;
   padding: 10px;
   width: 90%;
-  background-color: ${({ selected }) => (selected ? '#3498db' : ';')};
+  background-color: ${({ selected }) => (selected ? 'rgba(0, 123, 255, 0.1)' : ';')};
   border-radius: 10px;
   box-shadow: 20px 10px 10px 20px rgba(0, 0, 0, 0.25);
   cursor: pointer;
@@ -133,7 +133,7 @@ const Button = styled.button`
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 25px;
   margin-top: 5px;
   border: 2px solid white
   ;

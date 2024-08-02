@@ -136,14 +136,14 @@ export const Button = styled(Link)`
   width: 200px;
   height: 180px;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
+  overflow: x;
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
 
   img {
    width: 200px;
-    height: 440px;
+    height: 300px;
     object-fit: cover;
     border-radius: 10px;
   }
@@ -157,7 +157,7 @@ export const Button = styled(Link)`
   }
 
   &:hover {
-    background-color: green;
+
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
   }

@@ -9,6 +9,7 @@ const Divcontainer = styled.div`
   background-color: rgba(128, 128, 128, 0.2);
   border-radius: 20px;
   padding: 10px;
+  gap:10px;
 `;
 
 const Div = styled.div`
@@ -72,12 +73,14 @@ const Button = styled.button`
 const DayCell = styled.div`
   padding: 10px;
   text-align: center;
-  border-radius: 5px;
+  justify-content: space-around;
+  border-radius: 25px;
   color: white;
+gap:100px;
 margin-top: 10px;
   cursor: pointer;
   ${({ isSelected }) => isSelected && 'background-color: rgba(0, 123, 255, 0.5); color: white ;border: 2px solid #fff ;'}
-  ${({ isCheckin }) => isCheckin && 'background-color: black ; color: black  color: white ;border: 2px solid #fff ;'}
+  ${({ isCheckin }) => isCheckin && 'background-color: rgba(0, 123, 255, 0.1) ; color: black  color: white ;border: 2px solid #fff ;'}
   ${({ isSomeOtherCriteriaMet }) => isSomeOtherCriteriaMet && 'border: 2px solid #;'}
 
   &:hover {
