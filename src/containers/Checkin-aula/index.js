@@ -31,6 +31,7 @@ const Div = styled.div`
   width: 100%;
   margin-top: 20px;
   display: flex;
+  gap:5px;
   align-items: center;
   flex-direction: column;
   box-shadow: 3px 10px 0px 1px rgba(0, 0, 0, 0.25);
@@ -150,7 +151,7 @@ const Divcontainer = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: 15px;
   background-color: black;
   transition: opacity 0.5s ease-in-out;
   

@@ -71,11 +71,11 @@ export const ButtonGallery = styled.div`
     height: 8px;
   }
   &::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.4);
+    background: transparent;
     border-radius: 10px;
   }
   &::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
+    background: transparent;
   }
 
   @media (max-width: 768px) {
@@ -136,11 +136,11 @@ export const Button = styled(Link)`
   width: 200px;
   height: 180px;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: x;
+  overflow-x: 0;
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
-
+  
   img {
    width: 200px;
     height: 300px;
