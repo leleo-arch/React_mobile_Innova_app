@@ -21,7 +21,3 @@ Hospedagem: Netlify
 
 ## Site 
 Site:*(https://innova-jiu.netlify.app/)
-
-## Contato
-- Email: [seu-email@example.com](mailto:seu-email@example.com)
-- LinkedIn: [Seu Nome](https://www.linkedin.com/in/seu-usuario/)
