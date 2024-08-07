@@ -20,8 +20,8 @@ const Container = styled.div`
   align-items: center;
   gap: 5px;
   border-radius: 25px;
-  width: 80%;
-  max-width: 800px;
+  width: 100%;
+  max-width: 100%;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   @media only screen and (max-width: 700px) {
