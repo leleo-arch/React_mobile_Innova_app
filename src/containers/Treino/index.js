@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import logo from "../../assets/logoinnocva.png";
 import NavBar from '../Nave/index'; // Certifique-se de que o caminho para o NavBar esteja correto
 
 const Body = styled.div`
@@ -13,18 +12,6 @@ const Body = styled.div`
   background-color: black;
 `;
 
-const Imagem = styled.img`
-  background-color: black;
-  border-radius: 10px;
-  height: 150px;
-  margin-bottom: 30px;
-
-  @media only screen and (max-width: 700px) {
-    margin-bottom: 30px;
-    margin-top: 50px;
-  }
-`;
-
 const Container = styled.div`
   background-size: cover;
   display: flex;
@@ -35,7 +22,7 @@ const Container = styled.div`
   width: 32%;
   padding: 20px;
   overflow-y: auto;
-  background: #fff;
+
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
   @media only screen and (max-width: 700px) {
@@ -43,57 +30,55 @@ const Container = styled.div`
   }
 `;
 
-const Title = styled.h1`
-  color: #333;
-  font-size: 24px;
-  margin-bottom: 30px;
-`;
 
 const SectionTitle = styled.h2`
-  color: #333;
+  color: #fff;
   font-size: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
 `;
 
 const Input = styled.input`
-  margin-bottom: 10px;
+  margin-bottom: 1px;
   padding: 8px;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 25px;
   border: 1px solid #ccc;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 const Select = styled.select`
-  margin-bottom: 10px;
+  margin-bottom: 1px;
   padding: 8px;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 25px;
   border: 1px solid #ccc;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 const Button = styled.button`
-  background-color: #007bff;
+  background-color: rgba(0, 123, 255, 0.1);
   color: #fff;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 25px;
   margin-right: 10px;
   margin-bottom: 10px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  box-shadow: 0px 2px 4px white;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: rgba(0, 123, 255, 0.1);;
   }
 `;
 
 const DeleteButton = styled(Button)`
-  background-color: #dc3545;
+  background-color: rgba(0, 123, 255, 0.4);
+
+  margin-bottom: 20px;
 
   &:hover {
-    background-color: #c82333;
+    background-color: rgba(0, 123, 255, 0.1);;
   }
 `;
 
@@ -108,30 +93,34 @@ const ExerciseItem = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 1px;
   color: #555;
-  background: #fff;
+  background-color: rgba(0, 123, 255, 0.1);;
   padding: 10px;
-  border-radius: 5px;
+  border: 2px solid white;
+
+  border-radius: 25px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 const TrainingDiv = styled.div`
   margin-bottom: 20px;
-  color: #555;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background-color: rgba(0, 123, 255, 0.1);;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 25px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid white
+
 `;
 
 const SearchInput = styled.input`
   margin-bottom: 20px;
   padding: 8px;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 25px;
   border: 1px solid #ccc;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 `;
@@ -210,10 +199,7 @@ const TrainingDayJiuJitsu = () => {
 
   return (
     <Body>
-      <Imagem alt="Logo Innocva" src={logo} />
-      <Title>Treino do Dia - Jiu-Jitsu</Title>
       <Container>
-    
         <SectionTitle>Adicionar Exercícios:</SectionTitle>
         <Input 
           type="text" 

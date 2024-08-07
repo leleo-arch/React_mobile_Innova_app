@@ -37,15 +37,14 @@ const BottomNavContainer = styled.div`
   background-color: black;
   padding: 8px 16px;
   position: fixed;
-  width: 90%;
+  width: 100%;
   bottom: 0;
-  left: 19px;
   z-index: 1000;
   box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
   box-sizing: border-box;
   border: 1px solid #3498db;
- border-radius: 20px;
+ border-radius: 20px 20px 0px 0px;
  
 
   @media (max-width: 768px) {
