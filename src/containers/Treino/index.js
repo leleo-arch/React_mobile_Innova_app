@@ -96,7 +96,7 @@ const ExerciseItem = styled.li`
   align-items: center;
   margin-bottom: 1px;
   color: #fff;
-  background-color: rgba(0, 123, 255, 0.1);;
+  background-color: rgba(0, 123, 255, 0.1);
   padding: 10px;
   border: 2px solid white;
 

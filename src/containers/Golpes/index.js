@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { FaSearch, FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import NavBar from '../Nave/index'; // Certifique-se de que o caminho para o NavBar esteja correto
 
-import logo from "../../assets/logoinnocva.png"; // Certifique-se de que o caminho do logo está correto
-
 const Body = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,38 +14,21 @@ const Body = styled.div`
   font-family: 'Arial', sans-serif;
 `;
 
-const Imagem = styled.img`
-  height: 100px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  @media only screen and (max-width: 700px) {
-    margin-top: 30px;
-  }
-`;
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  border-radius: 15px;
+  gap: 5px;
+  border-radius: 25px;
   width: 80%;
   max-width: 800px;
   padding: 20px;
-  background: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   @media only screen and (max-width: 700px) {
     width: 90%;
   }
 `;
 
-const Title = styled.h1`
-  color: #343a40;
-  font-size: 28px;
-  text-align: center;
-  margin-bottom: 30px;
-  margin-top: 10px;
-`;
 
 const SearchContainer = styled.div`
   display: flex;
@@ -60,7 +41,7 @@ const SearchInput = styled.input`
   flex-grow: 1;
   padding: 10px;
   border: 1px solid #ced4da;
-  border-radius: 5px 0 0 5px;
+  border-radius: 25px;
   outline: none;
 `;
 
@@ -69,7 +50,7 @@ const SearchButton = styled.button`
   border: none;
   background-color: #007bff;
   color: white;
-  border-radius: 0 5px 5px 0;
+  border-radius: 25px;
   cursor: pointer;
   &:hover {
     background-color: #0056b3;
@@ -84,10 +65,10 @@ const MoveListContainer = styled.ul`
 
 const MoveItemContainer = styled.li`
   margin-bottom: 20px;
-  background: #f8f9fa;
+  background-color: rgba(0, 123, 255, 0.1);
   padding: 20px;
-  border-radius: 5px;
-  border: 1px solid #ced4da;
+  border-radius: 25px;
+  box-shadow: 0px 2px 4px white;
   display: flex;
   flex-direction: column;
   transition: transform 0.2s;
@@ -106,17 +87,17 @@ const MoveHeader = styled.div`
 
 const MoveName = styled.h2`
   margin: 0;
-  color: #495057;
+  color: white;
 `;
 
 const MoveDescription = styled.p`
-  color: #6c757d;
+  color: white;
   margin: 10px 0 0;
 `;
 
 const MoveImage = styled.link`
   max-width: 100%;
-  border-radius: 5px;
+  border-radius: 25px;
   margin-top: 10px;
 `;
 
@@ -131,24 +112,24 @@ const FormInput = styled.input`
   margin-bottom: 10px;
   padding: 10px;
   border: 1px solid #ced4da;
-  border-radius: 5px;
+  border-radius: 25px;
   outline: none;
 `;
 
 const FormButton = styled.button`
   padding: 10px;
   border: none;
-  background-color: #28a745;
+  background-color: #004d99;
   color: white;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
   &:hover {
-    background-color: #218838;
+    background-color: #004d99;
   }
 `;
 
 const DeleteButton = styled.button`
-  background-color: #dc3545;
+    background-color: #004d99;
 
   color: #fff;
   border: none;
@@ -158,6 +139,7 @@ const DeleteButton = styled.button`
   margin-left: 10px;
   margin-top:30px;
   width: 40%;
+  border: 2px solid white;
 
   &:hover {
     background-color: #c82333;
@@ -255,8 +237,6 @@ const JiuJitsuMoves = () => {
     
     <Body>
       
-      <Imagem alt="Logo Innocva" src={logo} />
-      <Title>Golpes de Jiu-Jitsu</Title>
       <Container>
        
         <SearchContainer>

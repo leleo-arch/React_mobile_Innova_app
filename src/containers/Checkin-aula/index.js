@@ -104,7 +104,7 @@ const ClassItem = styled.li`
   width: 90%;
   background-color: ${({ selected }) => (selected ? 'rgba(0, 123, 255, 0.1)' : ';')};
   border-radius: 10px;
-  box-shadow: 20px 10px 10px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 4px white;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
   display: flex;

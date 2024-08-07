@@ -8,7 +8,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 130vh;
   padding: 20px;
   background-color: black;
 
@@ -20,9 +20,9 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 230px;
+  width: 270px;
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   border-radius: 20px;
 `;
 export const Tempo = styled.img`
