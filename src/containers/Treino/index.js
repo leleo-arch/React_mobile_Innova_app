@@ -17,7 +17,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   border-radius: 25px;
   width: 32%;
   padding: 20px;
@@ -73,9 +73,10 @@ const Button = styled.button`
 `;
 
 const DeleteButton = styled(Button)`
-  background-color: rgba(0, 123, 255, 0.4);
+    background-color: rgba(0, 123, 255, 0.1);;
 
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  margin-top: 20px;
 
   &:hover {
     background-color: rgba(0, 123, 255, 0.1);;
@@ -94,7 +95,7 @@ const ExerciseItem = styled.li`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1px;
-  color: #555;
+  color: #fff;
   background-color: rgba(0, 123, 255, 0.1);;
   padding: 10px;
   border: 2px solid white;
