@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
+import Peoples from "../../assets/logoinnocva.png";
+
 
 // Estilos com styled-components
 const AppContainer = styled.div`
@@ -16,22 +18,19 @@ const HeaderContainer = styled.header`
   padding: 10px;
   color: white;
   text-align: center;
+  margin-bottom: -30px;
 `;
 
-const Title = styled.h1`
-  margin: 0;
-  font-size: 24px;
-`;
+
 
 const LoginFormContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 30px;
+  gap: 10px;
   width: 300px;
   margin: 50px auto;
   padding: 20px;
-  border: 1px solid #ddd;
   border-radius: 5px;
   background-color: black;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -51,6 +50,7 @@ const Label = styled.label`
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  color: white;
 `;
 
 const Input = styled.input`
@@ -58,7 +58,7 @@ const Input = styled.input`
   padding: 8px;
   box-sizing: border-box;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 24px;
 `;
 
 const Button = styled.button`
@@ -67,7 +67,7 @@ const Button = styled.button`
   background-color: #0066cc;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 24px;
   margin-top: 20px;
   cursor: pointer;
 
@@ -83,7 +83,7 @@ const Button2 = styled(Link)`
   color: white;
   border: none;
   margin-top: 1px;
-  border-radius: 4px;
+  border-radius: 24px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -119,6 +119,13 @@ const Spinner = styled.div`
   margin: 20px auto;
 `;
 
+ const Image = styled.img`
+  width: 270px;
+  height: auto;
+  margin-bottom: 0px;
+  border-radius: 20px;
+`;
+
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -140,15 +147,16 @@ const App = () => {
 
   return (
     <AppContainer>
+    
       <HeaderContainer>
-        <Title>Jiu-Jitsu App</Title>
+      <Image alt="img-pessoas" src={Peoples} />
       </HeaderContainer>
       {!isLoggedIn ? (
         <LoginFormContainer>
-          <Subtitle>Login de Jiu-Jitsu</Subtitle>
+          <Subtitle></Subtitle>
           <form onSubmit={handleLogin}>
             <FormGroup>
-              <Label>Usuário</Label>
+              <Label>E-mail:</Label>
               <Input
                 type="text"
                 value={username}
