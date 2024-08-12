@@ -82,6 +82,7 @@ const ImageLink = styled(Link)`
   height: 10px;
   font-size: 10px;
   color: white;
+  text-decoration: none;
 
   &:hover img {
     transform: scale(1.3);
@@ -92,6 +93,10 @@ const ImageLink = styled(Link)`
     width: 30px; 
     height: 30px; 
     transition: transform 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    
   }
 `;
 
