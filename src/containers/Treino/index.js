@@ -65,7 +65,7 @@ const Button = styled.button`
   margin-right: 10px;
   margin-bottom: 10px;
   margin-top: 10px;
-  box-shadow: 0px 2px 4px white;
+  border: solid 2px white;
 
   &:hover {
     background-color: rgba(0, 123, 255, 0.1);;

@@ -68,7 +68,7 @@ const MoveItemContainer = styled.li`
   background-color: rgba(0, 123, 255, 0.1);
   padding: 20px;
   border-radius: 25px;
-  box-shadow: 0px 2px 4px white;
+ border: solid 2px white;
   display: flex;
   flex-direction: column;
   transition: transform 0.2s;
@@ -99,6 +99,8 @@ const MoveImage = styled.link`
   max-width: 100%;
   border-radius: 25px;
   margin-top: 10px;
+  color: white;
+
 `;
 
 const Form = styled.form`
@@ -156,7 +158,7 @@ const initialMoves = [
   {
     name: "Kimura",
     description: "Uma técnica de submissão que torce o braço do oponente em um ângulo doloroso.",
-    image: "link_to_kimura_image",
+    link: "link_to_kimura_video",
     level: "advanced"
   },
   //... outros golpes
@@ -170,7 +172,7 @@ const MoveItem = ({ move, index, expanded, toggleExpand, Delete }) => (
     {expanded === index && (
       <>
         <MoveDescription>{move.description}</MoveDescription>
-        <MoveImage src={move.image} alt={move.name} />
+        <MoveImage src={move.link} alt={move.name} />
       </>
     )}
     <DeleteButton onClick={() => Delete(index)}>Deletar</DeleteButton>
@@ -197,7 +199,7 @@ const MoveList = ({ moves, expanded, toggleExpand, Delete }) => (
 const JiuJitsuMoves = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [expanded, setExpanded] = useState(null);
-  const [newMove, setNewMove] = useState({ name: '', description: '', image: '', level: 'all' });
+  const [newMove, setNewMove] = useState({ name: '', description: '', link: '', level: 'all' });
   const [moveList, setMoveList] = useState(() => {
     const savedMoves = localStorage.getItem('jiuJitsuMoves');
     return savedMoves ? JSON.parse(savedMoves) : initialMoves;
@@ -230,7 +232,7 @@ const JiuJitsuMoves = () => {
   const handleNewMoveSubmit = (e) => {
     e.preventDefault();
     setMoveList([...moveList, newMove]);
-    setNewMove({ name: '', description: '', image: '', level: 'all' });
+    setNewMove({ name: '', description: '', link: '', level: 'all' });
   };
 
   return (
@@ -272,9 +274,9 @@ const JiuJitsuMoves = () => {
             required
           />
           <FormInput
-            type="text"
-            name="image"
-            value={newMove.image}
+            type="link"
+            name="link"
+            value={newMove.link}
             onChange={handleNewMoveChange}
             placeholder="link do video"
             required
