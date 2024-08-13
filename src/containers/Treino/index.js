@@ -10,6 +10,7 @@ const Body = styled.div`
   min-height: 100vh;
   padding: 20px;
   background-color: black;
+  margin-top: -20px;
 `;
 
 const Container = styled.div`

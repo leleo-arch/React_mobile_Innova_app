@@ -6,6 +6,8 @@ import CheckinImage from '../../assets/checkin.png.jpg'; // Corrigido a extensã
 import CheckinImage2 from '../../assets/png2.jpg'; // Corrigido a extensão
 import CheckinImage3 from '../../assets/png3.jpg'; // Corrigido a extensão
 import relogio from '../../assets/timer.png'; // Corrigido a extensão
+import Placar from '../../assets/punch.png'; // Corrigido a extensão
+
 
 
 import {
@@ -34,9 +36,11 @@ const App = () => {
         <CircleContainer>
         <Circle to="/Timer"> 
         <Tempo src={relogio} alt="Desafios"/>
-         </Circle>              
-          <Circle />
-          <Circle />
+         </Circle >              
+          <Circle to="/Placar">
+          <Tempo src={Placar} alt="Desafios"/>
+          </Circle>
+          <Circle to="/Placar"/>
           <Circle />
         </CircleContainer>
       <ButtonGallery>

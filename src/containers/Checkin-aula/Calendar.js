@@ -10,6 +10,7 @@ const Divcontainer = styled.div`
   border-radius: 20px;
   padding: 10px;
   gap:10px;
+  margin-top: -30px;
 `;
 
 const Div = styled.div`

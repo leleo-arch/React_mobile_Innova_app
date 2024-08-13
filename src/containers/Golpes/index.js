@@ -8,10 +8,11 @@ const Body = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 115vh;
   padding: 20px;
   background-color:black;
   font-family: 'Arial', sans-serif;
+  margin-top: -130px;
 `;
 
 const Container = styled.div`
