@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import Nave from '../Nave';
-import Cont from '../Placar/Contador';
+import React, { useState } from "react";
+import styled from "styled-components";
+import Nave from "../Nave";
+import Cont from "../Placar/Contador";
 
 const Body = styled.div`
   background-color: black;
   width: 100%;
-  height: 125vh;
+  height: 185vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
   box-sizing: border-box;
-  gap:35px;
+  gap: 35px;
 `;
 
 const ScoreboardContainer = styled.div`
@@ -28,7 +28,7 @@ const ScoreboardContainer = styled.div`
   max-width: 400px;
   text-align: center;
   box-sizing: border-box;
-  gap:30px;
+  gap: 30px;
 
   @media (min-width: 768px) {
     padding: 20px;
@@ -60,7 +60,6 @@ const Instructions = styled.p`
   font-size: 0.75rem;
   color: #ecf0f1;
   margin-bottom: 15px;
-  
 
   @media (min-width: 768px) {
     font-size: 0.875rem;
@@ -81,10 +80,8 @@ const ScoreRow = styled.div`
   overflow-x: auto;
   border: 1px solid #3498db;
   border-radius: 0px;
-padding: 23px;
-  gap:40px;
-
-  
+  padding: 23px;
+  gap: 40px;
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -101,12 +98,10 @@ const ScoreRow2 = styled.div`
   margin: 6px 0;
   overflow-x: auto;
   border: 1px solid red;
-border-radius: 20px;
-border-radius: 0px;
-padding: 23px;
-  gap:25px;
-
-  
+  border-radius: 20px;
+  border-radius: 0px;
+  padding: 23px;
+  gap: 25px;
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -115,11 +110,27 @@ padding: 23px;
   }
 `;
 
+const ScoreRow3 = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 70%;
+  margin: 6px 0;
+  overflow-x: auto;
+  border-radius: 40px;
+  padding: 23px;
+  gap: 25px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    margin: 15px 0;
+  }
+`;
+
 const ScoreLabel = styled.div`
   font-size: 1rem;
   color: #ecf0f1;
   margin-bottom: 5px;
-  
 
   @media (min-width: 768px) {
     font-size: 1.25rem;
@@ -135,7 +146,6 @@ const ScoreValue = styled.div`
   font-size: 1.5rem;
   color: #fff;
   margin-bottom: 5px;
-
 
   @media (min-width: 768px) {
     font-size: 1.75rem;
@@ -166,7 +176,8 @@ const ScoreButton = styled.button`
   cursor: pointer;
   border-radius: 6px;
   font-size: 0.875rem;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
   min-width: 50px;
 
   &:hover {
@@ -194,7 +205,8 @@ const ResetButton = styled.button`
   border-radius: 6px;
   font-size: 0.875rem;
   margin-top: 15px;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
   min-width: 70px;
 
   &:hover {
@@ -217,28 +229,25 @@ const ProgressBarContainer = styled.div`
   overflow: hidden;
 `;
 
-
-const Results= styled.div`
+const Results = styled.div`
   width: 50%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   border-radius: 50px;
-  border: 2px solid #3498db;
-
   padding: 10px;
 `;
 
-const Results2= styled.div`
+const Results2 = styled.div`
   width: 50%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   border-radius: 50px;
-  border: 2px solid red;
-
   padding: 10px;
 `;
-
-
 
 const ProgressBar = styled.div`
   height: 100%;
@@ -246,32 +255,31 @@ const ProgressBar = styled.div`
   background: #3498db;
   transition: width 0.3s ease;
   overflow: hidden;
-
 `;
 
 const techniques = [
-  { name: 'Pegada nas Costas', points: 4 },
-  { name: 'Montada', points: 4 },
-  { name: 'Passagem de Guarda', points: 3 },
-  { name: 'Queda', points: 2 },
-  { name: 'Raspagem', points: 2 },
-  { name: 'Joelho na Barriga', points: 2 },
+  { name: "Pegada nas Costas", points: 4 },
+  { name: "Montada", points: 4 },
+  { name: "Passagem de Guarda", points: 3 },
+  { name: "Queda", points: 2 },
+  { name: "Raspagem", points: 2 },
+  { name: "Joelho na Barriga", points: 2 },
 ];
 
 const Scoreboard = () => {
   const [score1, setScore1] = useState(0);
   const [score2, setScore2] = useState(0);
   const [adv1, setAdv1] = useState(0);
-  const [adv2, setAdv2] = useState(0);
   const [pen1, setPen1] = useState(0);
-  const [pen2, setPen2] = useState(0);
 
   const totalScore = score1 + score2;
 
   const renderTechniqueButtons = (technique, setScore, score) => (
     <ScoreButtonContainer key={technique.name}>
       <ScoreLabel>{technique.name}</ScoreLabel>
-      <ScoreButton onClick={() => setScore(score + technique.points)}>+{technique.points}</ScoreButton>
+      <ScoreButton onClick={() => setScore(score + technique.points)}>
+        +{technique.points}
+      </ScoreButton>
     </ScoreButtonContainer>
   );
 
@@ -279,68 +287,102 @@ const Scoreboard = () => {
     <Body>
       <ScoreboardContainer>
         <ScoreboardTitle>Placar de Jiu-Jitsu</ScoreboardTitle>
-        <Instructions>Adicione ou remova pontos para cada técnica. Registre vantagens e punições.</Instructions>
+        <Instructions>
+          Adicione ou remova pontos para cada técnica. Registre vantagens e
+          punições.
+        </Instructions>
         <Cont></Cont>
-        
+
         <Results>
           <ScoreValue>{score1}</ScoreValue>
-          </Results>
-        
-        <ScoreRow>
-         
-        <ScoreLabel>Competidor'1':</ScoreLabel>
+          <ScoreButtonContainer>
+            <ScoreButton onClick={() => setScore1(score1 + 1)}>+</ScoreButton>
+            <ScoreButton
+              onClick={() => setScore1(score1 - 1)}
+              disabled={score1 === 0}
+            >
+              -
+            </ScoreButton>
+          </ScoreButtonContainer>
+        </Results>
+       
 
-          {techniques.map((tech) => renderTechniqueButtons(tech, setScore1, score1))}
-          <ScoreButtonContainer>
-            <ScoreLabel>Vantagem:</ScoreLabel>
-            <ScoreButton onClick={() => setAdv1(adv1 + 1)}>+1</ScoreButton>
-            <ScoreLabel>{adv1}</ScoreLabel>
-          </ScoreButtonContainer>
-          <ScoreButtonContainer>
-            <ScoreLabel>Punição:</ScoreLabel>
-            <ScoreButton onClick={() => setPen1(pen1 + 1)}>+1</ScoreButton>
-            <ScoreLabel>{pen1}</ScoreLabel>
-          </ScoreButtonContainer>
+        <ScoreRow>
+        <Results>
+            <ScoreLabel>Vantagens</ScoreLabel>
+            <ScoreValue>{adv1}</ScoreValue>
+            <ScoreButtonContainer>
+              <ScoreButton onClick={() => setAdv1(adv1 + 1)}>+</ScoreButton>
+              <ScoreButton
+                onClick={() => setAdv1(adv1 - 1)}
+                disabled={adv1 === 0}
+              >
+                -
+              </ScoreButton>
+            </ScoreButtonContainer>
+          </Results>
+          {techniques.map((technique) =>
+            renderTechniqueButtons(technique, setScore1, score1)
+          )}
         </ScoreRow>
         <Results2>
-        <ScoreValue>{score2}</ScoreValue>
+          <ScoreValue>{score2}</ScoreValue>
+          <ScoreButtonContainer>
+            <ScoreButton onClick={() => setScore2(score2 + 1)}>+</ScoreButton>
+            <ScoreButton
+              onClick={() => setScore2(score2 - 1)}
+              disabled={score2 === 0}
+            >
+              -
+            </ScoreButton>
+          </ScoreButtonContainer>
         </Results2>
         <ScoreRow2>
-        <ScoreLabel>Competidor'2':</ScoreLabel>
-
-          {techniques.map((tech) => renderTechniqueButtons(tech, setScore2, score2))}
-          <ScoreButtonContainer>
-            <ScoreLabel>Vantagem:</ScoreLabel>
-            <ScoreButton onClick={() => setAdv2(adv2 + 1)}>+1</ScoreButton>
-            <ScoreLabel>{adv2}</ScoreLabel>
-          </ScoreButtonContainer>
-          <ScoreButtonContainer>
-            <ScoreLabel>Punição:</ScoreLabel>
-            <ScoreButton onClick={() => setPen2(pen2 + 1)}>+1</ScoreButton>
-            <ScoreLabel>{pen2}</ScoreLabel>
-          </ScoreButtonContainer>
+        <Results2>
+            <ScoreLabel>Punições</ScoreLabel>
+            <ScoreValue>{pen1}</ScoreValue>
+            <ScoreButtonContainer>
+              <ScoreButton onClick={() => setPen1(pen1 + 1)}>+</ScoreButton>
+              <ScoreButton
+                onClick={() => setPen1(pen1 - 1)}
+                disabled={pen1 === 0}
+              >
+                -
+              </ScoreButton>
+            </ScoreButtonContainer>
+          </Results2>
+          
+          {techniques.map((technique) =>
+            renderTechniqueButtons(technique, setScore2, score2)
+          )}
         </ScoreRow2>
+       
+        <ScoreRow3>
+        </ScoreRow3>
 
         <ProgressBarContainer>
-          <ProgressBar width={totalScore === 0 ? 0 : (score1 / totalScore) * 100} />
-          <ProgressBar width={totalScore === 0 ? 0 : (score2 / totalScore) * 100} />
+        <ProgressBar
+            width={totalScore === 0 ? 0 : (score1 / totalScore) * 100}
+          />
+          <ProgressBar
+            width={totalScore === 0 ? 0 : (score2 / totalScore) * 100}
+          />
         </ProgressBarContainer>
+
         <ResetButton
           onClick={() => {
             setScore1(0);
             setScore2(0);
             setAdv1(0);
-            setAdv2(0);
             setPen1(0);
-            setPen2(0);
           }}
         >
           Resetar Placar
         </ResetButton>
-        <Nave />
       </ScoreboardContainer>
-      </Body>
-        );
-      };
+      <Nave></Nave>
+    </Body>
+  );
+};
 
 export default Scoreboard;
