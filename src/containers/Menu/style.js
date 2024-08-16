@@ -97,8 +97,8 @@ export const CircleContainer = styled.div`
 `;
 
 export const Circle = styled(Link)`
-  width: 50px;
-  height: 50px;
+  width: 90px;
+  height: 80px;
   background-color: rgba(0, 123, 255, 0.3);
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -106,6 +106,7 @@ export const Circle = styled(Link)`
 display: flex;
 justify-content: center;
 align-items: center;
+margin-bottom: 30px;
 
   &:hover {
     background-color: #2980b9;
@@ -113,13 +114,13 @@ align-items: center;
   }
 
   @media (max-width: 768px) {
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
   }
 
   @media (max-width: 480px) {
-    width: 35px;
-    height: 35px;
+    width: 80px;
+    height: 80px;
   }
 `;
 
@@ -133,8 +134,8 @@ export const Button = styled(Link)`
   border-radius: 12px;
   padding: 0;
   text-decoration: none;
-  width: 200px;
-  height: 180px;
+  width: 180px;
+  height: 220px;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   overflow-x: 0;
   position: relative;
@@ -184,17 +185,19 @@ export const IntroText = styled.p`
   background-color:rgba(0, 123, 255, 0.3) ;
   border-radius:20px;
   padding: 10px;
+  margin-bottom: 30px;
+
 
   @media (max-width: 768px) {
     font-size: 16px;
     max-width: 80%;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
   }
 
   @media (max-width: 480px) {
     font-size: 14px;
     max-width: 80%;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 
   }
 `;

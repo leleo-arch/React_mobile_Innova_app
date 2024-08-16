@@ -6,7 +6,7 @@ import Cont from '../Placar/Contador';
 const Body = styled.div`
   background-color: black;
   width: 100%;
-  height: 138vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,6 +28,7 @@ const ScoreboardContainer = styled.div`
   max-width: 400px;
   text-align: center;
   box-sizing: border-box;
+  gap:30px;
 
   @media (min-width: 768px) {
     padding: 20px;
@@ -59,6 +60,7 @@ const Instructions = styled.p`
   font-size: 0.75rem;
   color: #ecf0f1;
   margin-bottom: 15px;
+  
 
   @media (min-width: 768px) {
     font-size: 0.875rem;
@@ -71,15 +73,21 @@ const Instructions = styled.p`
 
 const ScoreRow = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   width: 100%;
   margin: 8px 0;
+  overflow-y: auto;
+  
+  gap:25px;
+
+  
 
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
     margin: 15px 0;
+    overflow-x: auto;
   }
 `;
 
@@ -177,7 +185,7 @@ const ResetButton = styled.button`
 const ProgressBarContainer = styled.div`
   width: 100%;
   height: 8px;
-  background: #95a5a6;
+  background: red;
   border-radius: 4px;
   margin-top: 15px;
   overflow: hidden;
@@ -188,6 +196,8 @@ const ProgressBar = styled.div`
   width: ${(props) => props.width}%;
   background: #3498db;
   transition: width 0.3s ease;
+  overflow: hidden;
+
 `;
 
 const techniques = [
