@@ -6,7 +6,7 @@ import Cont from '../Placar/Contador';
 const Body = styled.div`
   background-color: black;
   width: 100%;
-  height: 100vh;
+  height: 125vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,16 +76,40 @@ const ScoreRow = styled.div`
   flex-direction: row;
   align-items: center;
   width: 100%;
-  margin: 8px 0;
-  overflow-y: auto;
+  height: 90%;
+  margin: 6px 10px;
+  overflow-x: auto;
+  border: 1px solid #3498db;
+  border-radius: 0px;
+padding: 23px;
+  gap:40px;
+
   
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    margin: 15px 0;
+    overflow-x: auto;
+  }
+`;
+
+const ScoreRow2 = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin: 6px 0;
+  overflow-x: auto;
+  border: 1px solid red;
+border-radius: 20px;
+border-radius: 0px;
+padding: 23px;
   gap:25px;
 
   
 
   @media (min-width: 768px) {
     flex-direction: row;
-    justify-content: space-between;
     margin: 15px 0;
     overflow-x: auto;
   }
@@ -95,6 +119,7 @@ const ScoreLabel = styled.div`
   font-size: 1rem;
   color: #ecf0f1;
   margin-bottom: 5px;
+  
 
   @media (min-width: 768px) {
     font-size: 1.25rem;
@@ -108,8 +133,9 @@ const ScoreLabel = styled.div`
 
 const ScoreValue = styled.div`
   font-size: 1.5rem;
-  color: #3498db;
+  color: #fff;
   margin-bottom: 5px;
+
 
   @media (min-width: 768px) {
     font-size: 1.75rem;
@@ -191,6 +217,29 @@ const ProgressBarContainer = styled.div`
   overflow: hidden;
 `;
 
+
+const Results= styled.div`
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  border: 2px solid #3498db;
+
+  padding: 10px;
+`;
+
+const Results2= styled.div`
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  border: 2px solid red;
+
+  padding: 10px;
+`;
+
+
+
 const ProgressBar = styled.div`
   height: 100%;
   width: ${(props) => props.width}%;
@@ -232,9 +281,15 @@ const Scoreboard = () => {
         <ScoreboardTitle>Placar de Jiu-Jitsu</ScoreboardTitle>
         <Instructions>Adicione ou remova pontos para cada técnica. Registre vantagens e punições.</Instructions>
         <Cont></Cont>
-        <ScoreRow>
-          <ScoreLabel>Competidor 1:</ScoreLabel>
+        
+        <Results>
           <ScoreValue>{score1}</ScoreValue>
+          </Results>
+        
+        <ScoreRow>
+         
+        <ScoreLabel>Competidor'1':</ScoreLabel>
+
           {techniques.map((tech) => renderTechniqueButtons(tech, setScore1, score1))}
           <ScoreButtonContainer>
             <ScoreLabel>Vantagem:</ScoreLabel>
@@ -247,10 +302,12 @@ const Scoreboard = () => {
             <ScoreLabel>{pen1}</ScoreLabel>
           </ScoreButtonContainer>
         </ScoreRow>
+        <Results2>
+        <ScoreValue>{score2}</ScoreValue>
+        </Results2>
+        <ScoreRow2>
+        <ScoreLabel>Competidor'2':</ScoreLabel>
 
-        <ScoreRow>
-          <ScoreLabel>Competidor 2:</ScoreLabel>
-          <ScoreValue>{score2}</ScoreValue>
           {techniques.map((tech) => renderTechniqueButtons(tech, setScore2, score2))}
           <ScoreButtonContainer>
             <ScoreLabel>Vantagem:</ScoreLabel>
@@ -262,7 +319,7 @@ const Scoreboard = () => {
             <ScoreButton onClick={() => setPen2(pen2 + 1)}>+1</ScoreButton>
             <ScoreLabel>{pen2}</ScoreLabel>
           </ScoreButtonContainer>
-        </ScoreRow>
+        </ScoreRow2>
 
         <ProgressBarContainer>
           <ProgressBar width={totalScore === 0 ? 0 : (score1 / totalScore) * 100} />
