@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Nave from "../Nave";
 import Cont from "../Placar/Contador";
@@ -256,7 +256,31 @@ const Scoreboard = () => {
   const [pen3, setPen3] = useState(0);
   const [pen4, setPen4] = useState(0);
 
+  // Effect to load state from localStorage
+  useEffect(() => {
+    const savedState = JSON.parse(localStorage.getItem("scoreboardState"));
+    if (savedState) {
+      setScore1(savedState.score1);
+      setScore2(savedState.score2);
+      setPen1(savedState.pen1);
+      setPen2(savedState.pen2);
+      setPen3(savedState.pen3);
+      setPen4(savedState.pen4);
+    }
+  }, []);
 
+  // Effect to save state to localStorage
+  useEffect(() => {
+    const stateToSave = {
+      score1,
+      score2,
+      pen1,
+      pen2,
+      pen3,
+      pen4
+    };
+    localStorage.setItem("scoreboardState", JSON.stringify(stateToSave));
+  }, [score1, score2, pen1, pen2, pen3, pen4]);
 
   const totalScore = score1 + score2;
 
@@ -290,7 +314,7 @@ const Scoreboard = () => {
           <ScoreButtonContainer>
             <SmallButton2 background="green" onClick={() => setPen1(pen1 + 1)}>Van {pen1} </SmallButton2>
             <SmallButton onClick={() => setPen3(pen3 - 1)} disabled={pen3 === -100}>
-            Puni {pen3}
+              Puni {pen3}
             </SmallButton>
           </ScoreButtonContainer>
         </Results>
@@ -302,18 +326,18 @@ const Scoreboard = () => {
         </ScoreRow>
 
         <Results>
-      <ScoreValue>{score2}</ScoreValue>
+          <ScoreValue>{score2}</ScoreValue>
 
           <ScoreButtonContainer>
             <ScoreButton2 onClick={() => setScore2(score2 + 1)}>+</ScoreButton2>
-            <ScoreButton2 onClick={() => setScore2(score2 - 1)} disabled={score1 === -100}>
+            <ScoreButton2 onClick={() => setScore2(score2 - 1)} disabled={score2 === -1000}>
               -
             </ScoreButton2>
           </ScoreButtonContainer>
           <ScoreButtonContainer>
             <SmallButton2 background="green" onClick={() => setPen2(pen2 + 1)}>Van {pen2}</SmallButton2>
-            <SmallButton onClick={() => setPen4(pen4 - 1)} disabled={pen4 === -100}>
-            Puni {pen4}
+            <SmallButton onClick={() => setPen4(pen4 - 1)} disabled={pen4 === -1000}>
+              Puni {pen4}
             </SmallButton>
           </ScoreButtonContainer>
         </Results>
