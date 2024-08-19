@@ -63,6 +63,7 @@ const Label = styled.label`
   font-weight: bold;
   display: block;
   margin-bottom: 5px;
+  margin-bottom: 10px;
 `;
 
 const Input = styled.input`
