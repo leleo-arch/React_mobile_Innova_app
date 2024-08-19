@@ -49,7 +49,7 @@ const Button = styled.button`
   padding: 8px 16px;
   cursor: pointer;
   border-radius: 26px;
-  font-size: 0.55rem;
+  font-size: 0.54srem;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
