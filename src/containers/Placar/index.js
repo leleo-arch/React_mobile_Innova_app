@@ -7,13 +7,20 @@ import Cont from "../Placar/Contador";
 const Body = styled.div`
   background-color: black;
   width: 100%;
-  height: 185vh;
+  height: 150vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
   box-sizing: border-box;
   gap: 25px;
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
 `;
 
 const ScoreboardContainer = styled.div`

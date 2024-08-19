@@ -7,7 +7,6 @@ const TimerContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 10px;
-  border: 2px solid #3498db;
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.8);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
@@ -49,8 +48,8 @@ const Button = styled.button`
   border: none;
   padding: 8px 16px;
   cursor: pointer;
-  border-radius: 6px;
-  font-size: 0.40rem;
+  border-radius: 26px;
+  font-size: 0.55rem;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {

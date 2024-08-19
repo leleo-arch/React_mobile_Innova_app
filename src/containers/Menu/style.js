@@ -8,9 +8,15 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 105vh;
+  min-height: 115vh;
   padding: 20px;
   background-color: black;
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
   @media (max-width: 768px) {
     padding: 0;
