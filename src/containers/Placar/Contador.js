@@ -46,10 +46,10 @@ const Button = styled.button`
   background-color: #3498db;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 5px;
   cursor: pointer;
-  border-radius: 26px;
-  font-size: 0.54srem;
+  border-radius: 20px;
+  font-size: 10px;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
