@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
-import Peoples from "../../assets/logoinnocva.png";
+import NavBar from '../Nave/index';
+
 
 
 const Container = styled.div`
@@ -10,6 +11,8 @@ const Container = styled.div`
   justify-content: center;
   min-height: 100vh;
   padding: 20px;
+  color: white;
+  
   background-color: black;
 `;
 
@@ -22,25 +25,16 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: solid 2px #ffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: #fff;
-  overflow-y: auto;
+  background-color: rgba(0, 123, 255, 0.1);
+    overflow-y: auto;
 `;
 
 const Heading = styled.h1`
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
-`;
-
-const Imagem = styled.img`
-  width: 20%;
-  margin-bottom: 20px;
-  border-radius: 20px;
-
-  @media only screen and (max-width: 700px) {
-    width: 50%;
-  }
+  color: white;
 `;
 
 const FormContainer = styled.div`
@@ -50,10 +44,11 @@ const FormContainer = styled.div`
   margin-bottom: 20px;
   border-radius: 20px;
   padding: 20px;
-  background-color: #e9ecef;
-  width: 100%;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-`;
+  background-color: black;
+  width: 90%;
+  border: solid 2px #ffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 123, 255, 0.1);`;
 
 const InputGroup = styled.div`
   margin-bottom: 15px;
@@ -74,18 +69,20 @@ const Input = styled.input`
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 25px;
   width: 100%;
   box-sizing: border-box;
 `;
 
 const Select = styled.select`
-  padding: 10px;
+  padding: 14px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
   box-sizing: border-box;
+  border-radius: 25px;
+
 `;
 
 const Button = styled.button`
@@ -113,10 +110,11 @@ const StudentList = styled.div`
 const StudentItem = styled.div`
   border: 1px solid #ccc;
   border-radius: 10px;
-  padding: 15px;
+  padding: 25px;
+  border: solid 2px #fff;
   margin-bottom: 20px;
   position: relative;
-  background-color: #fff;
+  background-color: black;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
@@ -145,6 +143,8 @@ const SearchInput = styled.input`
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
+  border-radius: 25px;
+
   box-sizing: border-box;
   margin-bottom: 20px;
 `;
@@ -212,10 +212,11 @@ const JiuJitsuPage = () => {
 
   return (
     <Container>
-      <Imagem alt="img-pessoas" src={Peoples} />
-      <Heading>Controle de Presença e Evolução</Heading>
       <FormContainer>
+      <Heading>Controle de Alunos</Heading>
+
         <InputGroup>
+        
           <Label htmlFor="name">Nome:</Label>
           <Input
             id="name"
@@ -352,7 +353,10 @@ const JiuJitsuPage = () => {
             </StudentItem>
           ))}
         </StudentList>
+
       </StyledContainer>
+      <NavBar></NavBar>
+
     </Container>
   );
 };

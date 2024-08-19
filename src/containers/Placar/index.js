@@ -7,7 +7,7 @@ import Cont from "../Placar/Contador";
 const Body = styled.div`
   background-color: black;
   width: 100%;
-  height: 150vh;
+  height: 155vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -326,7 +326,7 @@ const Scoreboard = () => {
           </ScoreButtonContainer>
         </Results>
 
-        <ScoreRow borderColor="blue">
+        <ScoreRow borderColor="#3498db">
           {techniques.map((technique) =>
             renderTechniqueButtons(technique, setScore1, score1)
           )}
