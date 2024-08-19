@@ -107,6 +107,7 @@ export const Circle = styled(Link)`
   height: 80px;
   background-color: rgba(0, 123, 255, 0.3);
   border-radius: 50%;
+  border: solid 2px #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, transform 0.3s ease;
 display: flex;
