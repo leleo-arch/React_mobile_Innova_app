@@ -50,7 +50,7 @@ const Button = styled.button`
   padding: 8px 16px;
   cursor: pointer;
   border-radius: 6px;
-  font-size: 6px;
+  font-size: 0.40rem;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
@@ -74,6 +74,25 @@ const Timer = () => {
   const [running, setRunning] = useState(false);
   const [countdown, setCountdown] = useState(null);
   const [countdownRunning, setCountdownRunning] = useState(false);
+
+  useEffect(() => {
+    const savedState = JSON.parse(localStorage.getItem('timerState'));
+    if (savedState) {
+      setTime(savedState.time);
+      setRunning(savedState.running);
+      setCountdown(savedState.countdown);
+      setCountdownRunning(savedState.countdownRunning);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('timerState', JSON.stringify({
+      time,
+      running,
+      countdown,
+      countdownRunning
+    }));
+  }, [time, running, countdown, countdownRunning]);
 
   useEffect(() => {
     let interval;
