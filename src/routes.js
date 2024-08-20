@@ -14,10 +14,6 @@ import timer  from "./containers/Timer";
 import placar from "./containers/Placar";
 
 
-
-
-
-
 function Routes() {
 
     return(

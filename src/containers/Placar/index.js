@@ -7,13 +7,14 @@ import Cont from "../Placar/Contador";
 const Body = styled.div`
   background-color: black;
   width: 100%;
-  height: 155vh;
+  min-height: 115vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
   box-sizing: border-box;
-  gap: 25px;
+  gap: 15px;
+  overflow-y: auto;
 
   * {
     margin: 0;

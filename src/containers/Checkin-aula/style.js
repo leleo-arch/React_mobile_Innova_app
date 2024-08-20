@@ -1,5 +1,4 @@
 import styled from "styled-components";
-//import background from "./assets/bg-image.svg"
 
 export const Conteiner = styled.div `
 

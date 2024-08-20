@@ -1,26 +1,18 @@
-// src/contexts/LoadingContext.js
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 
 const LoadingContext = createContext();
+
+export const useLoading = () => useContext(LoadingContext);
 
 export const LoadingProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (loading) {
-      const timer = setTimeout(() => {
-        setLoading(false);
-      }, 1000); // Define o tempo de carregamento para 1 segundo
-
-      return () => clearTimeout(timer);
-    }
-  }, [loading, setLoading]);
+  const showLoading = () => setLoading(true);
+  const hideLoading = () => setLoading(false);
 
   return (
-    <LoadingContext.Provider value={{ loading, setLoading }}>
+    <LoadingContext.Provider value={{ loading, showLoading, hideLoading }}>
       {children}
     </LoadingContext.Provider>
   );
 };
-
-export const useLoading = () => useContext(LoadingContext);

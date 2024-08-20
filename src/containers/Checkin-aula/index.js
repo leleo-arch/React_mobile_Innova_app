@@ -173,10 +173,6 @@ const P = styled.p`
 `;
 
 
-
-// Certifique-se de que todos os componentes personalizados usados aqui estão definidos/importados corretamente.
-// Isso inclui Divcontainer, Imagem, Container, Calendar, ClassListContainer, ClassList, ClassItem, ClassInfo, TimeInput, DeleteButton, Button, e P.
-
 const JiuJitsuCheckIn = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [classes, setClasses] = useState(() => {

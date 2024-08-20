@@ -91,7 +91,7 @@ const Button = styled.button`
   background-color: ${(props) => props.bgColor || "#007bff"};
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
   font-size: 14px;
   font-weight: bold;

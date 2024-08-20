@@ -8,7 +8,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 115vh;
+  min-height: 100vh;
   padding: 20px;
   background-color: black;
 
@@ -93,11 +93,11 @@ export const ButtonGallery = styled.div`
 export const CircleContainer = styled.div`
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   margin-bottom: 20px;
 
   @media (max-width: 768px) {
-    gap: 15px;
+    gap: 10px;
     margin-bottom: 15px;
   }
 `;
