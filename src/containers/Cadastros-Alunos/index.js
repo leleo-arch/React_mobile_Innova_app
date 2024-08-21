@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 import NavBar from '../Nave/index';
+import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
 
 
 
@@ -12,8 +13,11 @@ const Container = styled.div`
   min-height: 100vh;
   padding: 20px;
   color: white;
-  
   background-color: black;
+  background-image: url(${backgroundImg});  // Define a imagem de fundo
+  background-size: cover;  // Faz com que a imagem cubra todo o contêiner
+  background-position: center;  // Centraliza a imagem
+  background-repeat: no-repeat;  // Evita que a imagem se repita
 `;
 
 const StyledContainer = styled.div`
@@ -25,9 +29,7 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 2px #ffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 123, 255, 0.1);
+  box-shadow: 14px 14px 14px 14px rgba(0, 0, 0, 0.25);
     overflow-y: auto;
 `;
 
@@ -44,11 +46,9 @@ const FormContainer = styled.div`
   margin-bottom: 20px;
   border-radius: 20px;
   padding: 20px;
-  background-color: black;
   width: 90%;
-  border: solid 2px #ffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 123, 255, 0.1);`;
+  box-shadow: 14px 14px 14px 14px rgba(0, 0, 0, 0.25);
+`;
 
 const InputGroup = styled.div`
   margin-bottom: 15px;
@@ -69,7 +69,6 @@ const Label = styled.label`
 const Input = styled.input`
   padding: 10px;
   font-size: 14px;
-  border: 1px solid #ccc;
   border-radius: 25px;
   width: 100%;
   box-sizing: border-box;
@@ -78,7 +77,6 @@ const Input = styled.input`
 const Select = styled.select`
   padding: 14px;
   font-size: 14px;
-  border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
   box-sizing: border-box;
@@ -112,11 +110,9 @@ const StudentItem = styled.div`
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 25px;
-  border: solid 2px #fff;
   margin-bottom: 20px;
   position: relative;
-  background-color: black;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 12px 14px rgba(0, 0, 0, 0.1);
 `;
 
 const DeleteButton = styled.button`
@@ -141,7 +137,6 @@ const DeleteButton = styled.button`
 const SearchInput = styled.input`
   padding: 10px;
   font-size: 14px;
-  border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
   border-radius: 25px;

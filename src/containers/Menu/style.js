@@ -26,6 +26,14 @@ export const Container = styled.div`
     width: 100%;
     height: auto;
   }
+
+
+  @media (min-width: 375px) {
+    padding: 20px;
+    max-width: 500px;
+    max-height: 150vh;
+
+  }
 `;
 
 export const Image = styled.img`

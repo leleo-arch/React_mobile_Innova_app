@@ -6,7 +6,7 @@ const TimerContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 11px;
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.8);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
@@ -46,7 +46,7 @@ const Button = styled.button`
   background-color: #3498db;
   color: white;
   border: none;
-  padding: 20px;
+  padding: 5px;
   cursor: pointer;
   border-radius: 20px;
   font-size: 10px;

@@ -9,7 +9,7 @@ import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
 const Body = styled.div`
   background-color: black;
   width: 100%;
-  min-height: 115vh;
+  min-height: 110vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,6 +26,14 @@ const Body = styled.div`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  @media (max-width: 375px) {
+    padding: 20px;
+    max-width: 400px;
+    min-height: 150vh;
+
+    
   }
   
 `;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
-import Peoples from "../../assets/logoinnocva.png";
+import Peoples from "../../assets/logoinnocvaq.png";
 import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
 
 // Estilos com styled-components

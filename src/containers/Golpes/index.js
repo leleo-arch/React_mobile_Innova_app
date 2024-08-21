@@ -46,7 +46,8 @@ const SearchContainer = styled.div`
 const SearchInput = styled.input`
   flex-grow: 1;
   padding: 10px;
-  border: 1px solid #ced4da;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+
   border-radius: 25px;
   outline: none;
 `;
@@ -71,10 +72,9 @@ const MoveListContainer = styled.ul`
 
 const MoveItemContainer = styled.li`
   margin-bottom: 20px;
-  background-color: rgba(0, 123, 255, 0.1);
   padding: 20px;
   border-radius: 25px;
- border: solid 2px white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
   transition: transform 0.2s;
@@ -114,14 +114,16 @@ const Form = styled.form`
   flex-direction: column;
   width: 100%;
   margin-top: 20px;
+  
 `;
 
 const FormInput = styled.input`
   margin-bottom: 10px;
   padding: 10px;
-  border: 1px solid #ced4da;
   border-radius: 25px;
   outline: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+
 `;
 
 const FormButton = styled.button`
@@ -258,10 +260,8 @@ const JiuJitsuMoves = () => {
             <FaSearch />
           </SearchButton>
         </SearchContainer>
-        <p>Sua lista de golpes aqui:</p>
         <MoveList moves={filteredMoves} expanded={expanded} toggleExpand={toggleExpand} Delete={handleDeleteExercise}
         /> 
-       <p>Salve seu golpe aqui:</p>
         <Form onSubmit={handleNewMoveSubmit}>
           <FormInput
             type="text"
