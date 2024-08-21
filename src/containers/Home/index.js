@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
-import Peoples from "../../assets/logoinnocvaq.png";
+import Peoples from "../../assets/logo.png";
 import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
 
 // Estilos com styled-components
@@ -18,7 +18,6 @@ const AppContainer = styled.div`
 `;
 
 const HeaderContainer = styled.header`
-  background-color: black;
   padding: 10px;
   color: white;
   text-align: center;
@@ -35,9 +34,8 @@ const LoginFormContainer = styled.div`
   width: 300px;
   margin: 50px auto;
   padding: 20px;
-  border-radius: 5px;
-  background-color: black;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  box-shadow: 10 10 10 10px rgba(0, 0, 0, 0.1);
 `;
 
 const Subtitle = styled.h2`
@@ -124,10 +122,10 @@ const Spinner = styled.div`
 `;
 
  const Image = styled.img`
-  width: 270px;
+  width: 250px;
   height: auto;
   margin-bottom: 0px;
-  border-radius: 20px;
+  border-radius: 66px;
 `;
 
 const App = () => {
