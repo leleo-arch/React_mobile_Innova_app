@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import Peoples from "../../assets/logoinnocva.png";
-
+import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
 
 // Estilos com styled-components
 const AppContainer = styled.div`
@@ -11,6 +11,10 @@ const AppContainer = styled.div`
   background-color: black;
   min-height: 100vh;
   padding: 20px;
+  background-image: url(${backgroundImg});  // Define a imagem de fundo
+  background-size: cover;  // Faz com que a imagem cubra todo o contêiner
+  background-position: center;  // Centraliza a imagem
+  background-repeat: no-repeat;  // Evita que a imagem se repita
 `;
 
 const HeaderContainer = styled.header`

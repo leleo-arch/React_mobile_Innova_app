@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Nave from "../Nave";
 import Cont from "../Placar/Contador";
+import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
+
 
 // Styled Components
 const Body = styled.div`
@@ -15,6 +17,10 @@ const Body = styled.div`
   box-sizing: border-box;
   gap: 15px;
   overflow-y: auto;
+  background-image: url(${backgroundImg});  // Define a imagem de fundo
+  background-size: cover;  // Faz com que a imagem cubra todo o contêiner
+  background-position: center;  // Centraliza a imagem
+  background-repeat: no-repeat;  // Evita que a imagem se repita
 
   * {
     margin: 0;
@@ -30,7 +36,6 @@ const ScoreboardContainer = styled.div`
   align-items: center;
   padding: 15px;
   border-radius: 10px;
-  background: #000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
   width: 100%;
   max-width: 400px;

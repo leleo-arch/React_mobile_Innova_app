@@ -1,15 +1,12 @@
 
 import React from 'react';
 import NavBar from '../Nave/index'; 
-import CheckinImage from '../../assets/checkin.png.jpg'; 
 import CheckinImage2 from '../../assets/png2.jpg'; 
 import CheckinImage3 from '../../assets/png3.jpg'; 
 import relogio from '../../assets/timer.png'; 
 import Placar from '../../assets/punch.png'; 
 import Controle from '../../assets/controle.png'; 
 import Noticias from '../../assets/noticias.png'; 
-
-
 
 
 
@@ -21,7 +18,9 @@ import {
   Button,
   IntroText,
   CircleContainer,
+  ContainerItems2,
   Circle,
+  IntroText2,
   Tempo
 
 } from "./style";
@@ -30,6 +29,7 @@ const App = () => {
   return (
    
     <Container>
+
       <ContainerItems>
         <Title>Innova</Title>
         <IntroText>
@@ -38,7 +38,7 @@ const App = () => {
         <CircleContainer>
           
         <Circle to="/Timer"> 
-        <Tempo src={relogio} alt="Desafios"/>
+        <Tempo src={relogio} alt="Desafios"/> 
          </Circle > 
 
           <Circle to="/Placar">
@@ -54,9 +54,20 @@ const App = () => {
          </Circle > 
 
         </CircleContainer>
+
+
+        <ContainerItems2>
+    <IntroText2>Cronômetro</IntroText2>
+    <IntroText2>Placar</IntroText2>
+    <IntroText2>Presença</IntroText2>
+    <IntroText2>Notícias</IntroText2>
+
+  </ContainerItems2>
+
+
       <ButtonGallery>
           <Button to="/Cadastros-Alunos">
-          <img src={CheckinImage} alt="Cadastro"/>
+          <img src={CheckinImage3} alt="Cadastro"/>
           </Button>
           <Button to="/Desafios">
           <img src={CheckinImage2} alt="Desafios"/>
@@ -65,12 +76,12 @@ const App = () => {
           <img src={CheckinImage3} alt="Comunidade"/>
           </Button>
           <Button to="/Timer">
-          <img src={CheckinImage} alt="Timer"/>
+          <img src={CheckinImage2} alt="Timer"/>
           </Button>
         </ButtonGallery>
         <NavBar />
       </ContainerItems>
-
+      
     </Container>
   );
 };

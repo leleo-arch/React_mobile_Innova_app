@@ -2,6 +2,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import NavBar from '../Nave/index'; 
+import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
+
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -19,6 +21,10 @@ const GlobalStyle = createGlobalStyle`
     height: 100vh;
     margin: 0;
     overflow: hidden; 
+    background-image: url(${backgroundImg});  // Define a imagem de fundo
+  background-size: cover;  // Faz com que a imagem cubra todo o contêiner
+  background-position: center;  // Centraliza a imagem
+  background-repeat: no-repeat;  // Evita que a imagem se repita
   }
 `;
 

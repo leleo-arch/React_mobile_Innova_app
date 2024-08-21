@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react';
 import styled from 'styled-components';
 import { FaSearch, FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import NavBar from '../Nave/index'; // Certifique-se de que o caminho para o NavBar esteja correto
+import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
 
 const Body = styled.div`
   display: flex;
@@ -13,6 +14,10 @@ const Body = styled.div`
   background-color:black;
   font-family: 'Arial', sans-serif;
   margin-top: -130px;
+  background-image: url(${backgroundImg});  // Define a imagem de fundo
+  background-size: cover;  // Faz com que a imagem cubra todo o contêiner
+  background-position: center;  // Centraliza a imagem
+  background-repeat: no-repeat;  // Evita que a imagem se repita
 `;
 
 const Container = styled.div`

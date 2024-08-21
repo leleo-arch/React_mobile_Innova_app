@@ -1,7 +1,7 @@
 // src/pages/style.js
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
+import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
 
 export const Container = styled.div`
   display: flex;
@@ -10,7 +10,10 @@ export const Container = styled.div`
   justify-content: center;
   min-height: 100vh;
   padding: 20px;
-  background-color: black;
+  background-image: url(${backgroundImg});  // Define a imagem de fundo
+  background-size: cover;  // Faz com que a imagem cubra todo o contêiner
+  background-position: center;  // Centraliza a imagem
+  background-repeat: no-repeat;  // Evita que a imagem se repita
 
   * {
     margin: 0;
@@ -32,11 +35,15 @@ export const Image = styled.img`
   border-radius: 20px;
 `;
 export const Tempo = styled.img`
-  width: 25px;
-  height: 23px;
+  width: 35px;
+  height: 35px;
+`;
 
-
-
+export const Imagem = styled.img`
+  width: 270px;
+  height: auto;
+  margin-bottom: 0px;
+  border-radius: 20px;
 `;
 
 export const ContainerItems = styled.div`
@@ -45,6 +52,19 @@ export const ContainerItems = styled.div`
   align-items: center;
   width: 100%;
 `;
+
+export const ContainerItems2 = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  gap:49px;
+  margin-top: -28px;
+  margin-bottom: 50px;
+  margin-right: 13px;
+`;
+
 
 export const Title = styled.h1`
   font-family: 'Roboto', sans-serif;
@@ -97,7 +117,7 @@ export const CircleContainer = styled.div`
   margin-bottom: 20px;
 
   @media (max-width: 768px) {
-    gap: 10px;
+    gap: 16px;
     margin-bottom: 15px;
   }
 `;
@@ -105,7 +125,7 @@ export const CircleContainer = styled.div`
 export const Circle = styled(Link)`
   width: 90px;
   height: 80px;
-  background-color: rgba(0, 123, 255, 0.3);
+  background-color: #00AAFF;
   border-radius: 50%;
   border: solid 2px #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -154,6 +174,7 @@ export const Button = styled(Link)`
     height: 300px;
     object-fit: cover;
     border-radius: 10px;
+color:black;
   }
 
   span {
@@ -207,4 +228,13 @@ export const IntroText = styled.p`
     margin-bottom: 60px;
 
   }
+
+
+`;
+
+export const IntroText2 = styled.p`
+color: white;
+font-size: 10px;
+
+
 `;

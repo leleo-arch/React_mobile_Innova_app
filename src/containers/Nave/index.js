@@ -5,6 +5,8 @@ import CheckinImage from '../../assets/sport.png';
 import CheckinImage1 from '../../assets/home-button_9073243.png';
 import CheckinImage2 from '../../assets/check1.png';
 import CheckinImage3 from '../../assets/check_14293370.png';
+import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
+
 
 const bounce = keyframes`
   0%, 20%, 50%, 80%, 100% {
@@ -38,14 +40,18 @@ const BottomNavContainer = styled.div`
   padding: 8px 16px;
   position: fixed;
   width: 100%;
-  height: 60px;
+  height: 62px;
   bottom: 0;
   z-index: 1000;
   box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
   box-sizing: border-box;
-  border: 1px solid #3498db;
+  border: 1px solid #fff;
   border-radius: 20px 20px 0px 0px;
+  background-image: url(${backgroundImg});  // Define a imagem de fundo
+  background-size: cover;  // Faz com que a imagem cubra todo o contêiner
+  background-position: center;  // Centraliza a imagem
+  background-repeat: no-repeat;  // Evita que a imagem se repita
 
   @media (max-width: 768px) {
     padding: 6px 12px;

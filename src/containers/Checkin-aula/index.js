@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Calendar from './Calendar';
 import NavBar from '../Nave/index';
-
+import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
 
 // Styled Components
 const Container = styled.div`
@@ -12,6 +12,8 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
+
+
 
 
   @media only screen and (max-width: 900px) {
@@ -152,8 +154,10 @@ const Divcontainer = styled.div`
   justify-content: center;
   min-height: 100vh;
   padding: 15px;
-  background-color: black;
-  transition: opacity 0.5s ease-in-out;
+  background-image: url(${backgroundImg});  // Define a imagem de fundo
+  background-size: cover;  // Faz com que a imagem cubra todo o contêiner
+  background-position: center;  // Centraliza a imagem
+  background-repeat: no-repeat;  // Evita que a imagem se repita  transition: opacity 0.5s ease-in-out;
   
 
   @media only screen and (max-width: 900px) {
