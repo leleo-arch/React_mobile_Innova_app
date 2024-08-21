@@ -29,7 +29,6 @@ export const Container = styled.div`
 
 
   @media (min-width: 375px) {
-    padding: 20px;
     max-width: 500px;
     max-height: 150vh;
 
