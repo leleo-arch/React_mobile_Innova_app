@@ -162,27 +162,26 @@ export const Button = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
- background-color: white;
   color: white;
-  border: 2px solid #3498db;
-  border-radius: 12px;
+  border-radius: 10px;
+
   padding: 0;
   text-decoration: none;
-  width: 180px;
-  height: 220px;
+ 
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   overflow-x: 0;
   position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 1px 2px rgba(0, 0, 0, 0.25);
 
   
   img {
    width: 200px;
-    height: 300px;
+   opacity: 70%;
+    height: 260px;
+    box-shadow: 20 24 20 20px rgba(0, 0, 0, 0.9);
+
     object-fit: cover;
-    border-radius: 10px;
-color:black;
-  }
+    border-radius: 20px;  }
 
   span {
     position: absolute;

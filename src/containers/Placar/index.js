@@ -28,12 +28,18 @@ const Body = styled.div`
     box-sizing: border-box;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 380px) {
     padding: 20px;
     max-width: 400px;
-    min-height: 150vh;
+    min-height: 160vh;
 
-    
+  }
+
+  @media (max-width: 390px) {
+    padding: 20px;
+    max-width: 400px;
+    min-height: 140vh;
+
   }
   
 `;
@@ -97,7 +103,8 @@ const ScoreRow = styled.div`
   align-items: center;
   width: 100%;
   margin: 6px 0;
-  overflow-x: auto;
+  overflow-x: auto; 
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
   border: 1px solid ${(props) => props.borderColor};
   border-radius: 24px;
   padding: 23px;
