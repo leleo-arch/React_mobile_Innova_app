@@ -7,7 +7,7 @@ const SidebarContainer = styled.div`
   width: ${props => (props.isOpen ? '200px' : '0')};
   height: 100vh;
   background-color: #333;
-  padding: ${props => (props.isOpen ? '20px' : '0')};
+  padding: ${props => (props.isOpen ? '-20px' : '0')};
   position: fixed;
   border:solid 1px white;
   top: 0;
