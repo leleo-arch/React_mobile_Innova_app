@@ -77,9 +77,9 @@ const App = () => {
           <img src='https://cdn.discordapp.com/attachments/1274071230512894016/1276237487202762844/banner_controle_de_alunos.png?ex=66c8cc48&is=66c77ac8&hm=4c583313526fd439d5b35a77c143b3e7b28e74e01d3103bdf18fbb54725973e9&' alt="Desafios"/>
           </Button>
         </ButtonGallery>
-        <NavBar />
       </ContainerItems>
-      
+      <NavBar />
+
     </Container>
   );
 };

@@ -164,7 +164,6 @@ export const Button = styled(Link)`
   justify-content: center;
   color: white;
   border-radius: 10px;
-
   padding: 0;
   text-decoration: none;
  
@@ -177,7 +176,7 @@ export const Button = styled(Link)`
   img {
    width: 200px;
    opacity: 70%;
-    height: 260px;
+    height: 290px;
     box-shadow: 20 24 20 20px rgba(0, 0, 0, 0.9);
 
     object-fit: cover;

@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { FaSearch, FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import NavBar from '../Nave/index'; // Certifique-se de que o caminho para o NavBar esteja correto
 import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
+import backgroundImg2 from '../../assets/Banner.png';  // Importa a imagem de fundo
+
 
 const Body = styled.div`
   display: flex;
@@ -24,7 +26,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 15px;
   border-radius: 25px;
   width: 100%;
   max-width: 100%;
@@ -55,7 +57,7 @@ const SearchInput = styled.input`
 const SearchButton = styled.button`
   padding: 10px;
   border: none;
-  background-color: #007bff;
+  background-color: rgba(0, 123, 255, 0.1);
   color: white;
   border-radius: 25px;
   cursor: pointer;
@@ -79,6 +81,11 @@ const MoveItemContainer = styled.li`
   flex-direction: column;
   transition: transform 0.2s;
 align-items: center;
+background-image: url(${backgroundImg2});  // Define a imagem de fundo
+  background-size: 500px;  // Faz com que a imagem cubra todo o contêiner
+  background-position: center;  // Centraliza a imagem
+  background-repeat: no-repeat;  // Evita que a imagem se repita
+  opacity: 90%;
   &:hover {
     transform: scale(1.02);
   }
@@ -129,7 +136,7 @@ const FormInput = styled.input`
 const FormButton = styled.button`
   padding: 10px;
   border: none;
-  background-color: #004d99;
+  background-color: rgba(0, 123, 255, 0.1);
   color: white;
   border-radius: 25px;
   cursor: pointer;
@@ -139,7 +146,7 @@ const FormButton = styled.button`
 `;
 
 const DeleteButton = styled.button`
-    background-color: #004d99;
+  background-color: rgba(0, 123, 255, 0.1);
 
   color: #fff;
   border: none;

@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import NavBar from '../Nave/index'; 
 import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
+import backgroundImg2 from '../../assets/Banner.png';  // Importa a imagem de fundo
+
 
 
 const GlobalStyle = createGlobalStyle`
@@ -36,10 +38,13 @@ const TimerContainer = styled.div`
   padding: 20px;
   border: 3px solid #3498db;
   border-radius: 15px;
-  background: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+  background-image: url(${backgroundImg2});  // Define a imagem de fundo
+  background-size: 730px;  // Faz com que a imagem cubra todo o contêiner
+  background-position: center;  // Centraliza a imagem
+  background-repeat: no-repeat;  // Evita que a imagem se repita  transition: opacity 0.5s ease-in-out;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
   width: 90%;
-  max-width: 600px;
+  max-width: 700px;
   text-align: center;
   box-sizing: border-box;
   margin-left: 19px;
@@ -76,6 +81,7 @@ const ButtonContainer = styled.div`
   flex-direction: column;
   gap: 10px;
   justify-content: center;
+  align-items: center;
   margin-top: 20px;
 
   @media (min-width: 768px) {
@@ -90,6 +96,7 @@ const Button = styled.button`
   border: none;
   padding: 12px 24px;
   cursor: pointer;
+  width: 80%;
   border-radius: 28px;
   font-size: 1rem;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -198,15 +205,16 @@ const Timer = () => {
         <TimeDisplay>Relógio: {formatCurrentTime(currentTime)}</TimeDisplay>
         <TimeDisplay>Cronômetro: {formatTime(time)}</TimeDisplay>
         <TimeDisplay>Temporizador: {formatCountdown(countdown)}</TimeDisplay>
-        <ButtonContainer>
+        
+        <NavBar />
+      </TimerContainer>
+      <ButtonContainer>
           <Button onClick={() => setRunning(true)}>Iniciar Cronômetro</Button>
           <Button onClick={() => setRunning(false)}>Pausar Cronômetro</Button>
           <Button onClick={() => { setRunning(false); setTime(0); }}>Resetar Cronômetro</Button>
           <Button onClick={handleSetCountdown}>Definir Temporizador</Button>
           <Button onClick={() => setCountdownRunning(false)}>Parar Temporizador</Button>
         </ButtonContainer>
-        <NavBar />
-      </TimerContainer>
     </>
   );
 };

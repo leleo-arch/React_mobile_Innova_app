@@ -9,7 +9,7 @@ import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
 const Body = styled.div`
   background-color: black;
   width: 100%;
-  min-height: 110vh;
+  min-height: 113vh;
   display: flex;
   align-items: center;
   justify-content: center;

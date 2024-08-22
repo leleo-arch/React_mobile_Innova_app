@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Calendar from './Calendar';
 import NavBar from '../Nave/index';
 import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
+import backgroundImg2 from '../../assets/Banner.png';  // Importa a imagem de fundo
+
 
 // Styled Components
 const Container = styled.div`
@@ -48,6 +50,8 @@ const ClassListContainer = styled.div`
   border-radius: 20px;
   
 
+  
+
 
   &::-webkit-scrollbar {
     width: 5px;
@@ -72,6 +76,7 @@ const ClassList = styled.ul`
   background-color: rgba(128, 128, 128, 0.1);
 
 
+
 `;
 
 const DeleteButton = styled.button`
@@ -92,7 +97,7 @@ const TimeInput = styled.input`
   width: 90px;
   margin-left: 10px;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 25px;
   border: 1px solid #ccc;
 `;
 
@@ -102,7 +107,7 @@ const ClassItem = styled.li`
   color: white;
   text-align: center;
   font-family: "Roboto", sans-serif;
-  padding: 10px;
+  padding: 13px;
   width: 90%;
   background-color: ${({ selected }) => (selected ? 'rgba(0, 123, 255, 0.1)' : ';')};
   border-radius: 10px;
@@ -112,9 +117,22 @@ const ClassItem = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: start;
-  gap:0px;
+  gap:5px;
+  opacity: 80%;
+  background-image: url(${backgroundImg2});  // Define a imagem de fundo
+  background-size: 500px;  // Faz com que a imagem cubra todo o contêiner
+  background-position: center;  // Centraliza a imagem
+  background-repeat: no-repeat;  // Evita que a imagem se repita  transition: opacity 0.5s ease-in-out;
   
+  img {
+   width: 200px;
+   opacity: 70%;
+    height: 260px;
+    box-shadow: 20 24 20 20px rgba(0, 0, 0, 0.9);
 
+    object-fit: cover;
+    border-radius: 20px;  }
+    
   &:hover {
     background-color: ${({ selected }) => (selected ? '#3498db' : 'rgba(0, 123, 255, 0.1)')};
     transform: translateY(-5px);
@@ -246,7 +264,9 @@ const JiuJitsuCheckIn = () => {
       <Container>
       <P></P>
         <Calendar onSelectDate={setSelectedDate} />
-        <Button onClick={handleAddClass} disabled={!selectedDate}>Salvar Data</Button>
+        <Button onClick={handleAddClass} disabled={!selectedDate}>Salvar Data
+          
+        </Button>
         <P>Frequência:</P>
         <ClassListContainer>
           <ClassList>

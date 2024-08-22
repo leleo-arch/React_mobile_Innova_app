@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import NavBar from '../Nave/index'; // Certifique-se de que o caminho para o NavBar esteja correto
 import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
+import backgroundImg2 from '../../assets/Banner.png';  // Importa a imagem de fundo
+
 
 const Body = styled.div`
   display: flex;
@@ -94,6 +96,7 @@ const ExerciseList = styled.ul`
   padding: 0;
   width: 100%;
   margin-bottom: 20px;
+
 `;
 
 const ExerciseItem = styled.li`
@@ -105,6 +108,11 @@ const ExerciseItem = styled.li`
   background-color: rgba(0, 123, 255, 0.1);
   padding: 10px;
   border: 2px solid white;
+  background-image: url(${backgroundImg2});  // Define a imagem de fundo
+  background-size: 500px;  // Faz com que a imagem cubra todo o contêiner
+  background-position: center;  // Centraliza a imagem
+  background-repeat: no-repeat;  // Evita que a imagem se repita
+  opacity: 80%;
 
   border-radius: 25px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
