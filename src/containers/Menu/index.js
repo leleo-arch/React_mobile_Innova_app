@@ -5,6 +5,8 @@ import relogio from '../../assets/timer.png';
 import Placar from '../../assets/punch.png'; 
 import Controle from '../../assets/controle.png'; 
 import Noticias from '../../assets/noticias.png'; 
+import Home from '../../containers/Perfil'; 
+
 
 
 
@@ -27,7 +29,7 @@ const App = () => {
   return (
    
     <Container>
-
+     <Home></Home>
       <ContainerItems>
         <Title>Innova</Title>
         <IntroText>
@@ -78,7 +80,7 @@ const App = () => {
           </Button>
         </ButtonGallery>
       </ContainerItems>
-      <NavBar />
+      <NavBar/>
 
     </Container>
   );

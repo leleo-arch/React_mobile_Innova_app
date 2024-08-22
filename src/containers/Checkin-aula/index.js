@@ -48,10 +48,6 @@ const ClassListContainer = styled.div`
   margin-top: 10px;
   width: 100%;
   border-radius: 20px;
-  
-
-  
-
 
   &::-webkit-scrollbar {
     width: 5px;
@@ -124,14 +120,7 @@ const ClassItem = styled.li`
   background-position: center;  // Centraliza a imagem
   background-repeat: no-repeat;  // Evita que a imagem se repita  transition: opacity 0.5s ease-in-out;
   
-  img {
-   width: 200px;
-   opacity: 70%;
-    height: 260px;
-    box-shadow: 20 24 20 20px rgba(0, 0, 0, 0.9);
-
-    object-fit: cover;
-    border-radius: 20px;  }
+ 
     
   &:hover {
     background-color: ${({ selected }) => (selected ? '#3498db' : 'rgba(0, 123, 255, 0.1)')};

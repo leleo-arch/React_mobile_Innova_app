@@ -12,6 +12,8 @@ import golpes  from "./containers/Golpes";
 import comunidade  from "./containers/Comunidade";
 import timer  from "./containers/Timer";
 import placar from "./containers/Placar";
+import perfil from "./containers/Perfil";
+
 
 
 function Routes() {
@@ -31,6 +33,8 @@ function Routes() {
         <Route exact path="/Comunidade"component = {comunidade}/>
         <Route exact path="/Timer"component = {timer}/>
         <Route exact path="/Placar"component = {placar}/>
+        <Route exact path="/Perfil"component = {perfil}/>
+
         
     </Switch>
    </Router> 

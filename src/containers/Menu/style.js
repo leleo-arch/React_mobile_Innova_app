@@ -9,11 +9,13 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: 0px;
+  background-color: black;
   background-image: url(${backgroundImg});  // Define a imagem de fundo
   background-size: cover;  // Faz com que a imagem cubra todo o contêiner
   background-position: center;  // Centraliza a imagem
   background-repeat: no-repeat;  // Evita que a imagem se repita
+  
 
   * {
     margin: 0;
@@ -28,9 +30,8 @@ export const Container = styled.div`
   }
 
 
-  @media (min-width: 375px) {
-    max-width: 500px;
-    max-height: 150vh;
+  @media (max-width: 395px) {
+    max-height: 170vh;
 
   }
 `;
@@ -94,6 +95,8 @@ export const ButtonGallery = styled.div`
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+  overflow-y: auto;
+
   padding: 10px 0;
   gap: 15px;
   width: 100%;

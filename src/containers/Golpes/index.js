@@ -70,6 +70,7 @@ const MoveListContainer = styled.ul`
   list-style-type: none;
   padding: 0;
   width: 100%;
+  
 `;
 
 const MoveItemContainer = styled.li`
@@ -96,6 +97,7 @@ const MoveHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  color: white;
 `;
 
 const MoveName = styled.h2`
