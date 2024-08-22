@@ -6,12 +6,12 @@ const TimerContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 11px;
+  padding: 20px;
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.8);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   width: 100%;
-  max-width: 300px;
+
   text-align: center;
   box-sizing: border-box;
   margin: 10px auto;
