@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
 
 const SidebarContainer = styled.div`
-  width: ${props => (props.isOpen ? '200px' : '0')};
+  width: ${props => (props.isOpen ? '201px' : '0')};
   height: 100vh;
   background-color: #333;
-  padding: ${props => (props.isOpen ? '20px' : '0')};
+  padding: ${props => (props.isOpen ? '2px' : '0')};
   position: fixed;
   top: 0;
   left: 0;
