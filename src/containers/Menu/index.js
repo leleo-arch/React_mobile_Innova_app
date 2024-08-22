@@ -49,8 +49,8 @@ const App = () => {
         <Tempo src={Controle} alt="Desafios"/>
          </Circle > 
 
-         <Circle to="/Timer"> 
-        <Tempo src={Noticias} alt="Desafios"/>
+         <Circle to="/Noticias"> 
+        <Tempo src={Noticias} alt="Noticias"/>
          </Circle > 
 
         </CircleContainer>
