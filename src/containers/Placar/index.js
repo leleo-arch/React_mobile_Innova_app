@@ -9,7 +9,7 @@ import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
 const Body = styled.div`
   background-color: black;
   width: 100%;
-  min-height: 113vh;
+  min-height: 125vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,23 +22,18 @@ const Body = styled.div`
   background-position: center;  // Centraliza a imagem
   background-repeat: no-repeat;  // Evita que a imagem se repita
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
 
   @media (max-width: 380px) {
     padding: 20px;
     max-width: 400px;
-    min-height: 160vh;
+    min-height: 170vh;
 
   }
 
   @media (max-width: 390px) {
     padding: 20px;
     max-width: 400px;
-    min-height: 140vh;
+    min-height: 160vh;
 
   }
   

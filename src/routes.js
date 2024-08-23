@@ -14,6 +14,10 @@ import timer  from "./containers/Timer";
 import placar from "./containers/Placar";
 import perfil from "./containers/Perfil";
 import noticia from "./containers/Noticias";
+import animacao from "./containers/Animacao";
+
+
+
 
 
 
@@ -37,6 +41,8 @@ function Routes() {
         <Route exact path="/Placar"component = {placar}/>
         <Route exact path="/Perfil"component = {perfil}/>
         <Route exact path="/Noticias"component = {noticia}/>
+        <Route exact path="/Animacao"component = {animacao}/>
+
 
 
         

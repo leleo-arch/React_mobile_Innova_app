@@ -258,7 +258,8 @@ const JiuJitsuMoves = () => {
   return (
     
     <Body>
-      
+          <Home></Home>
+
       <Container>
        
         <SearchContainer>
