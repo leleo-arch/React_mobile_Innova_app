@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 import NavBar from '../Nave/index';
 import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
+import Home from '../../containers/Perfil'; 
+
 
 
 
@@ -208,6 +210,7 @@ const JiuJitsuPage = () => {
 
   return (
     <Container>
+      <Home></Home>
       <FormContainer>
       <Heading>Controle de Alunos</Heading>
 

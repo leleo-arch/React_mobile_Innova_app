@@ -4,6 +4,8 @@ import { FaSearch, FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import NavBar from '../Nave/index'; // Certifique-se de que o caminho para o NavBar esteja correto
 import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
 import backgroundImg2 from '../../assets/Banner.png';  // Importa a imagem de fundo
+import Home from '../../containers/Perfil'; 
+
 
 
 const Body = styled.div`
@@ -182,6 +184,7 @@ const initialMoves = [
 ];
 const MoveItem = ({ move, index, expanded, toggleExpand, Delete }) => (
   <MoveItemContainer>
+    <Home></Home>
     <MoveHeader onClick={() => toggleExpand(index)}>
       <MoveName>{move.name}</MoveName>
       {expanded === index ? <FaAngleUp /> : <FaAngleDown />}

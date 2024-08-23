@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import NavBar from '../Nave/index'; // Certifique-se de que o caminho para o NavBar esteja correto
 import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
 import backgroundImg2 from '../../assets/Banner.png';  // Importa a imagem de fundo
+import Home from '../../containers/Perfil'; 
+
 
 
 const Body = styled.div`
@@ -214,6 +216,7 @@ const TrainingDayJiuJitsu = () => {
 
   return (
     <Body>
+    <Home></Home>
       <Container>
         <SectionTitle>Adicionar Exercícios:</SectionTitle>
         <Input 

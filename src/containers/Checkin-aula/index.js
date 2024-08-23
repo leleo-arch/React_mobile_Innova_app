@@ -4,6 +4,8 @@ import Calendar from './Calendar';
 import NavBar from '../Nave/index';
 import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
 import backgroundImg2 from '../../assets/Banner.png';  // Importa a imagem de fundo
+import Home from '../../containers/Perfil'; 
+
 
 
 // Styled Components
@@ -250,6 +252,7 @@ const JiuJitsuCheckIn = () => {
   return (
     
     <Divcontainer>
+      <Home></Home>
       <Container>
       <P></P>
         <Calendar onSelectDate={setSelectedDate} />

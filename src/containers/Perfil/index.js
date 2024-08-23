@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaHome, FaUser, FaCogs, FaHandsHelping, FaEnvelope, FaSignOutAlt } from 'react-icons/fa';
 
 const SidebarContainer = styled.div`
-  width: ${props => (props.isOpen ? '201px' : '0')};
+  width: ${props => (props.isOpen ? '250px' : '0')};
   height: 100vh;
   background-color: #333;
-  padding: ${props => (props.isOpen ? '2px' : '0')};
+  padding: ${props => (props.isOpen ? '20px' : '0')};
   position: fixed;
   top: 0;
   left: 0;
@@ -18,23 +18,38 @@ const SidebarContainer = styled.div`
   overflow-x: hidden;
   transition: width 0.3s ease;
   z-index: 1000;
-  gap:20px;
+  gap: 20px;
 
-`;
-
-const SidebarItem = styled(Link)`
-  margin-top: 70px;
-
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  margin: 40px 0;
-  display: ${props => (props.isOpen ? 'block' : 'none')};
-  &:hover {
-    color: #00AAFF;
+  @media (max-width: 768px) {
+    width: ${props => (props.isOpen ? '250px' : '0')};
   }
 `;
 
+const SidebarItem = styled(Link)`
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: #00AAFF;
+    color: #fff;
+  }
+
+  svg {
+    margin-right: 10px;
+  }
+
+  &.active {
+    background-color: #00AAFF;
+    color: #fff;
+  }
+`;
 
 const MenuIcon = styled(FaBars)`
   position: fixed;
@@ -44,7 +59,6 @@ const MenuIcon = styled(FaBars)`
   color: white;
   cursor: pointer;
   z-index: 1100;
-  margin-bottom: 50px;
 `;
 
 const Sidebar = () => {
@@ -58,16 +72,28 @@ const Sidebar = () => {
     <>
       <MenuIcon onClick={toggleSidebar} />
       <SidebarContainer isOpen={isOpen}>
+        <div></div>
         <div>
-          <SidebarItem to="/dashboard" isOpen={isOpen}>Dashboard</SidebarItem>
-          <SidebarItem to="/profile" isOpen={isOpen}>Perfil</SidebarItem>
-          <SidebarItem to="/settings" isOpen={isOpen}>Configurações</SidebarItem>
-          <SidebarItem to="/support" isOpen={isOpen}>Suporte</SidebarItem>
-          <SidebarItem to="/contact" isOpen={isOpen}>Contato</SidebarItem>
-          <SidebarItem to="/" isOpen={isOpen}>Sair</SidebarItem>
-
+          <SidebarItem to="/Menu" isOpen={isOpen}>
+            <FaHome /> Menu
+          </SidebarItem>
+          <SidebarItem to="/profile" isOpen={isOpen}>
+            <FaUser /> Perfil
+          </SidebarItem>
+          <SidebarItem to="/settings" isOpen={isOpen}>
+            <FaCogs /> Configurações
+          </SidebarItem>
+          <SidebarItem to="/support" isOpen={isOpen}>
+            <FaHandsHelping /> Suporte
+          </SidebarItem>
+          <SidebarItem to="/contact" isOpen={isOpen}>
+            <FaEnvelope /> Contato
+          </SidebarItem>
+          <SidebarItem to="/" isOpen={isOpen}>
+            <FaSignOutAlt /> Sair
+          </SidebarItem>
         </div>
-        </SidebarContainer>
+      </SidebarContainer>
     </>
   );
 };

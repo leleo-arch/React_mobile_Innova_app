@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import Home from '../../containers/Perfil'; 
+
 
 const TimerContainer = styled.div`
   display: flex;
@@ -171,6 +173,7 @@ const Timer = () => {
 
   return (
     <TimerContainer>
+      <Home></Home>
       <TimeDisplay>{formatTime(countdownRunning ? countdown : time)}</TimeDisplay>
       <ButtonContainer>
         {countdown === null && (

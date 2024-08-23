@@ -4,6 +4,8 @@ import styled, { createGlobalStyle } from 'styled-components';
 import NavBar from '../Nave/index'; 
 import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
 import backgroundImg2 from '../../assets/Banner.png';  // Importa a imagem de fundo
+import Home from '../../containers/Perfil'; 
+
 
 
 
@@ -200,6 +202,7 @@ const Timer = () => {
 
   return (
     <>
+    <Home></Home>
       <GlobalStyle />
       <TimerContainer>
         <TimeDisplay>Relógio: {formatCurrentTime(currentTime)}</TimeDisplay>
