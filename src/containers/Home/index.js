@@ -178,7 +178,7 @@ const App = () => {
             <Button type="submit">Entrar</Button>
           </form>
           <Button2 to="/Session">Cadastrar-se</Button2>
-          <Button2 to="/AnimationPage">Pular</Button2>
+          <Button2 to="/Menu">Pular</Button2>
           {loading && (
             <LoadingContainer>
               <Spinner />

@@ -1,6 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
+// Importa os componentes
 import cadastro from "./containers/Cadastro-Alunos";
 import session from "./containers/Session";
 import historico from "./containers/Treino";
@@ -15,17 +16,21 @@ import placar from "./containers/Placar";
 import perfil from "./containers/Perfil";
 import noticia from "./containers/Noticias";
 import animacao from "./containers/Animacao";
-import Intro from "./containers/Intro"; // Adicione o caminho correto para o seu componente Intro
-import AnimationPage from "./containers/AnimationPage"; // Adicione o caminho correto para o seu componente AnimationPage
+import Intro from "./containers/Intro";
+import AnimationPage from "./containers/AnimationPage";
 
 function Routes() {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact component={home} /> {/* Adiciona a página de animação */}
-
-        <Route exact path="/AnimationPage" component={AnimationPage} />
-          <Route exact path="/Intro" component={Intro} /> {/* Adiciona a página de introdução */}
+        {/* Rota para a página de animação, que será a primeira página a ser exibida */}
+        <Route path="/" exact component={AnimationPage} />
+        
+        {/* Rota para a página inicial após a animação */}
+        <Route exact path="/home" component={home} />
+        
+        {/* Outras rotas */}
+        <Route exact path="/Intro" component={Intro} />
         <Route exact path="/Cadastros-Alunos" component={comunidades} />
         <Route exact path="/Golpes" component={golpes} />
         <Route exact path="/Treino" component={historico} />
@@ -39,10 +44,12 @@ function Routes() {
         <Route exact path="/Perfil" component={perfil} />
         <Route exact path="/Noticias" component={noticia} />
         <Route exact path="/Animacao" component={animacao} />
+        
+        {/* Redireciona qualquer outra rota para a página inicial */}
+        <Redirect to="/home" />
       </Switch>
     </Router>
   );
 }
 
 export default Routes;
-

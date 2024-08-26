@@ -60,7 +60,7 @@ const Intro = () => {
   useEffect(() => {
     // Redireciona para a página de Menu após 5 segundos
     const timer = setTimeout(() => {
-      history.push('/Menu');
+      history.push('/');
     }, 5000); // 5000 ms = 5 segundos
 
     // Limpa o timer quando o componente for desmontado

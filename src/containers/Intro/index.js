@@ -17,7 +17,7 @@ const fadeIn = keyframes`
 const IntroContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   height: 100vh;
   width: 100vw;
@@ -31,6 +31,7 @@ const Description = styled.p`
   text-align: center;
   margin-top: 20px;
   animation: ${fadeIn} 3s ease-in-out;
+  padding: 10px;
 `;
 
 const Intro = () => {
@@ -38,7 +39,7 @@ const Intro = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      history.push('/Menu');
+      history.push('home');
     }, 5000); // 5000 ms = 5 segundos
 
     return () => clearTimeout(timer);
