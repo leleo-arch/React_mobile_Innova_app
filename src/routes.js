@@ -17,7 +17,13 @@ import perfil from "./containers/Perfil";
 import noticia from "./containers/Noticias";
 import animacao from "./containers/Animacao";
 import Intro from "./containers/Intro";
+import configuracoes from "./containers/Configuracoes";
+import meuperfil from "./containers/MeuPerfil";
+import contato from "./containers/Contato";
+import suporte from "./containers/Suporte";
 import AnimationPage from "./containers/AnimationPage";
+
+
 
 function Routes() {
   return (
@@ -44,6 +50,14 @@ function Routes() {
         <Route exact path="/Perfil" component={perfil} />
         <Route exact path="/Noticias" component={noticia} />
         <Route exact path="/Animacao" component={animacao} />
+        <Route exact path="/Configuracoes" component={configuracoes} />
+        <Route exact path="/MeuPerfil" component={meuperfil} />
+        <Route exact path="/Contato" component={contato} />
+        <Route exact path="/Suporte" component={suporte} />
+
+
+
+
         
         {/* Redireciona qualquer outra rota para a página inicial */}
         <Redirect to="/home" />

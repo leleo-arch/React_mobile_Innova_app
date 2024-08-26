@@ -77,16 +77,16 @@ const Sidebar = () => {
           <SidebarItem to="/Menu" isOpen={isOpen}>
             <FaHome /> Menu
           </SidebarItem>
-          <SidebarItem to="/profile" isOpen={isOpen}>
+          <SidebarItem to="/MeuPerfil" isOpen={isOpen}>
             <FaUser /> Perfil
           </SidebarItem>
-          <SidebarItem to="/settings" isOpen={isOpen}>
+          <SidebarItem to="/Configuracoes" isOpen={isOpen}>
             <FaCogs /> Configurações
           </SidebarItem>
-          <SidebarItem to="/support" isOpen={isOpen}>
+          <SidebarItem to="/Suporte" isOpen={isOpen}>
             <FaHandsHelping /> Suporte
           </SidebarItem>
-          <SidebarItem to="/contact" isOpen={isOpen}>
+          <SidebarItem to="/Contato" isOpen={isOpen}>
             <FaEnvelope /> Contato
           </SidebarItem>
           <SidebarItem to="/" isOpen={isOpen}>

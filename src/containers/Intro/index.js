@@ -21,6 +21,7 @@ const IntroContainer = styled.div`
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  background-color: black;
   background: url(${backgroundImg}) center/cover no-repeat;
 `;
 

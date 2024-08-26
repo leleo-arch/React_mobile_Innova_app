@@ -40,7 +40,7 @@ const AnimationPage = () => {
     // Redireciona para a página de introdução após 3 segundos
     const timer = setTimeout(() => {
       history.push('/Intro');
-    }, 6000); // 3000 ms = 3 segundos
+    }, 7000); // 3000 ms = 3 segundos
 
     // Limpa o timer quando o componente for desmontado
     return () => clearTimeout(timer);
