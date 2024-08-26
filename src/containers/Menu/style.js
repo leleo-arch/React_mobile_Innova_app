@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
 
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;

@@ -32,7 +32,6 @@ const App = () => {
     <Container>
 
      <Home></Home>
-
       <ContainerItems>
         <Title>Innova</Title>
         <IntroText>
