@@ -7,6 +7,6 @@ import { LoadingProvider } from './containers/Loading/LoadingContext';
 
 
 
- ReactDOM.render( <><LoadingProvider/> <Routes/> <GlobalStyle/>  </>, document.getElementById('root'));
+ ReactDOM.render( <LoadingProvider> <Routes/> <GlobalStyle/>  </LoadingProvider>, document.getElementById('root'));
  
  
