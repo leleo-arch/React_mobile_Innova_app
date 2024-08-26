@@ -200,11 +200,6 @@ border-radius: 20px;
 `;
 
 
-// Supondo que os componentes estilizados estejam definidos/importados corretamente
-// Isso inclui Container, Imagem, Div3, Title, Div2, GlobalProgressBar, GlobalProgress, MonthlyChallengeSection,
-// MonthlyChallengeTitle, ChallengeList, ChallengeItem, ChallengeTitle, ChallengeDescription, Reward, Button,
-// Progress, ProgressBar, CompletionMessage e LoadingIcon
-
 const ChallengePage = () => {
   const [monthlyChallenges, setMonthlyChallenges] = useState(() => {
     const savedChallenges = localStorage.getItem('monthlyChallenges');

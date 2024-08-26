@@ -16,7 +16,6 @@ export const Container = styled.div`
   background-position: center;  // Centraliza a imagem
   background-repeat: no-repeat;  // Evita que a imagem se repita
   
-  
   @media (max-width: 768px) {
     padding: 0;
     width: 100%;

@@ -10,6 +10,7 @@ import Home from '../../containers/Perfil';
 
 
 
+
 import {
   Container,
   ContainerItems,
@@ -29,7 +30,7 @@ const App = () => {
   return (
    
     <Container>
-     
+
      <Home></Home>
 
       <ContainerItems>

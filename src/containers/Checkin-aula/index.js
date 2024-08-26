@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Calendar from './Calendar';
 import NavBar from '../Nave/index';
+import Home from '../Perfil';
+
 import backgroundImg from '../../assets/5.png';  // Importa a imagem de fundo
 import backgroundImg2 from '../../assets/Banner.png';  // Importa a imagem de fundo
-import Home from '../../containers/Perfil'; 
 
 
-
-// Styled Components
 const Container = styled.div`
   padding: 30px;
   display: flex;
@@ -16,9 +15,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-
-
-
 
   @media only screen and (max-width: 900px) {
     width: 85%;

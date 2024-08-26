@@ -72,10 +72,12 @@ const MoveListContainer = styled.ul`
   list-style-type: none;
   padding: 0;
   width: 100%;
+  overflow-y: auto;
   
 `;
 
 const MoveItemContainer = styled.li`
+
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 25px;
@@ -85,7 +87,7 @@ const MoveItemContainer = styled.li`
   transition: transform 0.2s;
 align-items: center;
 background-image: url(${backgroundImg2});  // Define a imagem de fundo
-  background-size: 500px;  // Faz com que a imagem cubra todo o contêiner
+  background-size: 300rem;  // Faz com que a imagem cubra todo o contêiner
   background-position: center;  // Centraliza a imagem
   background-repeat: no-repeat;  // Evita que a imagem se repita
   opacity: 90%;
@@ -168,10 +170,6 @@ const DeleteButton = styled.button`
 `;
 
 
-// Supondo que os componentes estilizados estejam definidos/importados corretamente
-// Isso inclui Body, Imagem, Container, Title, SearchContainer, SearchInput, SearchButton,
-// MoveListContainer, MoveItemContainer, MoveHeader, MoveName, MoveDescription, MoveImage, Form,
-// FormInput, FormButton.
 
 const initialMoves = [
   {
@@ -182,22 +180,6 @@ const initialMoves = [
   },
   //... outros golpes
 ];
-const MoveItem = ({ move, index, expanded, toggleExpand, Delete }) => (
-  <MoveItemContainer>
-    <Home></Home>
-    <MoveHeader onClick={() => toggleExpand(index)}>
-      <MoveName>{move.name}</MoveName>
-      {expanded === index ? <FaAngleUp /> : <FaAngleDown />}
-    </MoveHeader>
-    {expanded === index && (
-      <>
-        <MoveDescription>{move.description}</MoveDescription>
-        <MoveImage src={move.link} alt={move.name} />
-      </>
-    )}
-    <DeleteButton onClick={() => Delete(index)}>Deletar</DeleteButton>
-  </MoveItemContainer>
-);
 
 // Componente MoveList
 const MoveList = ({ moves, expanded, toggleExpand, Delete }) => (
@@ -307,6 +289,22 @@ const JiuJitsuMoves = () => {
     </Body>
   );
 };
+
+const MoveItem = ({ move, index, expanded, toggleExpand, Delete }) => (
+  <MoveItemContainer>
+    <MoveHeader onClick={() => toggleExpand(index)}>
+      <MoveName>{move.name}</MoveName>
+      {expanded === index ? <FaAngleUp /> : <FaAngleDown />}
+    </MoveHeader>
+    {expanded === index && (
+      <>
+        <MoveDescription>{move.description}</MoveDescription>
+        <MoveImage src={move.link} alt={move.name} />
+      </>
+    )}
+    <DeleteButton onClick={() => Delete(index)}>Deletar</DeleteButton>
+  </MoveItemContainer>
+);
 
 export default JiuJitsuMoves;
 
