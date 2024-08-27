@@ -122,9 +122,9 @@ const Spinner = styled.div`
 `;
 
  const Image = styled.img`
-  width: 250px;
+  width: 280px;
   height: auto;
-  margin-bottom: 0px;
+  margin-bottom: -50px;
   border-radius: 66px;
 `;
 

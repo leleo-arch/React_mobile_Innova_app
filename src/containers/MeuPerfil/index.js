@@ -12,7 +12,7 @@ const ProfileContainer = styled.div`
   padding: 20px;
   max-width: 800px;
   height: 100vh;
- gap:20px;
+  gap: 25px;
   margin: auto;
   background-image: url(${backgroundImg});  // Define a imagem de fundo
   background-size: cover;  // Faz com que a imagem cubra todo o contêiner
@@ -21,6 +21,7 @@ const ProfileContainer = styled.div`
 `;
 
 const ProfileHeader = styled.div`
+margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -6,7 +6,6 @@ import Home from '../../containers/Perfil';
 
 
 
-// Estilos para o contêiner da página de suporte
 const SupportContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -23,6 +22,7 @@ const SupportContainer = styled.div`
 
 // Estilos para o título da página de suporte
 const SupportTitle = styled.h1`
+margin-top: 40px;
   font-size: 24px;
   color: #fff;
   margin-bottom: 20px;
@@ -40,7 +40,7 @@ const SupportForm = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 25px;
 `;
 
 // Estilos para os campos do formulário

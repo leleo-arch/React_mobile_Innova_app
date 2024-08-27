@@ -23,6 +23,7 @@ const ContactContainer = styled.div`
 
 // Estilos para o título da página de contato
 const ContactTitle = styled.h1`
+margin-top: 40px;
   font-size: 24px;
   color: #fff;
   margin-bottom: 20px;
@@ -33,7 +34,7 @@ const ContactForm = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 25px;
 `;
 
 // Estilos para os campos do formulário

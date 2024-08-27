@@ -46,7 +46,7 @@ const ScoreboardContainer = styled.div`
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-  width: 100%;
+  width: 120%;
   max-width: 400px;
   text-align: center;
   box-sizing: border-box;
@@ -96,7 +96,7 @@ const ScoreRow = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
+  width: 9ch;
   margin: 6px 0;
   overflow-x: auto; 
    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);

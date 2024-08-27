@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { FaBars, FaHome, FaUser, FaCogs, FaHandsHelping, FaEnvelope, FaSignOutAlt } from 'react-icons/fa';
+import { FaBars, FaHome, FaUser, FaCogs, FaHandsHelping, FaEnvelope, FaSignOutAlt, FaUserFriends } from 'react-icons/fa';
 
 const SidebarContainer = styled.div`
   width: ${props => (props.isOpen ? '250px' : '0')};
   height: 100vh;
   background-color: #333;
-  padding: ${props => (props.isOpen ? '20px' : '0')};
+  padding: ${props => (props.isOpen ? '30px' : '0')};
   position: fixed;
   top: 0;
   left: 0;
@@ -91,6 +91,9 @@ const Sidebar = () => {
           </SidebarItem>
           <SidebarItem to="/" isOpen={isOpen}>
             <FaSignOutAlt /> Sair
+          </SidebarItem>
+          <SidebarItem to="/" isOpen={isOpen}>
+            <FaUserFriends  /> Instagram
           </SidebarItem>
         </div>
       </SidebarContainer>

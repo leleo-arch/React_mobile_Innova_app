@@ -24,6 +24,7 @@ const SettingsContainer = styled.div`
 // Estilos para o título da página de configurações
 const SettingsTitle = styled.h1`
   font-size: 24px;
+  margin-top: 40px;
   color: #fff;
   margin-bottom: 20px;
 `;
@@ -33,7 +34,7 @@ const SettingsForm = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 25px;
 `;
 
 // Estilos para os campos do formulário

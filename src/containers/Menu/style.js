@@ -61,7 +61,7 @@ export const ContainerItems2 = styled.div`
   align-items: center;
   justify-content: center;
   width: 80%;
-  gap:49px;
+  gap:62px;
   margin-top: -28px;
   margin-bottom: 50px;
   margin-right: 13px;

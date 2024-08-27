@@ -24,11 +24,10 @@ const AnimationContainer = styled.div`
   background-color: black; // Cor de fundo
   color: black;
 
-  
 `;
 
 const AnimationLogo = styled.img`
-  width: 300px;
+  width: 380px;
   height: auto;
   animation: ${fadeIn} 5s ease-in-out;
 `;
@@ -40,7 +39,7 @@ const AnimationPage = () => {
     // Redireciona para a página de introdução após 3 segundos
     const timer = setTimeout(() => {
       history.push('/Intro');
-    }, 7000); // 3000 ms = 3 segundos
+    }, 5000); // 
 
     // Limpa o timer quando o componente for desmontado
     return () => clearTimeout(timer);
