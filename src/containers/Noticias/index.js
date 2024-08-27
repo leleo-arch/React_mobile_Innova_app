@@ -52,12 +52,8 @@ const JiuJitsuNews = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get('https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI', {
-          params: { q: 'jiu-jitsu', pageSize: 10 },
-          headers: {
-            'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com',
-            'X-RapidAPI-Key': 'YOUR_RAPIDAPI_KEY' // Substitua com sua chave da RapidAPI
-          }
+        const response = await axios.get('https://newsapi.org/v2/everything?q=Apple&from=2024-08-27&sortBy=popularity&apiKey=API_KEY', {
+         
         });
         setArticles(response.data.value);
         setLoading(false);
@@ -76,7 +72,7 @@ const JiuJitsuNews = () => {
   return (
     <NewsContainer>
       <h1>Notícias de Jiu-Jitsu</h1>
-      {articles.length > 0 ? (
+      {articles.lngth > 0 ? (
         articles.map((article, index) => (
           <NewsItem key={index}>
             {article.image.url && <NewsImage src={article.image.url} alt={article.title} />}
