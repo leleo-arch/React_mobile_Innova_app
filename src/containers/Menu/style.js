@@ -64,7 +64,7 @@ export const ContainerItems2 = styled.div`
   gap:62px;
   margin-top: -28px;
   margin-bottom: 50px;
-  margin-right: 13px;
+  margin-left: -9px;
 `;
 
 
