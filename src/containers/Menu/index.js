@@ -8,9 +8,6 @@ import Noticias from '../../assets/noticias.png';
 import Home from '../../containers/Perfil'; 
 
 
-
-
-
 import {
   Container,
   ContainerItems,
@@ -71,7 +68,7 @@ const App = () => {
           <Button to="/Cadastros-Alunos">
           <img src='https://cdn.discordapp.com/attachments/1274071230512894016/1276237486825148456/banner_campeonato.png?ex=66c8cc48&is=66c77ac8&hm=c071ef1e2e4c6c57881d3c0c5b9c6c30339ab2f65b337c8a4a50309fe4d0a6aa&'alt="Cadastro"/>
           </Button>
-          <Button to="/Desafios">
+          <Button to="/Campeonatos">
           <img src='https://cdn.discordapp.com/attachments/1274071230512894016/1276237487202762844/banner_controle_de_alunos.png?ex=66c8cc48&is=66c77ac8&hm=4c583313526fd439d5b35a77c143b3e7b28e74e01d3103bdf18fbb54725973e9&' alt="Desafios"/>
           </Button>
           <Button to="/Comunidade">

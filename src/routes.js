@@ -22,6 +22,8 @@ import meuperfil from "./containers/MeuPerfil";
 import contato from "./containers/Contato";
 import suporte from "./containers/Suporte";
 import AnimationPage from "./containers/AnimationPage";
+import campeonatos from "./containers/Campeonatos";
+
 
 
 
@@ -54,6 +56,8 @@ function Routes() {
         <Route exact path="/MeuPerfil" component={meuperfil} />
         <Route exact path="/Contato" component={contato} />
         <Route exact path="/Suporte" component={suporte} />
+        <Route exact path="/Campeonatos" component={campeonatos} />
+
 
 
 
