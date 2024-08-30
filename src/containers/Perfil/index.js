@@ -4,10 +4,9 @@ import styled from 'styled-components';
 import { FaBars, FaHome, FaUser, FaCogs, FaHandsHelping, FaEnvelope, FaSignOutAlt, FaUserFriends } from 'react-icons/fa';
 
 const SidebarContainer = styled.div`
-  width: ${props => (props.isOpen ? '250px' : '0')};
+  width: ${props => (props.isOpen ? '250px' : '0px')};
   height: 100vh;
   background-color: #333;
-  padding: ${props => (props.isOpen ? '30px' : '0')};
   position: fixed;
   top: 0;
   left: 0;
@@ -18,10 +17,10 @@ const SidebarContainer = styled.div`
   overflow-x: hidden;
   transition: width 0.3s ease;
   z-index: 1000;
-  gap: 20px;
+  padding-top: 60px;
 
   @media (max-width: 768px) {
-    width: ${props => (props.isOpen ? '250px' : '0')};
+    width: ${props => (props.isOpen ? '250px' : '0px')};
   }
 `;
 
@@ -49,6 +48,16 @@ const SidebarItem = styled(Link)`
     background-color: #00AAFF;
     color: #fff;
   }
+
+  ${props => !props.isOpen && `
+    justify-content: center;
+    svg {
+      margin-right: 0;
+    }
+    span {
+      display: none;
+    }
+  `}
 `;
 
 const MenuIcon = styled(FaBars)`
@@ -72,28 +81,34 @@ const Sidebar = () => {
     <>
       <MenuIcon onClick={toggleSidebar} />
       <SidebarContainer isOpen={isOpen}>
-        <div></div>
         <div>
           <SidebarItem to="/Menu" isOpen={isOpen}>
-            <FaHome /> Menu
+            <FaHome />
+            {isOpen && <span>Menu</span>}
           </SidebarItem>
           <SidebarItem to="/MeuPerfil" isOpen={isOpen}>
-            <FaUser /> Perfil
+            <FaUser />
+            {isOpen && <span>Perfil</span>}
           </SidebarItem>
           <SidebarItem to="/Configuracoes" isOpen={isOpen}>
-            <FaCogs /> Configurações
+            <FaCogs />
+            {isOpen && <span>Configurações</span>}
           </SidebarItem>
           <SidebarItem to="/Suporte" isOpen={isOpen}>
-            <FaHandsHelping /> Suporte
+            <FaHandsHelping />
+            {isOpen && <span>Suporte</span>}
           </SidebarItem>
           <SidebarItem to="/Contato" isOpen={isOpen}>
-            <FaEnvelope /> Contato
+            <FaEnvelope />
+            {isOpen && <span>Contato</span>}
           </SidebarItem>
           <SidebarItem to="/" isOpen={isOpen}>
-            <FaSignOutAlt /> Sair
+            <FaSignOutAlt />
+            {isOpen && <span>Sair</span>}
           </SidebarItem>
           <SidebarItem to="/" isOpen={isOpen}>
-            <FaUserFriends  /> Instagram
+            <FaUserFriends />
+            {isOpen && <span>Instagram</span>}
           </SidebarItem>
         </div>
       </SidebarContainer>
@@ -102,3 +117,4 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
