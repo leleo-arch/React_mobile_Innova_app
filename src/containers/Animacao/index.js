@@ -7,7 +7,7 @@ import backgroundImg from '../../assets/5.png';  // Imagem de fundo
 // Animação para o texto
 const fadeIn = keyframes`
   from {
-    opacity: 0;
+    opacity: 1;
   }
   to {
     opacity: 1;
