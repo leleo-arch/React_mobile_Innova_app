@@ -16,7 +16,7 @@ const fadeIn = keyframes`
 
 // Animação para o logo
 const bounce = keyframes`
-  0%, 20%, 50%, 90%, 100% {
+  0%, 20%, 50%, 95%, 100% {
     transform: translateY(0);
   }
   40% {
