@@ -319,7 +319,7 @@ const Scoreboard = () => {
   return (
     <Body>
       <ScoreboardContainer>
-        <ScoreboardTitle>Placar de Jiu-Jitsu</ScoreboardTitle>
+        <ScoreboardTitle>Placar Jiu-Jitsu</ScoreboardTitle>
         <Instructions>
           Adicione ou remova pontos para cada técnica. Registre vantagens e punições.
         </Instructions>
