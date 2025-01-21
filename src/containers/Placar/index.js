@@ -237,7 +237,7 @@ const ResetButton = styled(ScoreButton)`
 `;
 
 const ProgressBarContainer = styled.div`
-  width: 99%;
+  width: 100%;
   height: 8px;
   background: red;
   border-radius: 4px;
