@@ -232,7 +232,7 @@ const ResetButton = styled(ScoreButton)`
   min-width: 70px;
 
   &:hover {
-    background-color: #1f6f8b;
+    background-color:rgb(28, 116, 148);
   }
 `;
 
